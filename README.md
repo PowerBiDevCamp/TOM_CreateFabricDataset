@@ -16,17 +16,61 @@ Here are the high-level steps to completing this demonstration:
 
 - Create Lakehouse tables using a pre-provided Fabric notebook
 
-- Run custom application to create DirectLake data model using TOM
+- Run the custom C# application to create DirectLake data model using
+  TOM
 
 ## Create workspace associated with Fabric capacity
 
-- Get URL to Workspace Connection
+Create a new workspace with a name such as **DirectLakeDemo**. Make sure
+the workspace is associated with a Premium capacity or a trial capacity
+with Fabric capabilities.
 
-- Write down workspace name
+Get URL to Workspace Connection
+
+<img src="./images/media/image1.png"
+style="width:3.25in;height:2.41129in" />
+
+The new
+
+powerbi://api.powerbi.com/v1.0/myorg/DirectLakeDemo
 
 ## Create a new Lakehouse in the new workspace
 
-- Get Lakehouse SQL Endpoint
+Inside the new workspace, create a new Lakehouse named
+**SalesDataLakehouse**.
+
+<img src="./images/media/image2.png"
+style="width:2.43333in;height:2.83265in" />
+
+Ssss
+
+<img src="./images/media/image3.png"
+style="width:4.025in;height:2.14905in" />
+
+Sss
+
+<img src="./images/media/image4.png"
+style="width:4.05in;height:1.45512in" />
+
+Ssss
+
+<img src="./images/media/image5.png"
+style="width:3.08333in;height:1.88695in" />
+
+Sssssss
+
+<img src="./images/media/image6.png"
+style="width:2.95833in;height:2.70203in" />
+
+Get Lakehouse SQL Endpoint
+
+<img src="./images/media/image7.png"
+style="width:4.11702in;height:2.06685in"
+alt="A screenshot of a computer Description automatically generated" />
+
+Ssss
+
+5lcsgl3vll3edero2m4sge7gdu-nya26urqtgsejoagwutwdoogl4**.datawarehouse.pbidedicated.windows.net**
 
 ## Create Lakehouse tables using a pre-provided Fabric notebook
 
@@ -46,7 +90,7 @@ Here are the high-level steps to completing this demonstration:
 
 - Execute code in notebook to generate calendar table for silver layer
 
-## Run custom application to create DirectLake data model using TOM
+## Run the custom C# application to create DirectLake data model using TOM
 
 - Create Azure AD application
 
