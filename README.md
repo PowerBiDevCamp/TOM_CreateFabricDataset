@@ -6,65 +6,63 @@ using the Tabular Object Model (TOM).
 
 Steps to completing this demonstration:
 
-1.  Create workspace associated with Fabric capacity
+## Create workspace associated with Fabric capacity
 
-2.  Get URL to Workspace Connection
+- Get URL to Workspace Connection
 
-3.  Write down workspace name
+- Write down workspace name
 
-4.  Create Lakehouse
+## Create a new Lakehouse in the new workspace
 
-5.  Get Lakehouse SQL Endpoint
+- Get Lakehouse SQL Endpoint
 
-6.  Create Lakehouse tables using Pythin code in pre-provided Python
-    notebook
+## Create Lakehouse tables using a pre-provided Fabric notebook
 
-7.  Upload Python notebook named **CreateLakehouseTables.ipynb**
+- Upload Python notebook named **CreateLakehouseTables.ipynb**
 
-8.  Associate notebook named **CreateLakehouseTables.ipynb** with
-    Lakehouse
+- Associate notebook named **CreateLakehouseTables.ipynb** with
+  Lakehouse
 
-9.  Execute code in notebook to copy CSV files from GitHib repository
-    into Lakehouse file system
+- Execute code in notebook to copy CSV files from GitHib repository into
+  Lakehouse file system
 
-10. Execute code in notebook to load CSV files and convert then into
-    delta tables for bronze zone
+- Execute code in notebook to load CSV files and convert then into delta
+  tables for bronze zone
 
-11. Execute code in notebook to load bronze tables and reshape/transform
-    data in into delta tables for silver layer
+- Execute code in notebook to load bronze tables and reshape/transform
+  data in into delta tables for silver layer
 
-12. Execute code in notebook to generate calendar table for silver layer
+- Execute code in notebook to generate calendar table for silver layer
 
-13. Run C# console application to create Power BI DirectLake dataset
-    using Tabular Object Model (TOM)
+## Run application to create DirectLake data model using TOM
 
-14. Create Azure AD application
+- Create Azure AD application
 
-15. Create a native/public application with redirect URI of
-    <http://localhost>
+  1.  Create a native/public application with redirect URI of
+      <http://localhost>
 
-16. Record Application ID for use in console application.
+  2.  Record Application ID for use in console application.
 
-17. Download C# console application source code and open project in
-    Visual Studio 2022
+- Download C# console application source code and open project in Visual
+  Studio 2022
 
-18. Open **AppSettings.cs** and updae the following:
+- Open **AppSettings.cs** and updae the following:
 
-19. ApplicationID of Azure AD application
+  1.  ApplicationID of Azure AD application
 
-20. Workspace Connection
+  2.  Workspace Connection
 
-21. SQL Endpoint
+- SQL Endpoint
 
-22. Lakehouse Name
+  1.  Lakehouse Name
 
-23. UserID and Password to prevent interactive login
+  2.  UserID and Password to prevent interactive login
 
-24. Save changes
+  3.  Save changes
 
-25. Run application
+- Run application
 
-26. It should run without error
+  1.  It should run without error
 
-27. When done, verify you can see new data model and use it to create
-    new report
+  2.  When done, verify you can see new data model and use it to create
+      new report
