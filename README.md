@@ -34,43 +34,54 @@ The new
 
 powerbi://api.powerbi.com/v1.0/myorg/DirectLakeDemo
 
+dddd
+
+<img src="./images/media/image2.png"
+style="width:4.28392in;height:1.53705in"
+alt="A screenshot of a computer Description automatically generated" />
+
 ## Create a new Lakehouse in the new workspace
 
 Inside the new workspace, create a new Lakehouse named
 **SalesDataLakehouse**.
 
-<img src="./images/media/image2.png"
+<img src="./images/media/image3.png"
 style="width:2.43333in;height:2.83265in" />
 
 Ssss
 
-<img src="./images/media/image3.png"
+<img src="./images/media/image4.png"
 style="width:4.025in;height:2.14905in" />
 
 Sss
 
-<img src="./images/media/image4.png"
+<img src="./images/media/image5.png"
 style="width:4.05in;height:1.45512in" />
 
 Ssss
 
-<img src="./images/media/image5.png"
+<img src="./images/media/image6.png"
 style="width:3.08333in;height:1.88695in" />
 
 Sssssss
 
-<img src="./images/media/image6.png"
+<img src="./images/media/image7.png"
 style="width:3.96911in;height:2.66667in" />
 
 Get Lakehouse SQL Endpoint
 
-<img src="./images/media/image7.png"
+<img src="./images/media/image8.png"
 style="width:4.11702in;height:2.06685in"
 alt="A screenshot of a computer Description automatically generated" />
 
 Ssss
 
 5lcsgl3vll3edero2m4sge7gdu-nya26urqtgsejoagwutwdoogl4**.datawarehouse.pbidedicated.windows.net**
+
+xx
+
+<img src="./images/media/image9.png"
+style="width:5.35in;height:1.62283in" />
 
 ## Create Lakehouse tables using a pre-provided Fabric notebook
 
@@ -80,95 +91,101 @@ link**](https://github.com/PowerBiDevCamp/TOM_CreateFabricDataset/archive/refs/h
 When you look inside the ZIP archive, you should see several files
 inside. Extract the files into a local folder on your machine.
 
-<img src="./images/media/image8.png"
+<img src="./images/media/image10.png"
 style="width:4.3103in;height:2.78333in" />
 
 Back to Fabric UI.
 
-<img src="./images/media/image9.png"
+<img src="./images/media/image11.png"
 style="width:4.13333in;height:2.8046in" />
 
 Sssss
 
-<img src="./images/media/image10.png"
+<img src="./images/media/image12.png"
 style="width:2.325in;height:1.94116in" />
 
 Aaaaa
 
-<img src="./images/media/image11.png"
+<img src="./images/media/image13.png"
 style="width:3.74167in;height:1.20283in" />
 
 Upload Python notebook named **CreateLakehouseTables.ipynb**.
 
-<img src="./images/media/image12.png"
+<img src="./images/media/image14.png"
 style="width:4.19167in;height:2.23338in" />
 
 ### Associate the Fabric Notebook with the Lakehouse named SalesDataLakehouse
 
 ddddd
 
-<img src="./images/media/image13.png"
+<img src="./images/media/image15.png"
 style="width:4.56667in;height:3.14435in" />
 
 Associate notebook named **CreateLakehouseTables.ipynb** with Lakehouse
 
-<img src="./images/media/image14.png"
+<img src="./images/media/image16.png"
 style="width:2.83622in;height:1.75833in" />
 
 Sss
 
-<img src="./images/media/image15.png"
+<img src="./images/media/image17.png"
 style="width:4.40833in;height:2.3243in" />
 
 Ssss
 
-<img src="./images/media/image16.png"
+<img src="./images/media/image18.png"
 style="width:2.25in;height:2.21987in" />
 
 ### Copy CSV files from this repository into the file system of your Fabric Lakehouse
 
 Execute code in notebook to copy CSV files from GitHib repository into
 Lakehouse file system
-``` python
+
 import requests
 
-csv_base_url = "https://github.com/PowerBiDevCamp/Python-In-Fabric-Notebooks/raw/main/ProductSalesData/"
+csv_base_url =
+"https://github.com/PowerBiDevCamp/Python-In-Fabric-Notebooks/raw/main/ProductSalesData/"
 
-csv_files = { "Customers.csv", "Products.csv", "Invoices.csv", "InvoiceDetails.csv" }
+csv_files = { "Customers.csv", "Products.csv", "Invoices.csv",
+"InvoiceDetails.csv" }
 
 folder_path = "Files/landing_zone_sales/"
 
 for csv_file in csv_files:
-    csv_file_path = csv_base_url + csv_file
-    with requests.get(csv_file_path) as response:
-        csv_content = response.content.decode('utf-8-sig')
-        mssparkutils.fs.put(folder_path + csv_file, csv_content, True)
-        print(csv_file + " copied to Lakehouse file in OneLake")
-```
+
+csv_file_path = csv_base_url + csv_file
+
+with requests.get(csv_file_path) as response:
+
+csv_content = response.content.decode('utf-8-sig')
+
+mssparkutils.fs.put(folder_path + csv_file, csv_content, True)
+
+print(csv_file + " copied to Lakehouse file in OneLake")
 
 xx
 
-<img src="./images/media/image17.png"
+<img src="./images/media/image19.png"
 style="width:4.5in;height:1.38654in" />
 
 Sssss
 
-<img src="./images/media/image18.png"
+<img src="./images/media/image20.png"
 style="width:4.51667in;height:1.65611in" />
 
 Sssss
 
-<img src="./images/media/image19.png"
+<img src="./images/media/image21.png"
 style="width:1.71667in;height:1.23488in" />
 
 Sss
 
-<img src="./images/media/image20.png"
+<img src="./images/media/image22.png"
 style="width:2.22493in;height:1.56667in" />
 
 Sss
 
-<img src="./images/media/image21.png"
+<img src="./images/media/image23.png"
 style="width:3.41667in;height:1.68389in" />
 
 xxx
@@ -211,7 +228,7 @@ df_products.show()
 
 ssssss
 
-<img src="./images/media/image22.png"
+<img src="./images/media/image24.png"
 style="width:1.875in;height:1.88291in" />
 
 Xx
@@ -260,7 +277,7 @@ df_customers.show()
 
 xxx
 
-<img src="./images/media/image23.png"
+<img src="./images/media/image25.png"
 style="width:3.31667in;height:3.37826in" />
 
 Xxx
@@ -305,7 +322,7 @@ df_invoices.show()
 
 xx
 
-<img src="./images/media/image24.png"
+<img src="./images/media/image26.png"
 style="width:2.35in;height:2.90681in" />
 
 Xx
@@ -352,7 +369,7 @@ df_invoice_details.show()
 
 xxx
 
-<img src="./images/media/image25.png"
+<img src="./images/media/image27.png"
 style="width:2.30062in;height:3.11667in" />
 
 ### Execute code to Save the Four DataFrames as Delta Tables in the Lakehouse
@@ -372,12 +389,12 @@ df_invoice_details.write.mode("overwrite")format("delta").save(f"Tables/bronze_i
 
 xxxx
 
-<img src="./images/media/image26.png"
+<img src="./images/media/image28.png"
 style="width:4in;height:1.96667in" />
 
 Sssss
 
-<img src="./images/media/image27.png"
+<img src="./images/media/image29.png"
 style="width:2in;height:2.30252in" />
 
 ### Reshape and Transform Data in Bronze Layer Tables to Create Silver Layer Tables
@@ -397,7 +414,7 @@ df_silver_products.show()
 
 cccc
 
-<img src="./images/media/image28.png"
+<img src="./images/media/image30.png"
 style="width:2.36667in;height:2.16536in" />
 
 Xx
@@ -429,7 +446,7 @@ df_silver_customers.show()
 
 ssss
 
-<img src="./images/media/image29.png"
+<img src="./images/media/image31.png"
 style="width:3.21814in;height:3.375in" />
 
 Xx
@@ -478,7 +495,7 @@ df_silver_sales.show()
 
 xxxx
 
-<img src="./images/media/image30.png"
+<img src="./images/media/image32.png"
 style="width:3.2392in;height:3.45in" />
 
 Xx
@@ -551,39 +568,39 @@ df_calendar_spark.show()
 
 xx
 
-<img src="./images/media/image31.png"
+<img src="./images/media/image33.png"
 style="width:6.76667in;height:5.59167in" />
 
 Xx
 
-<img src="./images/media/image32.png"
+<img src="./images/media/image34.png"
 style="width:1.975in;height:2.25163in" />
 
 ### Inspect the tables that have been created in the Lakehouse
 
 Xxxx
 
-<img src="./images/media/image33.png"
+<img src="./images/media/image35.png"
 style="width:3.01667in;height:1.5027in" />
 
 Xxxx
 
-<img src="./images/media/image34.png"
+<img src="./images/media/image36.png"
 style="width:3.29866in;height:2.36667in" />
 
 Xxx
 
-<img src="./images/media/image35.png"
+<img src="./images/media/image37.png"
 style="width:4.48745in;height:2.38333in" />
 
 Dddd
 
-<img src="./images/media/image36.png"
+<img src="./images/media/image38.png"
 style="width:4.10833in;height:2.14785in" />
 
 Xxxx
 
-<img src="./images/media/image37.png"
+<img src="./images/media/image39.png"
 style="width:5.23333in;height:1.5601in" />
 
 Now all Lakehouse tables have been created and you can move on top the
@@ -592,33 +609,138 @@ application.
 
 ## Run the custom C# application to create DirectLake data model using TOM
 
-- Create Azure AD application
+Create Entra ID application. In case you have not heard, Microsoft
+renamed Azure AD to Microsoft Entra.
 
-  1.  Create a native/public application with redirect URI of
-      <http://localhost>
+Start by going to Azure AD section of the Azure portal.
 
-  2.  Record Application ID for use in console application.
+<https://entra.microsoft.com/>
 
-- Download C# console application source code and open project in Visual
-  Studio 2022
+<img src="./images/media/image40.png"
+style="width:4.81896in;height:1.98333in" />
 
-- Open **AppSettings.cs** and updae the following:
+Ss
 
-  1.  ApplicationID of Azure AD application
+<img src="./images/media/image41.png"
+style="width:4.75833in;height:0.9781in" />
 
-  2.  Workspace Connection
+Give it a name such as **Create DirectLake Dataset Demo App**.
 
-- SQL Endpoint
+<img src="./images/media/image42.png"
+style="width:5.08333in;height:1.93167in" />
 
-  1.  Lakehouse Name
+Create a native/public application with redirect URI of
+<http://localhost>
 
-  2.  UserID and Password to prevent interactive login
+<img src="./images/media/image43.png"
+style="width:5.025in;height:0.96033in" />
 
-  3.  Save changes
+<img src="./images/media/image44.png"
+style="width:4.425in;height:1.10833in" />
 
-- Run application
+Record Application ID for use in console application.
 
-  1.  It should run without error
+<img src="./images/media/image45.png"
+style="width:5.775in;height:1.60417in" />
 
-  2.  When done, verify you can see new data model and use it to create
-      new report
+Get Application ID
+
+2a21a3ed-f849-4b3c-911d-38f2709830d7
+
+sss
+
+<img src="./images/media/image46.png"
+style="width:4.50787in;height:2.02479in"
+alt="A screenshot of a computer Description automatically generated" />
+
+### Open C# console application project in Visual Studio 2022
+
+Xxxx
+
+<img src="./images/media/image47.png"
+style="width:2.25in;height:1.81993in" />
+
+Open **AppSettings.cs** and update configuration value:
+
+<img src="./images/media/image48.png"
+style="width:2.92433in;height:2.36667in" />
+
+Xxxx
+
+<img src="./images/media/image49.png"
+style="width:5.14167in;height:1.66247in" />
+
+Add Workspace Connection, SQL Endpoint, Lakehouse Name, Application ID
+and endure RedirectUrl is connect.
+
+<img src="./images/media/image50.png"
+style="width:7.49167in;height:1.41667in" />
+
+Save changes
+
+### Run application
+
+Xxx
+
+<img src="./images/media/image51.png"
+style="width:4.34167in;height:0.71498in" />
+
+Xxx
+
+<img src="./images/media/image52.png"
+style="width:3.2in;height:2.67117in" />
+
+Ssss
+
+<img src="./images/media/image53.png"
+style="width:3.02721in;height:2.10833in" />
+
+Sssss
+
+<img src="./images/media/image54.png"
+style="width:5.65691in;height:0.56883in" />
+
+It should run without error
+
+When done, verify you can see new data model and use it to create new
+report
+
+<img src="./images/media/image55.png"
+style="width:4.84463in;height:2.85833in" />
+
+Xxxx
+
+<img src="./images/media/image56.png"
+style="width:5.13333in;height:2.3043in" />
+
+Xxxxx
+
+<img src="./images/media/image57.png"
+style="width:1.19167in;height:1.08292in" />
+
+Xx
+
+<img src="./images/media/image58.png"
+style="width:4.8in;height:1.98621in" />
+
+Xx
+
+<img src="./images/media/image59.png"
+style="width:1.825in;height:1.51694in" />
+
+Xx
+
+<img src="./images/media/image60.png"
+style="width:1.70629in;height:1.6in" />
+
+Xxx
+
+<img src="./images/media/image61.png"
+style="width:1.97005in;height:1.425in" />
+
+Xxxxx
+
+<img src="./images/media/image62.png"
+style="width:1.96737in;height:2.1in" />
+
+Xxxx
