@@ -6,6 +6,16 @@ using the Tabular Object Model (TOM).
 
 Steps to completing this demonstration:
 
+- Create workspace associated with Fabric capacity
+
+- Create a new Lakehouse in the new workspace
+
+- Create Lakehouse tables using a pre-provided Fabric notebook
+
+- Run custom application to create DirectLake data model using TOM
+
+Now we will go through steps.
+
 ## Create workspace associated with Fabric capacity
 
 - Get URL to Workspace Connection
@@ -34,7 +44,7 @@ Steps to completing this demonstration:
 
 - Execute code in notebook to generate calendar table for silver layer
 
-## Run application to create DirectLake data model using TOM
+## Run custom application to create DirectLake data model using TOM
 
 - Create Azure AD application
 
