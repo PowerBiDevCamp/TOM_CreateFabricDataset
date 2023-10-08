@@ -129,7 +129,7 @@ style="width:2.25in;height:2.21987in" />
 
 Execute code in notebook to copy CSV files from GitHib repository into
 Lakehouse file system
-
+``` python
 import requests
 
 csv_base_url =
@@ -151,6 +151,7 @@ csv_content = response.content.decode('utf-8-sig')
 mssparkutils.fs.put(folder_path + csv_file, csv_content, True)
 
 print(csv_file + " copied to Lakehouse file in OneLake")
+```
 
 xx
 
