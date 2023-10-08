@@ -118,34 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="CalculatedColumn-AgeGroup_dax" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DAX\CalculatedColumn-AgeGroup.dax;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="CalculatedColumn-SalesRegionSort_dax" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DAX\CalculatedColumn-SalesRegionSort.dax;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="CalculatedColumn-SalesRegionSort_m" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DAX\CalculatedColumn-SalesRegionSort.dax;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="CalculatedColumn-SalesRegion_dax" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DAX\CalculatedColumn-SalesRegion.dax;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="CalculatedTable-Calendar_dax" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DAX\CalculatedTable-Calendar.dax;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="CustomersQuery_m" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\M\CustomersQuery.m;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="DatabaseQuery_m" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\M\DatabaseQuery.m;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ProductQuery_m" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\M\ProductQuery.m;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="QueryGetSalesByState_dax" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DAX\QueryGetSalesByState.dax;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="SalesQuery_m" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\M\SalesQuery.m;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

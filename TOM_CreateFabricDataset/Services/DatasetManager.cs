@@ -31,38 +31,37 @@ namespace TOM_CreateFabricDataset.Services {
     public static void CreateDirectLakeSalesModel(string DatabaseName) {
 
       Database database = DatasetManager.CreateDatabase(DatabaseName);
-
+      
       Model model = database.Model;
 
-      string sqlEndPoint = AppSettings.SqlEndpoint;
-      string lakehouseName = AppSettings.TargetLakehouseName;
-
-      string databaseQueryExpression = 
-        Properties.Resources.DatabaseQuery_m
-           .Replace("{SQL_ENDPOINT}", sqlEndPoint)
-           .Replace("{LAKEHOUSE_NAME}", lakehouseName);
-
+      // create get named expression used to create DirectLake tables
       model.Expressions.Add(new NamedExpression {
         Name = "DatabaseQuery",
         Kind = ExpressionKind.M,
-        Expression = databaseQueryExpression
+        Expression = Properties.Resources.DatabaseQuery_m
+                     .Replace("{SQL_ENDPOINT}", AppSettings.SqlEndpoint)
+                     .Replace("{LAKEHOUSE_NAME}", AppSettings.TargetLakehouseName)
       });
 
       model.SaveChanges();
       model.RequestRefresh(RefreshType.Full);
 
+      // retrieve named expression used to create DirectLake tables
       NamedExpression sqlEndpoint = model.Expressions[0];
 
+      // pass named expression to functions creating DirectLake tables
       Table tableCustomers = CreateDirectLakeCustomersTable(sqlEndpoint);
       Table tableProducts = CreateDirectLakeProductsTable(sqlEndpoint);
       Table tableSales = CreateDirectLakeSalesTable(sqlEndpoint);
       Table tableCalendar = CreateDirectLakeCalendarTable(sqlEndpoint);
 
+      // add DirectLake tables to data model
       model.Tables.Add(tableCustomers);
       model.Tables.Add(tableProducts);
       model.Tables.Add(tableSales);
       model.Tables.Add(tableCalendar);
 
+      // create table relationship
       model.Relationships.Add(new SingleColumnRelationship {
         Name = "Customers to Sales",
         ToColumn = tableCustomers.Columns["CustomerId"],
@@ -185,20 +184,20 @@ namespace TOM_CreateFabricDataset.Services {
                     SchemaName = "dbo"
                 }
             }
-      },
+        },
         Columns = {
-        new DataColumn() { Name = "Date", DataType = DataType.DateTime, SourceColumn = "Date", IsHidden=true },
-        new DataColumn() { Name = "DateKey", DataType = DataType.Int64, SourceColumn = "DateKey", IsHidden=true, IsKey=true },
-        new DataColumn() { Name = "CustomerId", DataType = DataType.Int64, SourceColumn = "CustomerId", IsHidden=true},
-        new DataColumn() { Name = "ProductId", DataType = DataType.Int64, SourceColumn = "ProductId", IsHidden=true  },
-        new DataColumn() { Name = "Sales", DataType = DataType.Double, SourceColumn = "Sales", IsHidden=true},
-        new DataColumn() { Name = "Quantity", DataType = DataType.Int64, SourceColumn = "Quantity", IsHidden=true }
-      },
+          new DataColumn() { Name = "Date", DataType = DataType.DateTime, SourceColumn = "Date", IsHidden=true },
+          new DataColumn() { Name = "DateKey", DataType = DataType.Int64, SourceColumn = "DateKey", IsHidden=true, IsKey=true },
+          new DataColumn() { Name = "CustomerId", DataType = DataType.Int64, SourceColumn = "CustomerId", IsHidden=true},
+          new DataColumn() { Name = "ProductId", DataType = DataType.Int64, SourceColumn = "ProductId", IsHidden=true  },
+          new DataColumn() { Name = "Sales", DataType = DataType.Double, SourceColumn = "Sales", IsHidden=true},
+          new DataColumn() { Name = "Quantity", DataType = DataType.Int64, SourceColumn = "Quantity", IsHidden=true }
+        },
         Measures = {
-        new Measure { Name = "Sales Revenue", Expression = "Sum(Sales[Sales])", FormatString=@"\$#,0;(\$#,0);\$#,0" },
-        new Measure { Name = "Units Sold", Expression = "Sum(Sales[Quantity])", FormatString="#,0" },
-        new Measure { Name = "Customer Count", Expression = "CountRows(Customers)", FormatString="#,0"  }
-      }
+          new Measure { Name = "Sales Revenue", Expression = "Sum(Sales[Sales])", FormatString=@"\$#,0;(\$#,0);\$#,0" },
+          new Measure { Name = "Units Sold", Expression = "Sum(Sales[Quantity])", FormatString="#,0" },
+          new Measure { Name = "Customer Count", Expression = "CountRows(Customers)", FormatString="#,0"  }
+        }
       };
     }
 
@@ -268,14 +267,7 @@ namespace TOM_CreateFabricDataset.Services {
         writer.Write(fileContent);
         writer.Flush();
         writer.Dispose();
-
-        // open model.bim file in Notepad
-        //ProcessStartInfo startInfo = new ProcessStartInfo();
-        //startInfo.FileName = "Notepad.exe";
-        //startInfo.Arguments = filePath;
-        //Process.Start(startInfo);
-
-
+        
       }
     }
     
