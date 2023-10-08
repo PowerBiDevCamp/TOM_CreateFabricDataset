@@ -1,10 +1,14 @@
 # Using TOM to Create a DirectLake Dataset
 
-This repository contains a Fabric notebook with Python code and a C#
-console application which can be used to create a DirectLake data model
-using the Tabular Object Model (TOM).
+This repository contains C# console application named
+**TOM_CreateFabricDataset** which demonstrates how to create a
+DirectLake data model for Fabric and Power BI using the Tabular Object
+Model (TOM). This repository also contains a Fabric notebook named
+**CreateLakehouseTables.ipynb** with Python code which must be used to
+create tables in a Fabric Lakehouse that will be used as the underlying
+datasource for the DirectLake data model.
 
-Steps to completing this demonstration:
+Here are the high-level steps to completing this demonstration:
 
 - Create workspace associated with Fabric capacity
 
@@ -13,8 +17,6 @@ Steps to completing this demonstration:
 - Create Lakehouse tables using a pre-provided Fabric notebook
 
 - Run custom application to create DirectLake data model using TOM
-
-Now we will go through steps.
 
 ## Create workspace associated with Fabric capacity
 
