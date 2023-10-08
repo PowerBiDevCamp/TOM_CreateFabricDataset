@@ -132,25 +132,18 @@ Lakehouse file system
 ``` python
 import requests
 
-csv_base_url =
-"https://github.com/PowerBiDevCamp/Python-In-Fabric-Notebooks/raw/main/ProductSalesData/"
+csv_base_url = "https://github.com/PowerBiDevCamp/Python-In-Fabric-Notebooks/raw/main/ProductSalesData/"
 
-csv_files = { "Customers.csv", "Products.csv", "Invoices.csv",
-"InvoiceDetails.csv" }
+csv_files = { "Customers.csv", "Products.csv", "Invoices.csv", "InvoiceDetails.csv" }
 
 folder_path = "Files/landing_zone_sales/"
 
 for csv_file in csv_files:
-
-csv_file_path = csv_base_url + csv_file
-
-with requests.get(csv_file_path) as response:
-
-csv_content = response.content.decode('utf-8-sig')
-
-mssparkutils.fs.put(folder_path + csv_file, csv_content, True)
-
-print(csv_file + " copied to Lakehouse file in OneLake")
+    csv_file_path = csv_base_url + csv_file
+    with requests.get(csv_file_path) as response:
+        csv_content = response.content.decode('utf-8-sig')
+        mssparkutils.fs.put(folder_path + csv_file, csv_content, True)
+        print(csv_file + " copied to Lakehouse file in OneLake")
 ```
 
 xx
