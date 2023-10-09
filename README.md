@@ -8,18 +8,11 @@ notebook named **CreateLakehouseTables.ipynb** with Python code which
 can be used to generate Lakehouse tables in delta format that will be
 used as the underlying datasource for the DirectLake dataset.
 
-Here are the high-level steps to set up and run through this
-demonstration:
-
+Here are the high-level steps to set up and run through this demonstration:
 - Create a new workspace associated with Fabric capacity
-
 - Create a new Fabric lakehouse in the new workspace
-
-- Generate lakehouse tables using pre-provided Python code in Fabric
-  notebook
-
-- Set up and run the custom C# application to automate the creation of a
-  DirectLake datatset
+- Generate lakehouse tables using pre-provided Python code in Fabric notebook
+- Set up and run the custom C# application to automate the creation of a DirectLake datatset
 
 ## Create a new workspace associated with Fabric capacity
 
@@ -29,21 +22,18 @@ capacity which provides Fabric capabilities. After creating the new
 workspace named **DirectLakeDemo**, select the **Workspace settings**
 menu command to display the **Workspace settings** pane.
 
-<img src="./images/media/image1.png"
-style="width:7.49792in;height:1.72222in" />
+<img src="./images/media/image1.png" style="width:50%" />
 
 In **Workspace settings**, select the **Premium** tab in the left
 navigation and scroll down to locate the **Workspace connection**
 setting. Click the **Copy** button to copy the **Workspace connection**
 value to the Windows clipboard.
 
-<img src="./images/media/image2.png"
-style="width:3.311in;height:2.45655in" />
+<img src="./images/media/image2.png" style="width:50%" />
 
-As you can see, the **Workspace connection** string starts with
-**powerbi://** and ends with the workspace name.
+As you can see, the **Workspace connection** string starts with **powerbi://** and ends with the workspace name.
 
-powerbi://api.powerbi.com/v1.0/myorg/DirectLakeDemo
+``` powerbi://api.powerbi.com/v1.0/myorg/DirectLakeDemo
 
 Create a new text file using Notepad.exe to save configuration data you
 will need later when configuring the C# console application. Copy the
