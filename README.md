@@ -601,14 +601,14 @@ Give the new application a name such as **Create DirectLake Dataset Demo
 App** and leave the Supported account types setting with the default
 selection of **Accounts in this organizational directory only**.
 
-<img src="./images/media/image44.png"  style="width:80%" />
+<img src="./images/media/image44.png"  style="width:90%" />
 
 Move down to the **Redirect URI** section. Select **Public
 client/native** application in the drop down menu and enter a redirect
-URI of <http://localhost>. Make sure to create the URL with **http** and
+URI of **http://localhost**. Make sure to create the URL with **http** and
 not **https**.
 
-<img src="./images/media/image45.png"  style="width:70%" />
+<img src="./images/media/image45.png"  style="width:90%" />
 
 Click **Register** to create the new application.
 
