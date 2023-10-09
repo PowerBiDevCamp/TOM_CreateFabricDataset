@@ -378,16 +378,14 @@ df_invoices.write.mode("overwrite").format("delta").save(f"Tables/bronze_invoice
 df_invoice_details.write.mode("overwrite").format("delta").save(f"Tables/bronze_invoice_details")
 
 ```
+Once the code which creates the lakehouse tables completes, click the **Refresh** context menu of the **Tables** folder.
 
-Once the code which creates the lakehouse tables completes, click the
-**Refresh** context menu of the **Tables** folder.
-
-<img src="./images/media/image30.png"  style="width:70%" />
+<img src="./images/media/image30.png"  style="width:40%" />
 
 Once the refresh operation completes, you should be able to see four
 tables created for the Bronze layer.
 
-<img src="./images/media/image31.png"   style="width:70%" />
+<img src="./images/media/image31.png"   style="width:40%" />
 
 > At this point, you have created delta tables for the bronze layer which
 represents the raw data without any data cleansing or manipulation. In
@@ -403,23 +401,15 @@ in that it does not perform any transformations. However, it shows the
 basic pattern of loading a table into a DataFrame and then saving it as
 a different delta table.
 
-\# create silver layer products table
+``` python
 
-df_silver_products =
-spark.read.format("delta").load("Tables/bronze_products")
-
-df_silver_products.write.mode("overwrite").format("delta").save(f"Tables/products")
-
-df_silver_products.printSchema()
-
-df_silver_products.show()
+```
 
 Execute the code to create the **products** table. After the code
 completes, you should see output which display the DataFrame schema and
 displays the top 20 rows of data from the **products** table.
 
-<img src="./images/media/image32.png"
-style="width:2.36667in;height:2.16536in" />
+<img src="./images/media/image32.png"  style="width:70%" />
 
 Move to the next cell which contains the following code to load the
 table named **bronze_customers** and then saves it to a second delta
@@ -457,8 +447,7 @@ Execute the code to create the **customers** table. After the code
 completes, you should see output which display the DataFrame schema and
 displays the top 20 rows of data from the **customers** table.
 
-<img src="./images/media/image33.png"
-style="width:3.21814in;height:3.375in" />
+<img src="./images/media/image33.png"  style="width:70%" />
 
 Move to the next cell which contains the following code to create the
 **sales** table. This code merges data from the **bronze_invoices**
@@ -513,8 +502,7 @@ Execute the code to create the **sales** table. After the code
 completes, you should see output which display the DataFrame schema and
 displays the top 20 rows of data from the **sales** table.
 
-<img src="./images/media/image34.png"
-style="width:3.2392in;height:3.45in" />
+<img src="./images/media/image34.png" style="width:70%" />
 
 Move down to the last cell in the notebook which generates the
 **calendar** table used for time-based analysis. If you examine the
@@ -592,16 +580,14 @@ Execute the code to create the **calendar** table. After the code
 completes, you should see output which display the DataFrame schema and
 displays the top 20 rows of data from the **calendar** table.
 
-<img src="./images/media/image35.png"
-style="width:6.76667in;height:5.59167in" />
+<img src="./images/media/image35.png" style="width:70%" />
 
 Now refresh the **Tables** folder in the **Lakehouses** pane. You should
 now see the four delta tables named calendar, customers, products and
 sales. There are the delta tables that will be used to create the
 DirectLake-mode dataset.
 
-<img src="./images/media/image36.png"
-style="width:1.975in;height:2.25163in" />
+<img src="./images/media/image36.png" style="width:70%" />
 
 ### Inspect the tables that have been created in the lakehouse
 
@@ -609,35 +595,30 @@ Navigate to the main page of the **DirectLakeDemo** workspace and then
 click on the workspace item for the lakehouse named
 **SalesDataLakehouse**.
 
-<img src="./images/media/image37.png"
-style="width:3.01667in;height:1.5027in" />
+<img src="./images/media/image37.png" style="width:70%" />
 
 Now you can see and inspect the tables in the lakehouse. Start by
 clicking on the **products** table to see its contents.
 
-<img src="./images/media/image38.png"
-style="width:3.29866in;height:2.36667in" />
+<img src="./images/media/image38.png"  style="width:70%" />
 
 Inspect the data in the **customers** table.
 
-<img src="./images/media/image39.png"
-style="width:4.48745in;height:2.38333in" />
+<img src="./images/media/image39.png"  style="width:70%" />
 
 Inspect the data in the **sales** table.
 
-<img src="./images/media/image40.png"
-style="width:4.10833in;height:2.14785in" />
+<img src="./images/media/image40.png"  style="width:70%" />
 
 Inspect the data in the **sales** table.
 
-<img src="./images/media/image41.png"
-style="width:5.23333in;height:1.5601in" />
+<img src="./images/media/image41.png"  style="width:70%" />
 
 Now all Lakehouse tables have been created and you can move on to the
 next step where you create the DirectLake dataset using the custom
 application with C# code.
 
-In case you have not heard, Microsoft recently renamed ***Azure Active
+> In case you have not heard, Microsoft recently renamed ***Azure Active
 Directory*** to ***Microsoft Entra ID***. In the past, you would uses
 the Azure AD portal to create an Azure application which can be used to
 call Microsoft APIs such as the Tabular Object Model. Now, you will use
@@ -656,48 +637,40 @@ On the home page of the **Microsoft Entra admin center**, drop down the
 **Applications** section in the left navigation and click the **App
 registrations** link.
 
-<img src="./images/media/image42.png"
-style="width:4.81896in;height:1.98333in" />
+<img src="./images/media/image42.png"  style="width:70%" />
 
 On the **App registrations** page, click **New registration**.
 
-<img src="./images/media/image43.png"
-style="width:4.75833in;height:0.9781in" />
+<img src="./images/media/image43.png" style="width:70%" />
 
 Give the new application a name such as **Create DirectLake Dataset Demo
 App** and leave the Supported account types setting with the default
 selection of **Accounts in this organizational directory only**.
 
-<img src="./images/media/image44.png"
-style="width:5.08333in;height:1.93167in" />
+<img src="./images/media/image44.png"  style="width:70%" />
 
 Move down to the **Redirect URI** section. Select **Public
 client/native** application in the drop down menu and enter a redirect
 URI of <http://localhost>. Make sure to create the URL with **http** and
 not **https**.
 
-<img src="./images/media/image45.png"
-style="width:5.025in;height:0.96033in" />
+<img src="./images/media/image45.png"  style="width:70%" />
 
 Click **Register** to create the new application.
 
-<img src="./images/media/image46.png"
-style="width:4.425in;height:1.10833in" />
+<img src="./images/media/image46.png"  style="width:70%" />
 
 Now that you have created the application, you need to record
 Application ID for use in C# console application. Copy the **Application
 ID** from the application summary page in the Microsoft Entra admin
 center.
 
-<img src="./images/media/image47.png"
-style="width:5.775in;height:1.60417in" />
+<img src="./images/media/image47.png"  style="width:70%" />
 
 Add the Application ID and Redirect URI of <http://localhost> into the
 text file with configuration data.
 
-<img src="./images/media/image48.png"
-style="width:4.50787in;height:2.02479in"
-alt="A screenshot of a computer Description automatically generated" />
+<img src="./images/media/image48.png"  style="width:70%" />
 
 Now you have all the configuration data you need to set up and run the
 C# console application to create the DirectLake-mode dataset.
@@ -708,35 +681,30 @@ In an earlier step you extracted all the files from this repository into
 a local folder. If you examine the files in this folder, you will see a
 Visual Studio solution file named **TOM_CreateFabricDataset.sln**.
 
-<img src="./images/media/image49.png"
-style="width:4.34099in;height:2.87421in" />
+<img src="./images/media/image49.png"  style="width:70%" />
 
 Double-click on **TOM_CreateFabricDataset.sln** to open the project in
 Visual Studio 2022. You should see the project structure as shown in the
 following screenshot.
 
-<img src="./images/media/image50.png"
-style="width:2.25in;height:1.81993in" />
+<img src="./images/media/image50.png"  style="width:70%" />
 
 Open the C# file named **AppSettings.cs** so you can update
 configuration values used by the application.
 
-<img src="./images/media/image51.png"
-style="width:2.92433in;height:2.36667in" />
+<img src="./images/media/image51.png"  style="width:70%" />
 
 You can see **AppSettings.cs** has several constant for configuration
 values that need to be filled in before running the application.
 
-<img src="./images/media/image52.png"
-style="width:5.14167in;height:1.66247in" />
+<img src="./images/media/image52.png"  style="width:70%" />
 
 Update **AppSettings.cs** by adding configuration values for
 **WorkspaceConnection**, **SQLEndpoint**, **TargetLakehouseName**,
 **ApplicationID**. You should also endure that **RedirectUrl** is
 correctly set to **http://localhost**.
 
-<img src="./images/media/image53.png"
-style="width:7.49167in;height:1.41667in" />
+<img src="./images/media/image53.png" style="width:70%" />
 
 You can optionally update **AppSettings.cs** with your **UserId** and
 UserPassword if you want to avoid an interactive login each time you run
@@ -751,20 +719,17 @@ application.
 Either press **{F5}** or select **Debug \> Start Debugging** to run the
 application.
 
-<img src="./images/media/image54.png"
-style="width:4.34167in;height:0.71498in" />
+<img src="./images/media/image54.png"  style="width:70%" />
 
 When the application starts, you will be promoted to login. Log in using
 the same user account you have been using throughout this demo.
 
-<img src="./images/media/image55.png"
-style="width:3.2in;height:2.67117in" />
+<img src="./images/media/image55.png" style="width:70%" />
 
 After successfully logging in, wait until the program completes. It
 might take as long as 20-30 seconds.
 
-<img src="./images/media/image56.png"
-style="width:5.65691in;height:0.56883in" />
+<img src="./images/media/image56.png" style="width:70%" />>
 
 The application should run and complete without any errors. When the
 application completes, navigate to the home page of the
@@ -772,49 +737,41 @@ application completes, navigate to the home page of the
 named **DirectLake Sales Model**. Click on the named **DirectLake Sales
 Model** item to navigate to its details page.
 
-<img src="./images/media/image57.png"
-style="width:3.58491in;height:2.11509in" />
+<img src="./images/media/image57.png"  style="width:70%" />
 
 On the **Details for DirectLake Sales Model** page, click **+ Create a
 report** to drop down this menu.
 
-<img src="./images/media/image58.png"
-style="width:5.13333in;height:2.3043in" />
+<img src="./images/media/image58.png"  style="width:70%" />
 
 Select **Start from scratch** to create a new report so you can test out
 the new dataset.
 
-<img src="./images/media/image59.png"
-style="width:1.19167in;height:1.08292in" />
+<img src="./images/media/image59.png"  style="width:70%" />
 
 You should now be able to build a report using this DirectLake-mode
 dataset.
 
-<img src="./images/media/image60.png"
-style="width:4.8in;height:1.98621in" />
+<img src="./images/media/image60.png"  style="width:70%" />
 
 Examine the **Sales** table which contains three measures.
 
-<img src="./images/media/image61.png"
-style="width:1.825in;height:1.51694in" />
+<img src="./images/media/image61.png"  style="width:70%" />
 
 Examine the **Customer** table which contains several columns and a
 dimensional hierarchy.
 
-<img src="./images/media/image62.png"
-style="width:1.70629in;height:1.6in" />
+<img src="./images/media/image62.png" style="width:70%" />
 
 Examine the **Products** table which contains several columns and a
 dimensional hierarchy.
 
-<img src="./images/media/image63.png"
-style="width:1.97005in;height:1.425in" />
+<img src="./images/media/image63.png" style="width:70%" />
 
 Examine the **Calendar** table which contains several columns and a
 dimensional hierarchy.
 
-<img src="./images/media/image64.png"
-style="width:1.96737in;height:2.1in" />
+<img src="./images/media/image64.png" style="width:70%" />
 
 You have now generated a DirectLake-mode dataset which can be used to
 create Power BI reports. Designing a report that looks good is left as
