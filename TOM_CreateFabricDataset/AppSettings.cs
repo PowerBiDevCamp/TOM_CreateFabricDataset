@@ -13,7 +13,7 @@
     public const string UserId = "";
     public const string UserPassword = "";
 
-    // confidential application metadata for service principal authentication not current used in this demo
+    // confidential application metadata for service principal authentication not currently used in this demo
     public const string TenantId = "";
     public const string ConfidentialApplicationId = "";
     public const string ConfidentialApplicationSecret = "";
