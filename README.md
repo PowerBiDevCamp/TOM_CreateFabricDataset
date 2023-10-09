@@ -402,7 +402,11 @@ basic pattern of loading a table into a DataFrame and then saving it as
 a different delta table.
 
 ``` python
-
+# create silver layer products table
+df_silver_products = spark.read.format("delta").load("Tables/bronze_products")
+df_silver_products.write.mode("overwrite").format("delta").save(f"Tables/products")
+df_silver_products.printSchema()
+df_silver_products.show()
 ```
 
 Execute the code to create the **products** table. After the code
