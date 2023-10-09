@@ -619,7 +619,7 @@ Application ID for use in C# console application. Copy the **Application
 ID** from the application summary page in the Microsoft Entra admin
 center.
 
-<img src="./images/media/image47.png"  style="width:90%" />
+<img src="./images/media/image47.png"  style="width:97%" />
 
 Add the Application ID and Redirect URI of <http://localhost> into the
 text file with configuration data.
