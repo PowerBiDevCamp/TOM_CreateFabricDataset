@@ -143,7 +143,7 @@ Once the notebook opens, you should be able to verify that it is not yet
 associated with a lakehouse. Click the **Add** button in the
 **Lakehouses** pane.
 
-<img src="./images/media/image17.png" style="width:70%" />
+<img src="./images/media/image17.png" style="width:80%" />
 
 In the **Add lakehouse** dialog, select **Existing lakehouse** and click **Add**.
 
