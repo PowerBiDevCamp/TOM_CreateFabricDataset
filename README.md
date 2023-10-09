@@ -705,11 +705,11 @@ the new dataset.
 You should now be able to build a report using this DirectLake-mode
 dataset.
 
-<img src="./images/media/image60.png"  style="width:70%" />
+<img src="./images/media/image60.png"  style="width:95%" />
 
 Examine the **Sales** table which contains three measures.
 
-<img src="./images/media/image61.png"  style="width:70%" />
+<img src="./images/media/image61.png"  style="width:40%" />
 
 Examine the **Customer** table which contains several columns and a
 dimensional hierarchy.
