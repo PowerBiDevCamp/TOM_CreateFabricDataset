@@ -661,7 +661,7 @@ correctly set to **http://localhost**.
 <img src="./images/media/image53.png" style="width:97%" />
 
 > You can optionally update **AppSettings.cs** with your **UserId** and
-UserPassword if you want to avoid an interactive login each time you run
+**UserPassword** if you want to avoid an interactive login each time you run
 the application. If you leave these values blank, you will be promoted
 to login each time you run the application.
 
@@ -670,8 +670,7 @@ application.
 
 ### Run the application to create the DirectLake-mode Dataset
 
-Either press **{F5}** or select **Debug \> Start Debugging** to run the
-application.
+Run the application in debug mode by pressing **{F5}** or selecting **Debug \> Start Debugging**.
 
 <img src="./images/media/image54.png"  style="width:70%" />
 
