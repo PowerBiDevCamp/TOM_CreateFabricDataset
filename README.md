@@ -22,14 +22,14 @@ capacity which provides Fabric capabilities. After creating the new
 workspace named **DirectLakeDemo**, select the **Workspace settings**
 menu command to display the **Workspace settings** pane.
 
-<img src="./images/media/image1.png" style="width:50%" />
+<img src="./images/media/image1.png" style="width:70%" />
 
 In **Workspace settings**, select the **Premium** tab in the left
 navigation and scroll down to locate the **Workspace connection**
 setting. Click the **Copy** button to copy the **Workspace connection**
 value to the Windows clipboard.
 
-<img src="./images/media/image2.png" style="width:50%" />
+<img src="./images/media/image2.png" style="width:70%" />
 
 As you can see, the **Workspace connection** string starts with **powerbi://** and ends with the workspace name.
 
