@@ -111,8 +111,7 @@ should look like with the extracted files. The first file you will use
 is a Fabric notebook with Python code named
 **CreateLakehouseTables.ipynb**.
 
-<img src="./images/media/image12.png"
-style="width:4.3103in;height:2.78333in" />
+<img src="./images/media/image12.png"  style="width:50%" />
 
 Return to the browser and navigate to the main page of the
 **DirectLakeDemo** workspace. Locate and click on the ***Fabric
