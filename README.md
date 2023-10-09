@@ -287,7 +287,7 @@ df_customers.printSchema()
 df_customers.show()
 ```
 Execute the Python code in this cell to load customer data into a Spark DataFrame. After the
-code completes, you should see output which display the DataFrame schema
+code completes, you should see output which displays the DataFrame schema
 and displays the top 20 rows of data.
 
 <img src="./images/media/image27.png"  style="width:40%"   />
@@ -321,7 +321,7 @@ df_invoices.show()
 ```
 
 Execute the code to load invoice data into a Spark DataFrame. After the
-code completes, you should see output which display the DataFrame schema
+code completes, you should see output which displays the DataFrame schema
 and displays the top 20 rows of data.
 
 <img src="./images/media/image28.png"   style="width:40%"   />
@@ -356,7 +356,7 @@ df_invoice_details.show()
 ```
 
 Execute the code to load invoice detail data into a Spark DataFrame.
-After the code completes, you should see output which display the
+After the code completes, you should see output which displays the
 DataFrame schema and displays the top 20 rows of data.
 
 <img src="./images/media/image29.png"   style="width:40%"   />
