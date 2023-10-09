@@ -143,28 +143,23 @@ Once the notebook opens, you should be able to verify that it is not yet
 associated with a lakehouse. Click the **Add** button in the
 **Lakehouses** pane.
 
-<img src="./images/media/image17.png"
-style="width:4.56667in;height:3.14435in" />
+<img src="./images/media/image17.png" style="width:70%" />
 
-In the **Add lakehouse** dialog, select **Existing lakehouse** and click
-**Add**.
+In the **Add lakehouse** dialog, select **Existing lakehouse** and click **Add**.
 
-<img src="./images/media/image18.png"
-style="width:2.83622in;height:1.75833in" />
+<img src="./images/media/image18.png" style="width:70%" />
 
 Select the lakehouse you created earlier named **SalesDataLakehouse**
 and click **Add**.
 
-<img src="./images/media/image19.png"
-style="width:4.40833in;height:2.3243in" />
+<img src="./images/media/image19.png"  style="width:70%" />
 
 Once you have associated the notebook with the lakehouse named
 **SalesDataLakehouse**, you should see the **Tables** folder and the
 **Files** folder in the **Lakehouses** pane which are both initially
 empty.
 
-<img src="./images/media/image20.png"
-style="width:2.25in;height:2.21987in" />
+<img src="./images/media/image20.png"  style="width:70%" />
 
 ### Copy CSV files from this repository into the file system of your Fabric Lakehouse
 
