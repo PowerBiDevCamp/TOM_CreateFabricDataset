@@ -255,7 +255,7 @@ Execute the code in the second cell to load product data into a Spark
 DataFrame. After the code completes, you should see output which
 displays the DataFrame schema and 10 rows of product data.
 
-<img src="./images/media/image26.png"  style="width:80%"   />
+<img src="./images/media/image26.png"  style="width:50%"   />
 
 Examine the Python code from the third cell in the notebook which loads
 customer data from **Customers.csv** into a Spark DataFrame and then
