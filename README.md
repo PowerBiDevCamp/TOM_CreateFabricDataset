@@ -608,11 +608,11 @@ client/native** application in the drop down menu and enter a redirect
 URI of **http://localhost**. Make sure to create the URL with **http** and
 not **https**.
 
-<img src="./images/media/image45.png"  style="width:90%" />
+<img src="./images/media/image45.png"  style="width:95%" />
 
 Click **Register** to create the new application.
 
-<img src="./images/media/image46.png"  style="width:70%" />
+<img src="./images/media/image46.png"  style="width:60%" />
 
 Now that you have created the application, you need to record
 Application ID for use in C# console application. Copy the **Application
