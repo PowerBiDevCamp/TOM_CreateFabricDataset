@@ -380,7 +380,7 @@ df_invoice_details.write.mode("overwrite").format("delta").save(f"Tables/bronze_
 ```
 Once the code which creates the lakehouse tables completes, click the **Refresh** context menu of the **Tables** folder.
 
-<img src="./images/media/image30.png"  style="width:40%" />
+<img src="./images/media/image30.png"  style="width:30%" />
 
 Once the refresh operation completes, you should be able to see four
 tables created for the Bronze layer.
