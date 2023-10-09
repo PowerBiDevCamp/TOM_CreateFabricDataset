@@ -585,7 +585,7 @@ In order to set up the C# console application, you must first create a
 new application. Start by navigating to **Microsoft Entra admin center**
 at the following URL.
 
-**`<https://entra.microsoft.com/>`**
+**[<https://entra.microsoft.com/>(<https://entra.microsoft.com/>)**
 
 On the home page of the **Microsoft Entra admin center**, drop down the
 **Applications** section in the left navigation and click the **App
