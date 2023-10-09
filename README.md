@@ -143,7 +143,7 @@ Once the notebook opens, you should be able to verify that it is not yet
 associated with a lakehouse. Click the **Add** button in the
 **Lakehouses** pane.
 
-<img src="./images/media/image17.png" style="width:80%" />
+<img src="./images/media/image17.png" style="width:70%" />
 
 In the **Add lakehouse** dialog, select **Existing lakehouse** and click **Add**.
 
@@ -152,7 +152,7 @@ In the **Add lakehouse** dialog, select **Existing lakehouse** and click **Add**
 Select the lakehouse you created earlier named **SalesDataLakehouse**
 and click **Add**.
 
-<img src="./images/media/image19.png"  style="width:85%" />
+<img src="./images/media/image19.png"  style="width:75%" />
 
 Once you have associated the notebook with the lakehouse named
 **SalesDataLakehouse**, you should see the **Tables** folder and the
