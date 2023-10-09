@@ -568,9 +568,11 @@ Inspect the data in the **sales** table.
 
 <img src="./images/media/image41.png"  style="width:90%" />
 
-Now all Lakehouse tables have been created and you can move on to the
+> Now all Lakehouse tables have been created and you can move on to the
 next step where you create the DirectLake dataset using the custom
 application with C# code.
+
+## Run the C# application to create DirectLake dataset using TOM
 
 > In case you have not heard, Microsoft recently renamed ***Azure Active
 Directory*** to ***Microsoft Entra ID***. In the past, you would uses
@@ -578,8 +580,6 @@ the Azure AD portal to create an Azure application which can be used to
 call Microsoft APIs such as the Tabular Object Model. Now, you will use
 the **Microsoft Entra admin center** to create a new application for the
 C# console application.
-
-## Run the C# application to create DirectLake dataset using TOM
 
 In order to set up the C# console application, you must first create a
 new application. Start by navigating to **Microsoft Entra admin center**
