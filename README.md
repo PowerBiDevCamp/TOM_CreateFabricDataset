@@ -81,12 +81,10 @@ menu of the SQL endpoint.
 In the **Copy SQL connection string** dialog, click **Copy** to copy the
 connection string value to the Windows clipboard.
 
-<img src="./images/media/image10.png"
-style="width:2.46559in;height:1.23778in"
-alt="A screenshot of a computer Description automatically generated" />
+<img src="./images/media/image10.png"  style="width:50%" />
 
 The connection string starts with a unique value and end with
-**.datawarehouse.pbidedicated.windows.net**.
+`.datawarehouse.pbidedicated.windows.net`.
 
 5lcsgl3vll3edero2m4sge7gdu-nya26urqtgsejoagwutwdoogl4.datawarehouse.pbidedicated.windows.net
 
@@ -94,8 +92,7 @@ Copy the values for the SQL endpoint and the name of the Lakehouse into
 the text file with configuration values as shown in the following
 screenshot.
 
-<img src="./images/media/image11.png"
-style="width:4.09569in;height:1.24236in" />
+<img src="./images/media/image11.png"  style="width:60%"  />
 
 Save the text file with these use these configuration values for later
 use when setting up the C# console application.
