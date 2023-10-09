@@ -48,7 +48,7 @@ Inside the new workspace, it is time to create a new lakehouse named
 **SalesDataLakehouse**. Start by dropping down the **+ New** menu button
 and select **More options**.
 
-<img src="./images/media/image4.png"  style="width:45%"  />
+<img src="./images/media/image4.png"  style="width:40%"  />
 
 On the **New** page select **Lakehouse (Preview)** from **Data Engineering** section.
 
@@ -57,14 +57,12 @@ On the **New** page select **Lakehouse (Preview)** from **Data Engineering** sec
 When prompted, enter a name of **SalesDataLakehouse** for the new
 Lakehouse and click **Create**.
 
-<img src="./images/media/image6.png"
-style="width:2.50943in;height:1.39228in" />
+<img src="./images/media/image6.png"  style="width:40%" />
 
 Once you have created the Lakehouse, you will notice a message
 indicating a SQL Endpoint is being created.
 
-<img src="./images/media/image7.png"
-style="width:5.98668in;height:2.15094in" />
+<img src="./images/media/image7.png" style="width:60%"  />
 
 Navigate back to the main page for the **DirectLakeDemo** workspace. In
 the list of workspace items, you should see a new item for the new **SQL
