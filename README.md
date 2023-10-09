@@ -619,7 +619,7 @@ Application ID for use in C# console application. Copy the **Application
 ID** from the application summary page in the Microsoft Entra admin
 center.
 
-<img src="./images/media/image47.png"  style="width:70%" />
+<img src="./images/media/image47.png"  style="width:90%" />
 
 Add the Application ID and Redirect URI of <http://localhost> into the
 text file with configuration data.
@@ -635,30 +635,30 @@ In an earlier step you extracted all the files from this repository into
 a local folder. If you examine the files in this folder, you will see a
 Visual Studio solution file named **TOM_CreateFabricDataset.sln**.
 
-<img src="./images/media/image49.png"  style="width:70%" />
+<img src="./images/media/image49.png"  style="width:60%" />
 
 Double-click on **TOM_CreateFabricDataset.sln** to open the project in
 Visual Studio 2022. You should see the project structure as shown in the
 following screenshot.
 
-<img src="./images/media/image50.png"  style="width:70%" />
+<img src="./images/media/image50.png"  style="width:40%" />
 
 Open the C# file named **AppSettings.cs** so you can update
 configuration values used by the application.
 
-<img src="./images/media/image51.png"  style="width:70%" />
+<img src="./images/media/image51.png"  style="width:50%" />
 
 You can see **AppSettings.cs** has several constant for configuration
 values that need to be filled in before running the application.
 
-<img src="./images/media/image52.png"  style="width:70%" />
+<img src="./images/media/image52.png"  style="width:90%" />
 
 Update **AppSettings.cs** by adding configuration values for
 **WorkspaceConnection**, **SQLEndpoint**, **TargetLakehouseName**,
 **ApplicationID**. You should also endure that **RedirectUrl** is
 correctly set to **http://localhost**.
 
-<img src="./images/media/image53.png" style="width:70%" />
+<img src="./images/media/image53.png" style="width:90%" />
 
 You can optionally update **AppSettings.cs** with your **UserId** and
 UserPassword if you want to avoid an interactive login each time you run
