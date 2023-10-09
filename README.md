@@ -579,7 +579,7 @@ call Microsoft APIs such as the Tabular Object Model. Now, you will use
 the **Microsoft Entra admin center** to create a new application for the
 C# console application.
 
-## Run the custom C# application to create DirectLake data model using TOM
+## Run the C# application to create DirectLake dataset using TOM
 
 In order to set up the C# console application, you must first create a
 new application. Start by navigating to **Microsoft Entra admin center**
