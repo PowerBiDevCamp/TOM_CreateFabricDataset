@@ -48,14 +48,11 @@ Inside the new workspace, it is time to create a new lakehouse named
 **SalesDataLakehouse**. Start by dropping down the **+ New** menu button
 and select **More options**.
 
-<img src="./images/media/image4.png"
-style="width:2.43333in;height:2.83265in" />
+<img src="./images/media/image4.png"  style="width:65%"  />
 
-On the **New** page select **Lakehouse (Preview)** from **Data
-Engineering** section.
+On the **New** page select **Lakehouse (Preview)** from **Data Engineering** section.
 
-<img src="./images/media/image5.png"
-style="width:3.95598in;height:2.1122in" />
+<img src="./images/media/image5.png"  style="width:80%" />
 
 When prompted, enter a name of **SalesDataLakehouse** for the new
 Lakehouse and click **Create**.
