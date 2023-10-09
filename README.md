@@ -591,7 +591,7 @@ On the home page of the **Microsoft Entra admin center**, drop down the
 **Applications** section in the left navigation and click the **App
 registrations** link.
 
-<img src="./images/media/image42.png"  style="width:70%" />
+<img src="./images/media/image42.png"  style="width:90%" />
 
 On the **App registrations** page, click **New registration**.
 
@@ -601,7 +601,7 @@ Give the new application a name such as **Create DirectLake Dataset Demo
 App** and leave the Supported account types setting with the default
 selection of **Accounts in this organizational directory only**.
 
-<img src="./images/media/image44.png"  style="width:70%" />
+<img src="./images/media/image44.png"  style="width:80%" />
 
 Move down to the **Redirect URI** section. Select **Public
 client/native** application in the drop down menu and enter a redirect
