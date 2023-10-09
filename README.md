@@ -714,18 +714,18 @@ Examine the **Sales** table which contains three measures.
 Examine the **Customer** table which contains several columns and a
 dimensional hierarchy.
 
-<img src="./images/media/image62.png" style="width:70%" />
+<img src="./images/media/image62.png" style="width:40%" />
 
 Examine the **Products** table which contains several columns and a
 dimensional hierarchy.
 
-<img src="./images/media/image63.png" style="width:70%" />
+<img src="./images/media/image63.png" style="width:40%" />
 
 Examine the **Calendar** table which contains several columns and a
 dimensional hierarchy.
 
-<img src="./images/media/image64.png" style="width:70%" />
+<img src="./images/media/image64.png" style="width:40%" />
 
-You have now generated a DirectLake-mode dataset which can be used to
-create Power BI reports. Designing a report that looks good is left as
-an exercise for the reader.
+> You have now generated a DirectLake-mode dataset which can be used to
+create Power BI reports. This is the end of the demonstration. 
+Designing a report that looks good is left as an exercise for the reader.
