@@ -361,40 +361,36 @@ DataFrame schema and displays the top 20 rows of data.
 
 <img src="./images/media/image29.png"   style="width:45%"   />
 
-> You have now create four DataFrames. However, you have only loaded data
+> At this point you have created four DataFrames. However, you have only loaded data
 into memory. Nothing has been persisted. Now it’s time to actually
-persist your work by saving each of these four DataFrames to lakehouse
+persist your work by saving each of the four DataFrames to lakehouse
 tables using the delta format.
 
 ### Execute code to save the four DataFrames as delta tables in the lakehouse
 
-Locate and execute the next cell with the following Python code which
-saves all DataFrames as lakehouse tables with delta format.
+Execute the Python code in the next cell which
+saves all four DataFrames loaded in the previous steps as lakehouse tables in the delta format.
 
-\# save all bronze layer tables
-
+``` python
+# save all bronze layer tables
 df_products.write.mode("overwrite").format("delta").save(f"Tables/bronze_products")
-
 df_customers.write.mode("overwrite").format("delta").save(f"Tables/bronze_customers")
+df_invoices.write.mode("overwrite").format("delta").save(f"Tables/bronze_invoices")
+df_invoice_details.write.mode("overwrite").format("delta").save(f"Tables/bronze_invoice_details")
 
-df_invoices.write.mode("overwrite").
-format("delta").save(f"Tables/bronze_invoices")
-
-df_invoice_details.write.mode("overwrite")format("delta").save(f"Tables/bronze_invoice_details")
+```
 
 Once the code which creates the lakehouse tables completes, click the
 **Refresh** context menu of the **Tables** folder.
 
-<img src="./images/media/image30.png"
-style="width:4in;height:1.96667in" />
+<img src="./images/media/image30.png"  style="width:70%" />
 
 Once the refresh operation completes, you should be able to see four
 tables created for the Bronze layer.
 
-<img src="./images/media/image31.png"
-style="width:2in;height:2.30252in" />
+<img src="./images/media/image31.png"   style="width:70%" />
 
-At this point, you have created delta tables for the bronze layer which
+> At this point, you have created delta tables for the bronze layer which
 represents the raw data without any data cleansing or manipulation. In
 the next step, you will perform transformations on the data in the
 bronze layer tables to create the silver layer tables.
