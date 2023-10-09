@@ -413,7 +413,7 @@ Execute the code to create the **products** table. After the code
 completes, you should see output which display the DataFrame schema and
 displays the top 20 rows of data from the **products** table.
 
-<img src="./images/media/image32.png"  style="width:50%" />
+<img src="./images/media/image32.png"  style="width:40%" />
 
 Move to the next cell which contains the following code to load the
 table named **bronze_customers** and then saves it to a second delta
@@ -422,36 +422,28 @@ table is a bit more involved because it creates two new columns named
 **Customer** and **Age** and it drops two columns named **FirstName**
 and **LastName**.
 
-\# create silver layer customers table
-
-from pyspark.sql.functions import concat_ws, floor, datediff,
-current_date, col
+``` python
+# create silver layer customers table
+from pyspark.sql.functions import concat_ws, floor, datediff, current_date, col
 
 df_silver_customers = (
-
-spark.read.format("delta").load("Tables/bronze_customers")
-
-.withColumn("Customer", concat_ws(' ', col('FirstName'),
-col('LastName')) )
-
-.withColumn("Age",( floor( datediff( current_date(), col("DOB")
-)/365.25) ))
-
-.drop('FirstName', 'LastName')
-
+    spark.read.format("delta").load("Tables/bronze_customers")
+            .withColumn("Customer", concat_ws(' ', col('FirstName'), col('LastName')) )
+            .withColumn("Age",( floor( datediff( current_date(), col("DOB") )/365.25) ))   
+            .drop('FirstName', 'LastName')
 )
 
 df_silver_customers.write.mode("overwrite").format("delta").save(f"Tables/customers")
 
 df_silver_customers.printSchema()
-
 df_silver_customers.show()
+```
 
 Execute the code to create the **customers** table. After the code
 completes, you should see output which display the DataFrame schema and
 displays the top 20 rows of data from the **customers** table.
 
-<img src="./images/media/image33.png"  style="width:70%" />
+<img src="./images/media/image33.png"  style="width:40%" />
 
 Move to the next cell which contains the following code to create the
 **sales** table. This code merges data from the **bronze_invoices**
