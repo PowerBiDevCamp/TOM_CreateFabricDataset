@@ -591,7 +591,7 @@ On the home page of the **Microsoft Entra admin center**, drop down the
 **Applications** section in the left navigation and click the **App
 registrations** link.
 
-<img src="./images/media/image42.png"  style="width:90%" />
+<img src="./images/media/image42.png"  style="width:97%" />
 
 On the **App registrations** page, click **New registration**.
 
