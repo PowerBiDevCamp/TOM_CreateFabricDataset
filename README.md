@@ -22,18 +22,18 @@ capacity which provides Fabric capabilities. After creating the new
 workspace named **DirectLakeDemo**, select the **Workspace settings**
 menu command to display the **Workspace settings** pane.
 
-<img src="./images/media/image1.png" style="width:70%" />
+<img src="./images/media/image1.png" style="width:90%" />
 
 In **Workspace settings**, select the **Premium** tab in the left
 navigation and scroll down to locate the **Workspace connection**
 setting. Click the **Copy** button to copy the **Workspace connection**
 value to the Windows clipboard.
 
-<img src="./images/media/image2.png" style="width:70%" />
+<img src="./images/media/image2.png" style="width:80%" />
 
 As you can see, the **Workspace connection** string starts with **powerbi://** and ends with the workspace name.
 
-``` powerbi://api.powerbi.com/v1.0/myorg/DirectLakeDemo
+`powerbi://api.powerbi.com/v1.0/myorg/DirectLakeDemo`
 
 Create a new text file using Notepad.exe to save configuration data you
 will need later when configuring the C# console application. Copy the
