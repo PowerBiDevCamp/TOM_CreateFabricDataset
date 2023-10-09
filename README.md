@@ -159,7 +159,7 @@ Once you have associated the notebook with the lakehouse named
 **Files** folder in the **Lakehouses** pane which are both initially
 empty.
 
-<img src="./images/media/image20.png"  style="width:70%" />
+<img src="./images/media/image20.png"  style="width:40%" />
 
 ### Copy CSV files from this repository into the file system of your Fabric Lakehouse
 
