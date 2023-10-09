@@ -128,14 +128,14 @@ menu.
 Once you switch to the **Data Engineering** experience, locate and click
 on the **Import notebook** button.
 
-<img src="./images/media/image15.png"  style="width:60%" />
+<img src="./images/media/image15.png"  style="width:80%" />
 
 Upload Python notebook named **CreateLakehouseTables.ipynb**. After the
 notebook has been imported, you should be able to see an item for it on
 main workspace page. Click on **CreateLakehouseTables.ipynb** to open
 this Fabric notebook in the browser.
 
-<img src="./images/media/image16.png"  style="width:50%" />
+<img src="./images/media/image16.png"  style="width:70%" />
 
 ### Associate the Fabric notebook with the lakehouse named **SalesDataLakehouse**
 
