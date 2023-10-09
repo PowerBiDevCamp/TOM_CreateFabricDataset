@@ -118,12 +118,12 @@ Return to the browser and navigate to the main page of the
 Experience Switcher*** menu on the bottom right of the main workspace
 page.
 
-<img src="./images/media/image13.png"  style="width:60%"  />
+<img src="./images/media/image13.png"  style="width:65%"  />
 
 Select **Data Engineering** from the ***Fabric Experience Switcher***
 menu.
 
-<img src="./images/media/image14.png"  style="width:60%"  />
+<img src="./images/media/image14.png"  style="width:40%"  />
 
 Once you switch to the **Data Engineering** experience, locate and click
 on the **Import notebook** button.
