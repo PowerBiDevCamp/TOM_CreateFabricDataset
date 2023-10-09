@@ -540,7 +540,7 @@ now see the four delta tables named calendar, customers, products and
 sales. There are the delta tables that will be used to create the
 DirectLake-mode dataset.
 
-<img src="./images/media/image36.png" style="width:70%" />
+<img src="./images/media/image36.png" style="width:40%" />
 
 ### Inspect the tables that have been created in the lakehouse
 
