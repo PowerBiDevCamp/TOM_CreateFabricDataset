@@ -398,8 +398,8 @@ Move to the next cell in the notebook which contains the following code
 to load the table named **bronze_products** and then saves the data to a
 second delta table named **products**. Note this Python code is simple
 in that it does not perform any transformations. However, it shows the
-basic pattern of loading a table into a DataFrame and then saving it as
-a different delta table.
+basic pattern of loading a table into a DataFrame and then saving itback as
+a delta table with another name.
 
 ``` python
 # create silver layer products table
@@ -443,7 +443,7 @@ Execute the code to create the **customers** table. After the code
 completes, you should see output which display the DataFrame schema and
 displays the top 20 rows of data from the **customers** table.
 
-<img src="./images/media/image33.png"  style="width:40%" />
+<img src="./images/media/image33.png"  style="width:60%" />
 
 Move to the next cell which contains the following code to create the
 **sales** table. This code merges data from the **bronze_invoices**
