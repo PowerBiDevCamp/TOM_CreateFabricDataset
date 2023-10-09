@@ -203,11 +203,11 @@ of the CSV files as they're copied into the lakehouse file system.
 
 In the **Lakehouses** pane on the left, drop down the context menu for the **Files** folder.
 
-<img src="./images/media/image23.png" style="width:90%" />
+<img src="./images/media/image23.png" style="width:40%" />
 
 Select the **Refresh** command from the context menu of the **Files** folder.
 
-<img src="./images/media/image24.png" style="width:90%" />
+<img src="./images/media/image24.png" style="width:40%" />
 
 After the refresh operation completes, you should see a new child folder
 inside the **Files** folder named **landing_zone_sales**. If you select
