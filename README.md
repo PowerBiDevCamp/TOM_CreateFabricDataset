@@ -651,14 +651,14 @@ configuration values used by the application.
 You can see **AppSettings.cs** has several constants for configuration
 values that you need to update before running the application.
 
-<img src="./images/media/image52.png"  style="width:90%" />
+<img src="./images/media/image52.png"  style="width:82%" />
 
 Update **AppSettings.cs** by adding configuration values for
 **WorkspaceConnection**, **SQLEndpoint**, **TargetLakehouseName**,
 **ApplicationID**. You should also endure that **RedirectUrl** is
 correctly set to **http://localhost**.
 
-<img src="./images/media/image53.png" style="width:90%" />
+<img src="./images/media/image53.png" style="width:97%" />
 
 You can optionally update **AppSettings.cs** with your **UserId** and
 UserPassword if you want to avoid an interactive login each time you run
