@@ -672,12 +672,12 @@ application.
 
 Run the application in debug mode by pressing **{F5}** or selecting **Debug \> Start Debugging**.
 
-<img src="./images/media/image54.png"  style="width:95%" />
+<img src="./images/media/image54.png"  style="width:75%" />
 
 When the application starts, you will be promoted to login. Log in using
 the same user account you have been using throughout this demo.
 
-<img src="./images/media/image55.png" style="width:40%" />
+<img src="./images/media/image55.png" style="width:30%" />
 
 After successfully logging in, wait until the program completes. It
 might take as long as 20-30 seconds.
@@ -690,7 +690,7 @@ application completes, navigate to the home page of the
 named **DirectLake Sales Model**. Click on the named **DirectLake Sales
 Model** item to navigate to its details page.
 
-<img src="./images/media/image57.png"  style="width:70%" />
+<img src="./images/media/image57.png"  style="width:60%" />
 
 On the **Details for DirectLake Sales Model** page, click **+ Create a
 report** to drop down this menu.
