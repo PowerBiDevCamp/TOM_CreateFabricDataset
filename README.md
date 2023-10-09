@@ -368,8 +368,7 @@ tables using the delta format.
 
 ### Execute code to save the four DataFrames as delta tables in the lakehouse
 
-Execute the Python code in the next cell which
-saves all four DataFrames loaded in the previous steps as lakehouse tables in the delta format.
+Execute the code in the next cell which saves all four DataFrames as lakehouse tables in the delta format.
 
 ``` python
 # save all bronze layer tables
