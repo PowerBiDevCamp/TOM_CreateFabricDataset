@@ -92,7 +92,7 @@ Copy the values for the SQL endpoint and the name of the Lakehouse into
 the text file with configuration values as shown in the following
 screenshot.
 
-<img src="./images/media/image11.png"  style="width:60%"  />
+<img src="./images/media/image11.png"  style="width:90%"  />
 
 Save the text file with these use these configuration values for later
 use when setting up the C# console application.
