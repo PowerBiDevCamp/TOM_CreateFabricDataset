@@ -172,33 +172,27 @@ into file system of the lakehouse.
 Examine the following Python code from the first cell of the notebook
 which copies CSV files to the lakehouse file system.
 
+``` python
 import requests
 
-csv_base_url =
-"https://github.com/PowerBiDevCamp/Python-In-Fabric-Notebooks/raw/main/ProductSalesData/"
+csv_base_url = "https://github.com/PowerBiDevCamp/Python-In-Fabric-Notebooks/raw/main/ProductSalesData/"
 
-csv_files = { "Customers.csv", "Products.csv", "Invoices.csv",
-"InvoiceDetails.csv" }
+csv_files = { "Customers.csv", "Products.csv", "Invoices.csv", "InvoiceDetails.csv" }
 
 folder_path = "Files/landing_zone_sales/"
 
 for csv_file in csv_files:
-
-csv_file_path = csv_base_url + csv_file
-
-with requests.get(csv_file_path) as response:
-
-csv_content = response.content.decode('utf-8-sig')
-
-mssparkutils.fs.put(folder_path + csv_file, csv_content, True)
-
-print(csv_file + " copied to Lakehouse file in OneLake")
+    csv_file_path = csv_base_url + csv_file
+    with requests.get(csv_file_path) as response:
+        csv_content = response.content.decode('utf-8-sig')
+        mssparkutils.fs.put(folder_path + csv_file, csv_content, True)
+        print(csv_file + " copied to Lakehouse file in OneLake")
+```
 
 Execute the code in the top notebook cell by clicking the **Execute**
 button located on top just to the left of the cell.
 
-<img src="./images/media/image21.png"
-style="width:4.5in;height:1.38654in" />
+<img src="./images/media/image21.png" style="width:70%" />
 
 The first time you execute Python code from a Fabric notebook, it
 typically takes 10-20 seconds to start up and initialize the Spark pool
@@ -206,20 +200,16 @@ which is used to process notebook code execution requests. When the
 Python code completes its execution, you should see a message for each
 of the CSV files that have been copied into the lakehouse file system.
 
-<img src="./images/media/image22.png"
-style="width:3.8239in;height:1.4021in" />
+<img src="./images/media/image22.png"  style="width:70%" />
 
 In the **Lakehouses** pane on the left, drop down the context menu for
 the **Files** folder.
 
-<img src="./images/media/image23.png"
-style="width:1.71667in;height:1.23488in" />
+<img src="./images/media/image23.png" style="width:70%" />
 
-Select the **Refresh** command from the context menu of the **Files**
-folder.
+Select the **Refresh** command from the context menu of the **Files** folder.
 
-<img src="./images/media/image24.png"
-style="width:2.22493in;height:1.56667in" />
+<img src="./images/media/image24.png" style="width:70%" />
 
 After the refresh operation completes, you should see a new child folder
 inside the **Files** folder named **landing_zone_sales**. If you select
@@ -228,8 +218,7 @@ to see four new CSV files named **Customers.csv**,
 **InvoiceDetails.csv**, **Invoices.csv** and **Products.csv** on the
 right.
 
-<img src="./images/media/image25.png"
-style="width:3.41667in;height:1.68389in" />
+<img src="./images/media/image25.png" style="width:70%" />
 
 At this point, you have now copied the CSV files with the raw data into
 the lakehouse file system. Now you will use Spark to load this data into
