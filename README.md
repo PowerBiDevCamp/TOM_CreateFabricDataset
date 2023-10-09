@@ -2,19 +2,20 @@
 
 This GitHub repository contains a sample C# console application named
 **TOM_CreateFabricDataset** which demonstrates how to automate the
-creation of a DirectLake mode dataset for Power BI using the Tabular
+creation of a DirectLake-mode dataset for Power BI using the Tabular
 Object Model (TOM). Inside this repository, there is also a Fabric
 notebook named **CreateLakehouseTables.ipynb** with Python code which
 can be used to generate Lakehouse tables in delta format that will be
-used the underlying datasource for the DirectLake dataset.
+used as the underlying datasource for the DirectLake dataset.
 
-Here are the high-level steps to set up and complete the demonstration:
+Here are the high-level steps to set up and run through this
+demonstration:
 
 - Create a new workspace associated with Fabric capacity
 
-- Create a new Lakehouse in the new workspace
+- Create a new Fabric lakehouse in the new workspace
 
-- Generate Lakehouse tables using pre-provided Python code in Fabric
+- Generate lakehouse tables using pre-provided Python code in Fabric
   notebook
 
 - Set up and run the custom C# application to automate the creation of a
@@ -31,15 +32,16 @@ menu command to display the **Workspace settings** pane.
 <img src="./images/media/image1.png"
 style="width:7.49792in;height:1.72222in" />
 
-Select the **Premium** tab in the left navigation and scroll down to
-locate the **Workspace connection** setting. Click the **Copy** button
-to copy the **Workspace connection** value to the Windows clipboard.
+In **Workspace settings**, select the **Premium** tab in the left
+navigation and scroll down to locate the **Workspace connection**
+setting. Click the **Copy** button to copy the **Workspace connection**
+value to the Windows clipboard.
 
 <img src="./images/media/image2.png"
 style="width:3.311in;height:2.45655in" />
 
-The **Workspace connection** string starts with **powerbi://** and ends
-with the workspace name.
+As you can see, the **Workspace connection** string starts with
+**powerbi://** and ends with the workspace name.
 
 powerbi://api.powerbi.com/v1.0/myorg/DirectLakeDemo
 
@@ -52,9 +54,9 @@ following screenshot.
 style="width:4.28392in;height:1.53705in"
 alt="A screenshot of a computer Description automatically generated" />
 
-## Create a new Lakehouse in the new workspace
+## Create a new Fabric lakehouse in the new workspace
 
-Inside the new workspace you just created, create a new Lakehouse named
+Inside the new workspace, it is time to create a new lakehouse named
 **SalesDataLakehouse**. Start by dropping down the **+ New** menu button
 and select **More options**.
 
@@ -74,7 +76,7 @@ Lakehouse and click **Create**.
 style="width:2.50943in;height:1.39228in" />
 
 Once you have created the Lakehouse, you will notice a message
-indicating a SQL Endpoint is also being created.
+indicating a SQL Endpoint is being created.
 
 <img src="./images/media/image7.png"
 style="width:5.98668in;height:2.15094in" />
@@ -82,7 +84,7 @@ style="width:5.98668in;height:2.15094in" />
 Navigate back to the main page for the **DirectLakeDemo** workspace. In
 the list of workspace items, you should see a new item for the new **SQL
 endpoint** in addition to the item for the Lakehouse. Both the Lakehouse
-and the SQL endpoint both have the same name of **SalesDataLakehouse**.
+and the SQL endpoint have the same name which is **SalesDataLakehouse**.
 Drop down the context menu for the SQL endpoint named
 **SalesDataLakehouse**.
 
@@ -99,7 +101,7 @@ In the **Copy SQL connection string** dialog, click **Copy** to copy the
 connection string value to the Windows clipboard.
 
 <img src="./images/media/image10.png"
-style="width:4.11702in;height:2.06685in"
+style="width:2.46559in;height:1.23778in"
 alt="A screenshot of a computer Description automatically generated" />
 
 The connection string starts with a unique value and end with
@@ -108,22 +110,27 @@ The connection string starts with a unique value and end with
 5lcsgl3vll3edero2m4sge7gdu-nya26urqtgsejoagwutwdoogl4.datawarehouse.pbidedicated.windows.net
 
 Copy the values for the SQL endpoint and the name of the Lakehouse into
-the text file with configuration values.
+the text file with configuration values as shown in the following
+screenshot.
 
 <img src="./images/media/image11.png"
-style="width:5.35in;height:1.62283in" />
+style="width:4.09569in;height:1.24236in" />
 
-Once again, you will use these configuration values later when setting
-up the C# console application.
+Save the text file with these use these configuration values for later
+use when setting up the C# console application.
 
-## Create Lakehouse tables using a pre-provided Fabric notebook
+## Create lakehouse tables using a pre-provided Fabric notebook
 
-Download all the sources files from this GitHub repository as a single
-ZIP archive named **TOM_CreateFabricDataset.zip** using [**this
+Start by downloading all the sources files from this GitHub repository
+as a single ZIP archive named **TOM_CreateFabricDataset.zip**. You can
+download the ZIP archive by clicking [**this
 link**](https://github.com/PowerBiDevCamp/TOM_CreateFabricDataset/archive/refs/heads/main.zip).
-Extract the files from inside **TOM_CreateFabricDataset.zip** into a
-local folder on your machine. The first file you will use from these
-files is a Fabric notebook with Python code named
+
+Once you have downloaded the ZIP archive named
+**TOM_CreateFabricDataset.zip**, extract the files from inside into a
+local folder on your machine. The screenshot below shows what the folder
+should look like with the extracted files. The first file you will use
+is a Fabric notebook with Python code named
 **CreateLakehouseTables.ipynb**.
 
 <img src="./images/media/image12.png"
@@ -137,30 +144,31 @@ page.
 <img src="./images/media/image13.png"
 style="width:4.13333in;height:2.8046in" />
 
-Select Data Engineering from the ***Fabric Experience Switcher*** menu.
+Select **Data Engineering** from the ***Fabric Experience Switcher***
+menu.
 
 <img src="./images/media/image14.png"
 style="width:2.325in;height:1.94116in" />
 
-Once you switch to **Data Engineering** experience, locate and click on
-the **Import notebook** button.
+Once you switch to the **Data Engineering** experience, locate and click
+on the **Import notebook** button.
 
 <img src="./images/media/image15.png"
 style="width:3.74167in;height:1.20283in" />
 
 Upload Python notebook named **CreateLakehouseTables.ipynb**. After the
 notebook has been imported, you should be able to see an item for it on
-main workspace page. Click on **CreateLakehouseTables.ipynb** to open it
-in the browser.
+main workspace page. Click on **CreateLakehouseTables.ipynb** to open
+this Fabric notebook in the browser.
 
 <img src="./images/media/image16.png"
 style="width:4.19167in;height:2.23338in" />
 
-### Associate the Fabric Notebook with the Lakehouse named SalesDataLakehouse
+### Associate the Fabric notebook with the lakehouse named SalesDataLakehouse
 
-Once the notebook opens, you should see that it is not yet associated
-with any Lakehouses. Click the **Add** button in the **Lakehouses**
-pane.
+Once the notebook opens, you should be able to verify that it is not yet
+associated with a lakehouse. Click the **Add** button in the
+**Lakehouses** pane.
 
 <img src="./images/media/image17.png"
 style="width:4.56667in;height:3.14435in" />
@@ -177,21 +185,24 @@ and click **Add**.
 <img src="./images/media/image19.png"
 style="width:4.40833in;height:2.3243in" />
 
-Once you have associated the notebook with **SalesDataLakehouse**, you
-should see the **Tables** folder and the **Files** folder which are both
-initially empty.
+Once you have associated the notebook with the lakehouse named
+**SalesDataLakehouse**, you should see the **Tables** folder and the
+**Files** folder in the **Lakehouses** pane which are both initially
+empty.
 
 <img src="./images/media/image20.png"
 style="width:2.25in;height:2.21987in" />
 
 ### Copy CSV files from this repository into the file system of your Fabric Lakehouse
 
-Now you will execute the Python code from the cell of the workbook to
-populate the lakehouse with tables. You will execute the Python code in
-each cell in this workspace one by one from top to bottom. You will
-begin by executing Python code to copy four CSV files from this GitHub
-repository into file system of this lakehouse. Examine the following
-Python code from the first cell of the notebook.
+Now you will execute the Python code from this workbook to populate the
+lakehouse with data. You will execute the Python code in each of the
+notebook’s cell one by one from top to bottom. You will begin by
+executing Python code to copy four CSV files from this GitHub repository
+into file system of the lakehouse.
+
+Examine the following Python code from the first cell of the notebook
+which copies CSV files to the lakehouse file system.
 
 import requests
 
@@ -223,7 +234,7 @@ style="width:4.5in;height:1.38654in" />
 
 The first time you execute Python code from a Fabric notebook, it
 typically takes 10-20 seconds to start up and initialize the Spark pool
-which is used to process the notebook code execution requests. When the
+which is used to process notebook code execution requests. When the
 Python code completes its execution, you should see a message for each
 of the CSV files that have been copied into the lakehouse file system.
 
@@ -243,24 +254,25 @@ folder.
 style="width:2.22493in;height:1.56667in" />
 
 After the refresh operation completes, you should see a new child folder
-named **landing_zone_sales** inside the **Files** folder. If you select
-the **landing_zone_sales** folder on the left, you should be able to see
-four new CSV files named **Customers.csv**, **InvoiceDetails.csv**,
-**Invoices.csv** and **Products.csv**.
+inside the **Files** folder named **landing_zone_sales**. If you select
+the **landing_zone_sales** folder in the left pane, you should be able
+to see four new CSV files named **Customers.csv**,
+**InvoiceDetails.csv**, **Invoices.csv** and **Products.csv** on the
+right.
 
 <img src="./images/media/image25.png"
 style="width:3.41667in;height:1.68389in" />
 
-You have now copied the CSV files with the raw data into the lakehouse
-file system. Now you will use Spark to load this data into memory as
-DataFrames where the data can be manipulated and saved as lakehouse
-tables.
+At this point, you have now copied the CSV files with the raw data into
+the lakehouse file system. Now you will use Spark to load this data into
+memory as DataFrames where the data can be manipulated and saved as
+lakehouse tables.
 
 ### Execute code in notebook to load CSV files into Spark DataFrames for the bronze layer
 
 Examine the following Python code from the second cell in the notebook
-which loads product data from Products.csv into a Spark DataFrame and
-then displays the DataFrame schema and samples rows of data.
+which loads product data from **Products.csv** into a Spark DataFrame
+and then displays the DataFrame schema and rows of data.
 
 from pyspark.sql.types import StructType, StructField, StringType,
 LongType, FloatType
@@ -295,15 +307,15 @@ df_products.printSchema()
 df_products.show()
 
 Execute the code in the second cell to load product data into a Spark
-DataFrame. After the code completes, you should see output which display
-the DataFrame schema and displays 10 rows of data.
+DataFrame. After the code completes, you should see output which
+displays the DataFrame schema and 10 rows of product data.
 
 <img src="./images/media/image26.png"
 style="width:1.875in;height:1.88291in" />
 
-Examine the following Python code from the third cell in the notebook
-which loads customer data from **Customers.csv** into a Spark DataFrame
-and then displays the DataFrame schema and samples rows of data.
+Examine the Python code from the third cell in the notebook which loads
+customer data from **Customers.csv** into a Spark DataFrame and then
+displays the DataFrame schema and samples rows of data.
 
 from pyspark.sql.types import StructType, StructField, StringType,
 LongType, FloatType, DateType
@@ -347,9 +359,9 @@ df_customers.printSchema()
 
 df_customers.show()
 
-Execute the code in the third cell to load customer data into a Spark
-DataFrame. After the code completes, you should see output which display
-the DataFrame schema and displays the top 20 rows of data.
+Execute the code to load customer data into a Spark DataFrame. After the
+code completes, you should see output which display the DataFrame schema
+and displays the top 20 rows of data.
 
 <img src="./images/media/image27.png"
 style="width:2.00058in;height:2.03774in" />
@@ -454,11 +466,12 @@ DataFrame schema and displays the top 20 rows of data.
 <img src="./images/media/image29.png"
 style="width:2.30062in;height:3.11667in" />
 
-You have now create four DataFrames. However, you have just loaded data
-into memory. Now it’s time to actually persist your work by saving each
-of these four DataFrames into lakehouse tables using the delta format.
+You have now create four DataFrames. However, you have only loaded data
+into memory. Nothing has been persisted. Now it’s time to actually
+persist your work by saving each of these four DataFrames to lakehouse
+tables using the delta format.
 
-### Execute code to Save the Four DataFrames as Delta Tables in the Lakehouse
+### Execute code to save the four DataFrames as delta tables in the lakehouse
 
 Locate and execute the next cell with the following Python code which
 saves all DataFrames as lakehouse tables with delta format.
@@ -486,9 +499,19 @@ tables created for the Bronze layer.
 <img src="./images/media/image31.png"
 style="width:2in;height:2.30252in" />
 
+At this point, you have created delta tables for the bronze layer which
+represents the raw data without any data cleansing or manipulation. In
+the next step, you will perform transformations on the data in the
+bronze layer tables to create the silver layer tables.
+
 ### Reshape and Transform Data in Bronze Layer Tables to Create Silver Layer Tables
 
-Ssss
+Move to the next cell in the notebook which contains the following code
+to load the table named **bronze_products** and then saves the data to a
+second delta table named **products**. Note this Python code is simple
+in that it does not perform any transformations. However, it shows the
+basic pattern of loading a table into a DataFrame and then saving it as
+a different delta table.
 
 \# create silver layer products table
 
@@ -501,12 +524,19 @@ df_silver_products.printSchema()
 
 df_silver_products.show()
 
-cccc
+Execute the code to create the **products** table. After the code
+completes, you should see output which display the DataFrame schema and
+displays the top 20 rows of data from the **products** table.
 
 <img src="./images/media/image32.png"
 style="width:2.36667in;height:2.16536in" />
 
-Xx
+Move to the next cell which contains the following code to load the
+table named **bronze_customers** and then saves it to a second delta
+table named **customers**. This code written to create the **customers**
+table is a bit more involved because it creates two new columns named
+**Customer** and **Age** and it drops two columns named **FirstName**
+and **LastName**.
 
 \# create silver layer customers table
 
@@ -533,12 +563,19 @@ df_silver_customers.printSchema()
 
 df_silver_customers.show()
 
-ssss
+Execute the code to create the **customers** table. After the code
+completes, you should see output which display the DataFrame schema and
+displays the top 20 rows of data from the **customers** table.
 
 <img src="./images/media/image33.png"
 style="width:3.21814in;height:3.375in" />
 
-Xx
+Move to the next cell which contains the following code to create the
+**sales** table. This code merges data from the **bronze_invoices**
+table and the **bronze_invoice_details** table into a single DataFrame.
+This code performs several other transformations including renaming a
+column, generating an integer-based **DateKey** column, dropping
+unneeded columns and rearranging the order of columns.
 
 \# create silver layer sales table
 
@@ -582,12 +619,18 @@ df_silver_sales.printSchema()
 
 df_silver_sales.show()
 
-xxxx
+Execute the code to create the **sales** table. After the code
+completes, you should see output which display the DataFrame schema and
+displays the top 20 rows of data from the **sales** table.
 
 <img src="./images/media/image34.png"
 style="width:3.2392in;height:3.45in" />
 
-Xx
+Move down to the last cell in the notebook which generates the
+**calendar** table used for time-based analysis. If you examine the
+code, you can see it uses the first and last dates from the **Date**
+column of the **sales** table to determine where to start and to end the
+**calendar** table.
 
 \# create silver layer calendar table
 
@@ -655,181 +698,234 @@ df_calendar_spark.printSchema()
 
 df_calendar_spark.show()
 
-xx
+Execute the code to create the **calendar** table. After the code
+completes, you should see output which display the DataFrame schema and
+displays the top 20 rows of data from the **calendar** table.
 
 <img src="./images/media/image35.png"
 style="width:6.76667in;height:5.59167in" />
 
-Xx
+Now refresh the **Tables** folder in the **Lakehouses** pane. You should
+now see the four delta tables named calendar, customers, products and
+sales. There are the delta tables that will be used to create the
+DirectLake-mode dataset.
 
 <img src="./images/media/image36.png"
 style="width:1.975in;height:2.25163in" />
 
-### Inspect the tables that have been created in the Lakehouse
+### Inspect the tables that have been created in the lakehouse
 
-Xxxx
+Navigate to the main page of the **DirectLakeDemo** workspace and then
+click on the workspace item for the lakehouse named
+**SalesDataLakehouse**.
 
 <img src="./images/media/image37.png"
 style="width:3.01667in;height:1.5027in" />
 
-Xxxx
+Now you can see and inspect the tables in the lakehouse. Start by
+clicking on the **products** table to see its contents.
 
 <img src="./images/media/image38.png"
 style="width:3.29866in;height:2.36667in" />
 
-Xxx
+Inspect the data in the **customers** table.
 
 <img src="./images/media/image39.png"
 style="width:4.48745in;height:2.38333in" />
 
-Dddd
+Inspect the data in the **sales** table.
 
 <img src="./images/media/image40.png"
 style="width:4.10833in;height:2.14785in" />
 
-Xxxx
+Inspect the data in the **sales** table.
 
 <img src="./images/media/image41.png"
 style="width:5.23333in;height:1.5601in" />
 
-Now all Lakehouse tables have been created and you can move on top the
-step where you create the DirectLake dataset using the customer
-application.
+Now all Lakehouse tables have been created and you can move on to the
+next step where you create the DirectLake dataset using the custom
+application with C# code.
+
+In case you have not heard, Microsoft recently renamed ***Azure Active
+Directory*** to ***Microsoft Entra ID***. In the past, you would uses
+the Azure AD portal to create an Azure application which can be used to
+call Microsoft APIs such as the Tabular Object Model. Now, you will use
+the **Microsoft Entra admin center** to create a new application for the
+C# console application.
 
 ## Run the custom C# application to create DirectLake data model using TOM
 
-Create Entra ID application. In case you have not heard, Microsoft
-renamed Azure AD to Microsoft Entra.
-
-Start by going to Azure AD section of the Azure portal.
+In order to set up the C# console application, you must first create a
+new application. Start by navigating to **Microsoft Entra admin center**
+at the following URL.
 
 <https://entra.microsoft.com/>
+
+On the home page of the **Microsoft Entra admin center**, drop down the
+**Applications** section in the left navigation and click the **App
+registrations** link.
 
 <img src="./images/media/image42.png"
 style="width:4.81896in;height:1.98333in" />
 
-Ss
+On the **App registrations** page, click **New registration**.
 
 <img src="./images/media/image43.png"
 style="width:4.75833in;height:0.9781in" />
 
-Give it a name such as **Create DirectLake Dataset Demo App**.
+Give the new application a name such as **Create DirectLake Dataset Demo
+App** and leave the Supported account types setting with the default
+selection of **Accounts in this organizational directory only**.
 
 <img src="./images/media/image44.png"
 style="width:5.08333in;height:1.93167in" />
 
-Create a native/public application with redirect URI of
-<http://localhost>
+Move down to the **Redirect URI** section. Select **Public
+client/native** application in the drop down menu and enter a redirect
+URI of <http://localhost>. Make sure to create the URL with **http** and
+not **https**.
 
 <img src="./images/media/image45.png"
 style="width:5.025in;height:0.96033in" />
 
+Click **Register** to create the new application.
+
 <img src="./images/media/image46.png"
 style="width:4.425in;height:1.10833in" />
 
-Record Application ID for use in console application.
+Now that you have created the application, you need to record
+Application ID for use in C# console application. Copy the **Application
+ID** from the application summary page in the Microsoft Entra admin
+center.
 
 <img src="./images/media/image47.png"
 style="width:5.775in;height:1.60417in" />
 
-Get Application ID
-
-2a21a3ed-f849-4b3c-911d-38f2709830d7
-
-sss
+Add the Application ID and Redirect URI of <http://localhost> into the
+text file with configuration data.
 
 <img src="./images/media/image48.png"
 style="width:4.50787in;height:2.02479in"
 alt="A screenshot of a computer Description automatically generated" />
 
+Now you have all the configuration data you need to set up and run the
+C# console application to create the DirectLake-mode dataset.
+
 ### Open C# console application project in Visual Studio 2022
 
-Xxxx
+In an earlier step you extracted all the files from this repository into
+a local folder. If you examine the files in this folder, you will see a
+Visual Studio solution file named **TOM_CreateFabricDataset.sln**.
 
 <img src="./images/media/image49.png"
-style="width:2.25in;height:1.81993in" />
+style="width:4.34099in;height:2.87421in" />
 
-Open **AppSettings.cs** and update configuration value:
+Double-click on **TOM_CreateFabricDataset.sln** to open the project in
+Visual Studio 2022. You should see the project structure as shown in the
+following screenshot.
 
 <img src="./images/media/image50.png"
-style="width:2.92433in;height:2.36667in" />
+style="width:2.25in;height:1.81993in" />
 
-Xxxx
+Open the C# file named **AppSettings.cs** so you can update
+configuration values used by the application.
 
 <img src="./images/media/image51.png"
-style="width:5.14167in;height:1.66247in" />
+style="width:2.92433in;height:2.36667in" />
 
-Add Workspace Connection, SQL Endpoint, Lakehouse Name, Application ID
-and endure RedirectUrl is connect.
+You can see **AppSettings.cs** has several constant for configuration
+values that need to be filled in before running the application.
 
 <img src="./images/media/image52.png"
-style="width:7.49167in;height:1.41667in" />
+style="width:5.14167in;height:1.66247in" />
 
-Save changes
-
-### Run application
-
-Xxx
+Update **AppSettings.cs** by adding configuration values for
+**WorkspaceConnection**, **SQLEndpoint**, **TargetLakehouseName**,
+**ApplicationID**. You should also endure that **RedirectUrl** is
+correctly set to **http://localhost**.
 
 <img src="./images/media/image53.png"
-style="width:4.34167in;height:0.71498in" />
+style="width:7.49167in;height:1.41667in" />
 
-Xxx
+You can optionally update **AppSettings.cs** with your **UserId** and
+UserPassword if you want to avoid an interactive login each time you run
+the application. If you leave these values blank, you will be promoted
+to login each time you run the application.
+
+Save your changes to **AppSettings.cs**. You are now ready to run the
+application.
+
+### Run the application to create the DirectLake-mode Dataset
+
+Either press **{F5}** or select **Debug \> Start Debugging** to run the
+application.
 
 <img src="./images/media/image54.png"
-style="width:3.2in;height:2.67117in" />
+style="width:4.34167in;height:0.71498in" />
 
-Ssss
+When the application starts, you will be promoted to login. Log in using
+the same user account you have been using throughout this demo.
 
 <img src="./images/media/image55.png"
-style="width:3.02721in;height:2.10833in" />
+style="width:3.2in;height:2.67117in" />
 
-Sssss
+After successfully logging in, wait until the program completes. It
+might take as long as 20-30 seconds.
 
 <img src="./images/media/image56.png"
 style="width:5.65691in;height:0.56883in" />
 
-It should run without error
-
-When done, verify you can see new data model and use it to create new
-report
+The application should run and complete without any errors. When the
+application completes, navigate to the home page of the
+**DirectLakeDemo** workspace and verify that you can see new dataset
+named **DirectLake Sales Model**. Click on the named **DirectLake Sales
+Model** item to navigate to its details page.
 
 <img src="./images/media/image57.png"
-style="width:4.84463in;height:2.85833in" />
+style="width:3.58491in;height:2.11509in" />
 
-Xxxx
+On the **Details for DirectLake Sales Model** page, click **+ Create a
+report** to drop down this menu.
 
 <img src="./images/media/image58.png"
 style="width:5.13333in;height:2.3043in" />
 
-Xxxxx
+Select **Start from scratch** to create a new report so you can test out
+the new dataset.
 
 <img src="./images/media/image59.png"
 style="width:1.19167in;height:1.08292in" />
 
-Xx
+You should now be able to build a report using this DirectLake-mode
+dataset.
 
 <img src="./images/media/image60.png"
 style="width:4.8in;height:1.98621in" />
 
-Xx
+Examine the **Sales** table which contains three measures.
 
 <img src="./images/media/image61.png"
 style="width:1.825in;height:1.51694in" />
 
-Xx
+Examine the **Customer** table which contains several columns and a
+dimensional hierarchy.
 
 <img src="./images/media/image62.png"
 style="width:1.70629in;height:1.6in" />
 
-Xxx
+Examine the **Products** table which contains several columns and a
+dimensional hierarchy.
 
 <img src="./images/media/image63.png"
 style="width:1.97005in;height:1.425in" />
 
-Xxxxx
+Examine the **Calendar** table which contains several columns and a
+dimensional hierarchy.
 
 <img src="./images/media/image64.png"
 style="width:1.96737in;height:2.1in" />
 
-Xxxx
+You have now generated a DirectLake-mode dataset which can be used to
+create Power BI reports. Designing a report that looks good is left as
+an exercise for the reader.
