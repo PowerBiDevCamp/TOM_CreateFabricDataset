@@ -385,7 +385,7 @@ Once the code which creates the lakehouse tables completes, click the **Refresh*
 Once the refresh operation completes, you should be able to see four
 tables created for the Bronze layer.
 
-<img src="./images/media/image31.png"   style="width:40%" />
+<img src="./images/media/image31.png"   style="width:35%" />
 
 > At this point, you have created delta tables for the bronze layer which
 represents the raw data without any data cleansing or manipulation. In
