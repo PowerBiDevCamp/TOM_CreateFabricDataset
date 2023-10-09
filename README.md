@@ -481,7 +481,7 @@ Execute the code to create the **sales** table. After the code
 completes, you should see output which display the DataFrame schema and
 displays the top 20 rows of data from the **sales** table.
 
-<img src="./images/media/image34.png" style="width:70%" />
+<img src="./images/media/image34.png" style="width:55%" />
 
 Move down to the last cell in the notebook which generates the
 **calendar** table used for time-based analysis. If you examine the
