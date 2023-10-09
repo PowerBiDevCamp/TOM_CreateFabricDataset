@@ -71,12 +71,12 @@ and the SQL endpoint have the same name which is **SalesDataLakehouse**.
 Drop down the context menu for the SQL endpoint named
 **SalesDataLakehouse**.
 
-<img src="./images/media/image8.png"  style="width:60%" />
+<img src="./images/media/image8.png"  style="width:50%" />
 
 Select the **Copy SQL connection string** menu command from the context
 menu of the SQL endpoint.
 
-<img src="./images/media/image9.png"  style="width:70%" />
+<img src="./images/media/image9.png"  style="width:45%" />
 
 In the **Copy SQL connection string** dialog, click **Copy** to copy the
 connection string value to the Windows clipboard.
