@@ -203,7 +203,7 @@ of the CSV files as they're copied into the lakehouse file system.
 
 In the **Lakehouses** pane on the left, drop down the context menu for the **Files** folder.
 
-<img src="./images/media/image23.png" style="width:35%" />
+<img src="./images/media/image23.png" style="width:30%" />
 
 Select the **Refresh** command from the context menu of the **Files** folder.
 
@@ -229,44 +229,33 @@ Examine the following Python code from the second cell in the notebook
 which loads product data from **Products.csv** into a Spark DataFrame
 and then displays the DataFrame schema and rows of data.
 
-from pyspark.sql.types import StructType, StructField, StringType,
-LongType, FloatType
+``` python
+from pyspark.sql.types import StructType, StructField, StringType, LongType, FloatType
 
-\# creating a Spark DataFrame using schema defined using StructType and
-StructField
+# create schema for Spark DataFrame using  StructType and StructField 
+schema_products = StructType([
+    StructField("ProductId", LongType() ),
+    StructField("Product", StringType() ),
+    StructField("Category", StringType() )
+])
 
-schema_products = StructType(\[
-
-StructField("ProductId", LongType() ),
-
-StructField("Product", StringType() ),
-
-StructField("Category", StringType() )
-
-\])
-
+# use schema to load CSV data into new DataFrame
 df_products = (
-
-spark.read.format("csv")
-
-.option("header","true")
-
-.schema(schema_products)
-
-.load("Files/landing_zone_sales/Products.csv")
-
+    spark.read.format("csv")
+         .option("header","true")
+         .schema(schema_products)
+         .load("Files/landing_zone_sales/Products.csv")
 )
 
 df_products.printSchema()
-
 df_products.show()
+```
 
 Execute the code in the second cell to load product data into a Spark
 DataFrame. After the code completes, you should see output which
 displays the DataFrame schema and 10 rows of product data.
 
-<img src="./images/media/image26.png"
-style="width:1.875in;height:1.88291in" />
+<img src="./images/media/image26.png"  style="width:80%"   />
 
 Examine the Python code from the third cell in the notebook which loads
 customer data from **Customers.csv** into a Spark DataFrame and then
