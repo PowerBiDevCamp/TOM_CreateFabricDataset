@@ -682,7 +682,7 @@ the same user account you have been using throughout this demo.
 After successfully logging in, wait until the program completes. It
 might take as long as 20-30 seconds.
 
-<img src="./images/media/image56.png" style="width:90%" />>
+<img src="./images/media/image56.png" style="width:97%" />>
 
 The application should run and complete without any errors. When the
 application completes, navigate to the home page of the
