@@ -8,13 +8,13 @@ notebook named **CreateLakehouseTables.ipynb** with Python code which
 can be used to generate Lakehouse tables in delta format that will be
 used as the underlying datasource for the DirectLake dataset.
 
+> This document will take you through the steps required to set up and run through the demo. If you are just looking to understand how to write C# code using the Tabular Object Model (TOM), you should read **[CodeWalkthrough.md](CodeWalkthrough.md)**.
+
 Here are the high-level steps to set up and run through this demonstration:
 - Create a new workspace associated with Fabric capacity
 - Create a new Fabric lakehouse in the new workspace
 - Generate lakehouse tables using pre-provided Python code in Fabric notebook
 - Set up and run the custom C# application to automate the creation of a DirectLake datatset
-
-> This document will take you through the steps required to set up and run through the demo. If you are just looking to understand how to write C# code using the Tabular Object Model (TOM), you should read **[CodeWalkthrough.md](CodeWalkthrough.md)**.
 
 ## Create a new workspace associated with Fabric capacity
 
