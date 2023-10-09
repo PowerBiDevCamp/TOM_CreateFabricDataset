@@ -700,7 +700,7 @@ report** to drop down this menu.
 Select **Start from scratch** to create a new report so you can test out
 the new dataset.
 
-<img src="./images/media/image59.png"  style="width:70%" />
+<img src="./images/media/image59.png"  style="width:30%" />
 
 You should now be able to build a report using this DirectLake-mode
 dataset.
