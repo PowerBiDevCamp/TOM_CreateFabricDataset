@@ -296,103 +296,72 @@ Examine the Python code in the next cell which loads customer data from
 **Invoices.csv** into a Spark DataFrame and then displays the DataFrame
 schema and samples rows of data.
 
-from pyspark.sql.types import StructType, StructField, StringType,
-LongType, FloatType, DateType
+``` python
+from pyspark.sql.types import StructType, StructField, StringType, LongType, FloatType, DateType
 
-\# creating a Spark DataFrame using schema defined using StructType and
-StructField
-
-schema_invoices = StructType(\[
-
-StructField("InvoiceId", LongType() ),
-
-StructField("Date", DateType() ),
-
-StructField("TotalSalesAmount", FloatType() ),
-
-StructField("CustomerId", LongType() )
-
-\])
+# creating a Spark DataFrame using schema defined using StructType and StructField 
+schema_invoices = StructType([
+    StructField("InvoiceId", LongType() ),
+    StructField("Date", DateType() ),
+    StructField("TotalSalesAmount", FloatType() ),
+    StructField("CustomerId", LongType() )
+])
 
 df_invoices = (
-
-spark.read.format("csv")
-
-.option("header","true")
-
-.schema(schema_invoices)
-
-.option("dateFormat", "MM/dd/yyyy")
-
-.option("inferSchema", "true")
-
-.load("Files/landing_zone_sales/Invoices.csv")
-
+    spark.read.format("csv")
+         .option("header","true")
+         .schema(schema_invoices)
+         .option("dateFormat", "MM/dd/yyyy")
+         .option("inferSchema", "true") 
+         .load("Files/landing_zone_sales/Invoices.csv")
 )
 
 df_invoices.printSchema()
-
 df_invoices.show()
+```
 
 Execute the code to load invoice data into a Spark DataFrame. After the
 code completes, you should see output which display the DataFrame schema
 and displays the top 20 rows of data.
 
-<img src="./images/media/image28.png"
-style="width:2.35in;height:2.90681in" />
+<img src="./images/media/image28.png"   style="width:40%"   />
 
 Examine the Python code in the next cell which loads customer data from
 **InvoiceDetails.csv** into a Spark DataFrame and then displays the
 DataFrame schema and samples rows of data.
 
-from pyspark.sql.types import StructType, StructField, StringType,
-LongType, FloatType, DateType
+``` python
+from pyspark.sql.types import StructType, StructField, StringType, LongType, FloatType, DateType
 
-\# creating a Spark DataFrame using schema defined using StructType and
-StructField
-
-schema_invoice_details = StructType(\[
-
-StructField("Id", LongType() ),
-
-StructField("Quantity", LongType() ),
-
-StructField("SalesAmount", FloatType() ),
-
-StructField("InvoiceId", LongType() ),
-
-StructField("ProductId", LongType() )
-
-\])
+# creating a Spark DataFrame using schema defined using StructType and StructField 
+schema_invoice_details = StructType([
+    StructField("Id", LongType() ),
+    StructField("Quantity", LongType() ),
+    StructField("SalesAmount", FloatType() ),
+    StructField("InvoiceId", LongType() ),
+    StructField("ProductId", LongType() )
+])
 
 df_invoice_details = (
-
-spark.read.format("csv")
-
-.option("header","true")
-
-.schema(schema_invoice_details)
-
-.option("dateFormat", "MM/dd/yyyy")
-
-.option("inferSchema", "true")
-
-.load("Files/landing_zone_sales/InvoiceDetails.csv")
-
+    spark.read.format("csv")
+         .option("header","true")
+         .schema(schema_invoice_details)
+         .option("dateFormat", "MM/dd/yyyy")
+         .option("inferSchema", "true") 
+         .load("Files/landing_zone_sales/InvoiceDetails.csv")
 )
 
 df_invoice_details.printSchema()
-
 df_invoice_details.show()
+```
 
 Execute the code to load invoice detail data into a Spark DataFrame.
 After the code completes, you should see output which display the
 DataFrame schema and displays the top 20 rows of data.
 
-<img src="./images/media/image29.png"
-style="width:2.30062in;height:3.11667in" />
+<img src="./images/media/image29.png"   style="width:40%"   />
 
-You have now create four DataFrames. However, you have only loaded data
+> You have now create four DataFrames. However, you have only loaded data
 into memory. Nothing has been persisted. Now it’s time to actually
 persist your work by saving each of these four DataFrames to lakehouse
 tables using the delta format.
