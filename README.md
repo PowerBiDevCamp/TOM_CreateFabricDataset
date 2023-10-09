@@ -525,7 +525,7 @@ df_calendar_spark = (
        .drop('timestamp')
 )
 
-df_calendar_spark.write.mode("overwrite").option("overwriteSchema", "True").format("delta").save(f"Tables/calendar")
+df_calendar_spark.write.mode("overwrite").format("delta").save(f"Tables/calendar")
 df_calendar_spark.printSchema()
 df_calendar_spark.show()
 ```
