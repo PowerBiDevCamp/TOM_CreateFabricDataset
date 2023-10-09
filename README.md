@@ -196,8 +196,8 @@ button located on top just to the left of the cell.
 The first time you execute Python code from a Fabric notebook, it
 typically takes 10-20 seconds to start up and initialize the Spark pool
 which is used to process notebook code execution requests. When the
-Python code completes its execution, you should see a message for each
-of the CSV files that have been copied into the lakehouse file system.
+Python code completes its execution, you'll see a message for each
+of the CSV files as they're copied into the lakehouse file system.
 
 <img src="./images/media/image22.png"  style="width:90%" />
 
