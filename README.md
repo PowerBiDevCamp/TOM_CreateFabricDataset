@@ -489,71 +489,45 @@ code, you can see it uses the first and last dates from the **Date**
 column of the **sales** table to determine where to start and to end the
 **calendar** table.
 
-\# create silver layer calendar table
-
+``` python
+# create silver layer calendar table 
 import pandas as pd
-
 from datetime import datetime, timedelta, date
-
 import os
 
-from pyspark.sql.functions import to_date, year, month, dayofmonth,
-quarter, dayofweek
+from pyspark.sql.functions import to_date, year, month, dayofmonth, quarter, dayofweek
 
-first_sales_date = df_silver_sales.agg({"Date":
-"min"}).collect()\[0\]\[0\]
-
-last_sales_date = df_silver_sales.agg({"Date":
-"max"}).collect()\[0\]\[0\]
+first_sales_date = df_silver_sales.agg({"Date": "min"}).collect()[0][0]
+last_sales_date = df_silver_sales.agg({"Date": "max"}).collect()[0][0]
 
 start_date = date(first_sales_date.year, 1, 1)
-
 end_date = date(last_sales_date.year, 12, 31)
 
-os.environ\["PYARROW_IGNORE_TIMEZONE"\] = "1"
-
-df_calendar_ps = pd.date_range(start_date, end_date,
-freq='D').to_frame()
+os.environ["PYARROW_IGNORE_TIMEZONE"] = "1"
+df_calendar_ps = pd.date_range(start_date, end_date, freq='D').to_frame()
 
 df_calendar_spark = (
-
-spark.createDataFrame(df_calendar_ps)
-
-.withColumnRenamed("0", "timestamp")
-
-.withColumn("Date", to_date(col('timestamp')))
-
-.withColumn("DateKey", (year(col('timestamp'))\*10000) +
-
-(month(col('timestamp'))\*100) +
-
-(dayofmonth(col('timestamp'))) )
-
-.withColumn("Year", year(col('timestamp')) )
-
-.withColumn("Quarter", date_format(col('timestamp'),"yyyy-QQ") )
-
-.withColumn("Month", date_format(col('timestamp'),'yyyy-MM') )
-
-.withColumn("Day", dayofmonth(col('timestamp')) )
-
-.withColumn("MonthInYear", date_format(col('timestamp'),'MMMM') )
-
-.withColumn("MonthInYearSort", month(col('timestamp')) )
-
-.withColumn("DayOfWeek", date_format(col('timestamp'),'EEEE') )
-
-.withColumn("DayOfWeekSort", dayofweek(col('timestamp')))
-
-.drop('timestamp')
-
+     spark.createDataFrame(df_calendar_ps)
+       .withColumnRenamed("0", "timestamp")
+       .withColumn("Date", to_date(col('timestamp')))
+       .withColumn("DateKey", (year(col('timestamp'))*10000) + 
+                              (month(col('timestamp'))*100) + 
+                              (dayofmonth(col('timestamp')))   )
+       .withColumn("Year", year(col('timestamp'))  )
+       .withColumn("Quarter", date_format(col('timestamp'),"yyyy-QQ")  )
+       .withColumn("Month", date_format(col('timestamp'),'yyyy-MM')  )
+       .withColumn("Day", dayofmonth(col('timestamp'))  )
+       .withColumn("MonthInYear", date_format(col('timestamp'),'MMMM')  )
+       .withColumn("MonthInYearSort", month(col('timestamp'))  )
+       .withColumn("DayOfWeek", date_format(col('timestamp'),'EEEE')  )
+       .withColumn("DayOfWeekSort", dayofweek(col('timestamp')))
+       .drop('timestamp')
 )
 
-df_calendar_spark.write.mode("overwrite").format("delta").save(f"Tables/calendar")
-
+df_calendar_spark.write.mode("overwrite").option("overwriteSchema", "True").format("delta").save(f"Tables/calendar")
 df_calendar_spark.printSchema()
-
 df_calendar_spark.show()
+```
 
 Execute the code to create the **calendar** table. After the code
 completes, you should see output which display the DataFrame schema and
