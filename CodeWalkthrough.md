@@ -1,0 +1,173 @@
+# Creating DirectLake Datasets using Tabular Object Model (TOM)
+
+This 
+
+## Create a new workspace associated with Fabric capacity
+
+this project uses these assemblies
+
+- `Microsoft.AnalysisServices.NetCore.retail.amd64`
+- `Microsoft.AnalysisServices.AdomdClient.NetCore.retail.amd64'
+
+xxx
+
+``` csharp
+public static Database CreateDatabase(string DatabaseName) {
+
+  // ensure new workspace name not already in use
+  string newDatabaseName = server.Databases.GetNewName(DatabaseName);
+
+  // create new database object (aka Dataset) with CompatibilityLevel >= 1604
+  var database = new Database() {
+    Name = newDatabaseName,
+    ID = newDatabaseName,
+    CompatibilityLevel = 1604,
+    StorageEngineUsed = Microsoft.AnalysisServices.StorageEngineUsed.TabularMetadata,
+    Model = new Model() {
+      Name = DatabaseName + "-Model",
+      Description = "A Demo Tabular data model with 1604 compatibility level."
+    },
+  };
+
+  // add new dataset to target workspace
+  server.Databases.Add(database);
+  database.Update(Microsoft.AnalysisServices.UpdateOptions.ExpandFull);
+
+  // return database object to caller
+  return database;
+}
+```
+
+xxx
+
+``` csharp
+Database database = DatasetManager.CreateDatabase(DatabaseName);
+      
+Model model = database.Model;
+
+// create named expression used to create DirectLake tables
+model.Expressions.Add(new NamedExpression {
+  Name = "DatabaseQuery",
+  Kind = ExpressionKind.M,
+  Expression = Properties.Resources.DatabaseQuery_m
+                .Replace("{SQL_ENDPOINT}", AppSettings.SqlEndpoint)
+                .Replace("{LAKEHOUSE_NAME}", AppSettings.TargetLakehouseName)
+});
+
+model.SaveChanges();
+model.RequestRefresh(RefreshType.Full);
+
+// retrieve named expression used to create DirectLake tables
+NamedExpression sqlEndpoint = model.Expressions[0];
+```
+xxx
+
+``` csharp
+ // retrieve named expression used to create DirectLake tables
+ NamedExpression sqlEndpoint = model.Expressions[0];
+
+ // pass named expression to functions creating DirectLake tables
+ Table tableCustomers = CreateDirectLakeCustomersTable(sqlEndpoint);
+ Table tableProducts = CreateDirectLakeProductsTable(sqlEndpoint);
+ Table tableSales = CreateDirectLakeSalesTable(sqlEndpoint);
+ Table tableCalendar = CreateDirectLakeCalendarTable(sqlEndpoint);
+```
+xxx
+
+``` csharp
+private static Table CreateDirectLakeProductsTable(NamedExpression sqlEndpoint) {
+  
+  // create table in DirectLake mode
+  Table productsTable = new Table() {
+    Name = "Products",
+    Description = "Products table",
+    Partitions = {
+      new Partition() {
+        Name = "All Products",
+        Mode = ModeType.DirectLake,
+        Source = new EntityPartitionSource() {
+          EntityName = "products",
+          ExpressionSource = sqlEndpoint,
+          SchemaName = "dbo"
+        }
+      }
+    },
+    Columns = {
+      new DataColumn() { Name = "ProductId", DataType = DataType.Int64, SourceColumn = "ProductId", IsHidden = true, IsKey=true },
+      new DataColumn() { Name = "Product", DataType = DataType.String, SourceColumn = "Product" },
+      new DataColumn() { Name = "Category", DataType = DataType.String, SourceColumn = "Category" }
+    }
+  };
+
+  // add dimensional hierarchy
+  productsTable.Hierarchies.Add(
+    new Hierarchy() {
+      Name = "Product Categories",
+      Levels = {
+          new Level() { Ordinal=0, Name="Category", Column=productsTable.Columns["Category"]  },
+          new Level() { Ordinal=1, Name="Product", Column=productsTable.Columns["Product"] }
+        }
+    });
+
+  // return table object to caller
+  return productsTable;
+}
+
+```
+xxx
+``` csharp
+# add code here
+```
+private static Table CreateDirectLakeProductsTable(NamedExpression sqlEndpoint)
+
+``` csharp
+new Partition() {
+  Name = "All Products",
+  Mode = ModeType.DirectLake,
+  Source = new EntityPartitionSource() {
+    EntityName = "products",
+    ExpressionSource = sqlEndpoint,
+    SchemaName = "dbo"
+  }
+}
+```
+xxx
+
+``` csharp
+# add code here
+```
+xxx
+
+``` csharp
+# add code here
+```
+xxx
+
+``` csharp
+# add code here
+```
+xxx
+
+``` csharp
+# add code here
+```
+xxx
+
+``` csharp
+# add code here
+```
+xxx
+
+``` csharp
+# add code here
+```
+xxx
+
+``` csharp
+# add code here
+```
+xxx
+
+``` csharp
+# add code here
+```
