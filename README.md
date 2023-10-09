@@ -40,9 +40,7 @@ will need later when configuring the C# console application. Copy the
 **Workspace connection** string into the text file as shown in the
 following screenshot.
 
-<img src="./images/media/image3.png"
-style="width:4.28392in;height:1.53705in"
-alt="A screenshot of a computer Description automatically generated" />
+<img src="./images/media/image3.png" style="width:70%"  />
 
 ## Create a new Fabric lakehouse in the new workspace
 
