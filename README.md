@@ -59,7 +59,7 @@ Lakehouse and click **Create**.
 
 <img src="./images/media/image6.png"  style="width:40%" />
 
-Once you have created the Lakehouse, you will notice a message
+Once you have created the lakehouse, you will notice a message
 indicating a SQL Endpoint is being created.
 
 <img src="./images/media/image7.png" style="width:90%"  />
@@ -71,14 +71,12 @@ and the SQL endpoint have the same name which is **SalesDataLakehouse**.
 Drop down the context menu for the SQL endpoint named
 **SalesDataLakehouse**.
 
-<img src="./images/media/image8.png"
-style="width:3.08333in;height:1.88695in" />
+<img src="./images/media/image8.png"  style="width:60%" />
 
 Select the **Copy SQL connection string** menu command from the context
 menu of the SQL endpoint.
 
-<img src="./images/media/image9.png"
-style="width:3.96911in;height:2.66667in" />
+<img src="./images/media/image9.png"  style="width:70%" />
 
 In the **Copy SQL connection string** dialog, click **Copy** to copy the
 connection string value to the Windows clipboard.
