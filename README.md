@@ -255,60 +255,42 @@ Execute the code in the second cell to load product data into a Spark
 DataFrame. After the code completes, you should see output which
 displays the DataFrame schema and 10 rows of product data.
 
-<img src="./images/media/image26.png"  style="width:50%"   />
+<img src="./images/media/image26.png"  style="width:40%"   />
 
 Examine the Python code from the third cell in the notebook which loads
 customer data from **Customers.csv** into a Spark DataFrame and then
 displays the DataFrame schema and samples rows of data.
 
-from pyspark.sql.types import StructType, StructField, StringType,
-LongType, FloatType, DateType
+``` python
+from pyspark.sql.types import StructType, StructField, StringType, LongType, FloatType, DateType
 
-\# creating a Spark DataFrame using schema defined with StructType and
-StructField
-
-schema_customers = StructType(\[
-
-StructField("CustomerId", LongType() ),
-
-StructField("FirstName", StringType() ),
-
-StructField("LastName", StringType() ),
-
-StructField("Country", StringType() ),
-
-StructField("City", StringType() ),
-
-StructField("DOB", DateType() ),
-
-\])
+# creating a Spark DataFrame using schema defined with StructType and StructField 
+schema_customers = StructType([
+    StructField("CustomerId", LongType() ),
+    StructField("FirstName", StringType() ),
+    StructField("LastName", StringType() ),
+    StructField("Country", StringType() ),
+    StructField("City", StringType() ),
+    StructField("DOB", DateType() ),
+])
 
 df_customers = (
-
-spark.read.format("csv")
-
-.option("header","true")
-
-.schema(schema_customers)
-
-.option("dateFormat", "M/d/yyyy")
-
-.option("inferSchema", "true")
-
-.load("Files/landing_zone_sales/Customers.csv")
-
+    spark.read.format("csv")
+         .option("header","true")
+         .schema(schema_customers)
+         .option("dateFormat", "M/d/yyyy")
+         .option("inferSchema", "true")
+         .load("Files/landing_zone_sales/Customers.csv")
 )
 
 df_customers.printSchema()
-
 df_customers.show()
-
-Execute the code to load customer data into a Spark DataFrame. After the
+```
+Execute the Python code in this cell to load customer data into a Spark DataFrame. After the
 code completes, you should see output which display the DataFrame schema
 and displays the top 20 rows of data.
 
-<img src="./images/media/image27.png"
-style="width:2.00058in;height:2.03774in" />
+<img src="./images/media/image27.png"  style="width:40%"   />
 
 Examine the Python code in the next cell which loads customer data from
 **Invoices.csv** into a Spark DataFrame and then displays the DataFrame
