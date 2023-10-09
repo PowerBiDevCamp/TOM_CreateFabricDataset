@@ -169,8 +169,7 @@ notebook’s cell one by one from top to bottom. You will begin by
 executing Python code to copy four CSV files from this GitHub repository
 into file system of the lakehouse.
 
-Examine the following Python code in the top cell of the notebook
-which copies CSV files to the lakehouse file system.
+Examine the following Python code in the top notebook cell which copies CSV files to the lakehouse file system.
 
 ``` python
 import requests
