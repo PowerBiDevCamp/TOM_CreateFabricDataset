@@ -660,7 +660,7 @@ correctly set to **http://localhost**.
 
 <img src="./images/media/image53.png" style="width:97%" />
 
-You can optionally update **AppSettings.cs** with your **UserId** and
+> You can optionally update **AppSettings.cs** with your **UserId** and
 UserPassword if you want to avoid an interactive login each time you run
 the application. If you leave these values blank, you will be promoted
 to login each time you run the application.
