@@ -641,12 +641,12 @@ Double-click on **TOM_CreateFabricDataset.sln** to open the project in
 Visual Studio 2022. You should see the project structure as shown in the
 following screenshot.
 
-<img src="./images/media/image50.png"  style="width:40%" />
+<img src="./images/media/image50.png"  style="width:30%" />
 
 Open the C# file named **AppSettings.cs** so you can update
 configuration values used by the application.
 
-<img src="./images/media/image51.png"  style="width:50%" />
+<img src="./images/media/image51.png"  style="width:40%" />
 
 You can see **AppSettings.cs** has several constant for configuration
 values that need to be filled in before running the application.
