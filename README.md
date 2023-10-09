@@ -191,7 +191,7 @@ for csv_file in csv_files:
 Execute the code in the top notebook cell by clicking the **Execute**
 button located on top just to the left of the cell.
 
-<img src="./images/media/image21.png" style="width:90%" />
+<img src="./images/media/image21.png" style="width:97%" />
 
 The first time you execute Python code from a Fabric notebook, it
 typically takes 10-20 seconds to start up and initialize the Spark pool
@@ -199,7 +199,7 @@ which is used to process notebook code execution requests. When the
 Python code completes its execution, you'll see a message for each
 of the CSV files as they're copied into the lakehouse file system.
 
-<img src="./images/media/image22.png"  style="width:90%" />
+<img src="./images/media/image22.png"  style="width:97%" />
 
 In the **Lakehouses** pane on the left, drop down the context menu for the **Files** folder.
 
