@@ -5,7 +5,7 @@ This documents provides a code walkthrough of the C# console application porject
 The project references the following assembly which provides the API for the Tabular Object Model.
 - `Microsoft.AnalysisServices.NetCore.retail.amd64`
 
-Let's start by reviewing the code used to create a new dataset named **CreateDatabase**.
+Let's start by reviewing the code used to create a new Power BI dataset named **CreateDatabase**. Note that you must use a **CompatibilityLevel** of **1604** or higher to create DirectLake-mode tables.
 
 ``` csharp
 public static Database CreateDatabase(string DatabaseName) {
