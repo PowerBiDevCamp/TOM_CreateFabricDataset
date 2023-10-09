@@ -612,7 +612,7 @@ not **https**.
 
 Click **Register** to create the new application.
 
-<img src="./images/media/image46.png"  style="width:60%" />
+<img src="./images/media/image46.png"  style="width:50%" />
 
 Now that you have created the application, you need to record
 Application ID for use in C# console application. Copy the **Application
