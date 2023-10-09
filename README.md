@@ -324,7 +324,7 @@ Execute the code to load invoice data into a Spark DataFrame. After the
 code completes, you should see output which displays the DataFrame schema
 and displays the top 20 rows of data.
 
-<img src="./images/media/image28.png"   style="width:50%"   />
+<img src="./images/media/image28.png"   style="width:45%"   />
 
 Examine the Python code in the next cell which loads customer data from
 **InvoiceDetails.csv** into a Spark DataFrame and then displays the
@@ -359,7 +359,7 @@ Execute the code to load invoice detail data into a Spark DataFrame.
 After the code completes, you should see output which displays the
 DataFrame schema and displays the top 20 rows of data.
 
-<img src="./images/media/image29.png"   style="width:60%"   />
+<img src="./images/media/image29.png"   style="width:45%"   />
 
 > You have now create four DataFrames. However, you have only loaded data
 into memory. Nothing has been persisted. Now it’s time to actually
