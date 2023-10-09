@@ -672,17 +672,17 @@ application.
 
 Run the application in debug mode by pressing **{F5}** or selecting **Debug \> Start Debugging**.
 
-<img src="./images/media/image54.png"  style="width:70%" />
+<img src="./images/media/image54.png"  style="width:95%" />
 
 When the application starts, you will be promoted to login. Log in using
 the same user account you have been using throughout this demo.
 
-<img src="./images/media/image55.png" style="width:70%" />
+<img src="./images/media/image55.png" style="width:40%" />
 
 After successfully logging in, wait until the program completes. It
 might take as long as 20-30 seconds.
 
-<img src="./images/media/image56.png" style="width:70%" />>
+<img src="./images/media/image56.png" style="width:90%" />>
 
 The application should run and complete without any errors. When the
 application completes, navigate to the home page of the
