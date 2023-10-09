@@ -385,7 +385,7 @@ Once the code which creates the lakehouse tables completes, click the **Refresh*
 Once the refresh operation completes, you should be able to see four
 tables created for the Bronze layer.
 
-<img src="./images/media/image31.png"   style="width:35%" />
+<img src="./images/media/image31.png"   style="width:30%" />
 
 > At this point, you have created delta tables for the bronze layer which
 represents the raw data without any data cleansing or manipulation. In
@@ -413,7 +413,7 @@ Execute the code to create the **products** table. After the code
 completes, you should see output which display the DataFrame schema and
 displays the top 20 rows of data from the **products** table.
 
-<img src="./images/media/image32.png"  style="width:70%" />
+<img src="./images/media/image32.png"  style="width:50%" />
 
 Move to the next cell which contains the following code to load the
 table named **bronze_customers** and then saves it to a second delta
