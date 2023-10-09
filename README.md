@@ -324,7 +324,7 @@ Execute the code to load invoice data into a Spark DataFrame. After the
 code completes, you should see output which displays the DataFrame schema
 and displays the top 20 rows of data.
 
-<img src="./images/media/image28.png"   style="width:60%"   />
+<img src="./images/media/image28.png"   style="width:50%"   />
 
 Examine the Python code in the next cell which loads customer data from
 **InvoiceDetails.csv** into a Spark DataFrame and then displays the
