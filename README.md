@@ -203,11 +203,11 @@ of the CSV files as they're copied into the lakehouse file system.
 
 In the **Lakehouses** pane on the left, drop down the context menu for the **Files** folder.
 
-<img src="./images/media/image23.png" style="width:40%" />
+<img src="./images/media/image23.png" style="width:30%" />
 
 Select the **Refresh** command from the context menu of the **Files** folder.
 
-<img src="./images/media/image24.png" style="width:40%" />
+<img src="./images/media/image24.png" style="width:30%" />
 
 After the refresh operation completes, you should see a new child folder
 inside the **Files** folder named **landing_zone_sales**. If you select
@@ -216,7 +216,7 @@ to see four new CSV files named **Customers.csv**,
 **InvoiceDetails.csv**, **Invoices.csv** and **Products.csv** on the
 right.
 
-<img src="./images/media/image25.png" style="width:70%" />
+<img src="./images/media/image25.png" style="width:60%" />
 
 At this point, you have now copied the CSV files with the raw data into
 the lakehouse file system. Now you will use Spark to load this data into
