@@ -123,7 +123,7 @@ page.
 Select **Data Engineering** from the ***Fabric Experience Switcher***
 menu.
 
-<img src="./images/media/image14.png"  style="width:40%"  />
+<img src="./images/media/image14.png"  style="width:30%"  />
 
 Once you switch to the **Data Engineering** experience, locate and click
 on the **Import notebook** button.
