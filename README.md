@@ -62,7 +62,7 @@ Lakehouse and click **Create**.
 Once you have created the Lakehouse, you will notice a message
 indicating a SQL Endpoint is being created.
 
-<img src="./images/media/image7.png" style="width:60%"  />
+<img src="./images/media/image7.png" style="width:90%"  />
 
 Navigate back to the main page for the **DirectLakeDemo** workspace. In
 the list of workspace items, you should see a new item for the new **SQL
