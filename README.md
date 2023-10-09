@@ -452,47 +452,30 @@ This code performs several other transformations including renaming a
 column, generating an integer-based **DateKey** column, dropping
 unneeded columns and rearranging the order of columns.
 
-\# create silver layer sales table
+``` python
+# create silver layer sales table
+from pyspark.sql.functions import col, desc, concat, lit, floor, datediff
+from pyspark.sql.functions import date_format, to_date, current_date, year, month, dayofmonth
 
-from pyspark.sql.functions import col, desc, concat, lit, floor,
-datediff
-
-from pyspark.sql.functions import date_format, to_date, current_date,
-year, month, dayofmonth
-
-df_bronze_invoices =
-spark.read.format("delta").load("Tables/bronze_invoices")
-
-df_bronze_invoice_details =
-spark.read.format("delta").load("Tables/bronze_invoice_details")
+df_bronze_invoices = spark.read.format("delta").load("Tables/bronze_invoices")
+df_bronze_invoice_details = spark.read.format("delta").load("Tables/bronze_invoice_details")
 
 df_silver_sales = (
-
-df_bronze_invoice_details
-
-.join(df_bronze_invoices, df_bronze_invoice_details\['InvoiceId'\] ==
-df_bronze_invoices\['InvoiceId'\])
-
-.withColumnRenamed('SalesAmount', 'Sales')
-
-.withColumn("DateKey", (year(col('Date'))\*10000) +
-
-(month(col('Date'))\*100) +
-
-(dayofmonth(col('Date'))) )
-
-.drop('InvoiceId', 'TotalSalesAmount', 'InvoiceId', 'Id')
-
-.select('Date', "DateKey", "CustomerId", "ProductId", "Sales",
-"Quantity")
-
+    df_bronze_invoice_details
+            .join(df_bronze_invoices, df_bronze_invoice_details['InvoiceId'] == df_bronze_invoices['InvoiceId'])
+            .withColumnRenamed('SalesAmount', 'Sales')
+            .withColumn("DateKey", (year(col('Date'))*10000) + 
+                                   (month(col('Date'))*100) + 
+                                   (dayofmonth(col('Date')))   )
+            .drop('InvoiceId', 'TotalSalesAmount', 'InvoiceId', 'Id')
+            .select('Date', "DateKey", "CustomerId", "ProductId", "Sales", "Quantity")
 )
 
 df_silver_sales.write.mode("overwrite").format("delta").save(f"Tables/sales")
 
 df_silver_sales.printSchema()
-
 df_silver_sales.show()
+```
 
 Execute the code to create the **sales** table. After the code
 completes, you should see output which display the DataFrame schema and
