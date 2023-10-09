@@ -31,7 +31,7 @@ value to the Windows clipboard.
 
 <img src="./images/media/image2.png" style="width:80%" />
 
-As you can see, the **Workspace connection** string starts with **powerbi://** and ends with the workspace name.
+As you can see, the **Workspace connection** string starts with `powerbi://` and ends with the workspace name.
 
 `powerbi://api.powerbi.com/v1.0/myorg/DirectLakeDemo`
 
