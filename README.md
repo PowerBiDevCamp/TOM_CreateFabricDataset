@@ -695,12 +695,12 @@ Model** item to navigate to its details page.
 On the **Details for DirectLake Sales Model** page, click **+ Create a
 report** to drop down this menu.
 
-<img src="./images/media/image58.png"  style="width:70%" />
+<img src="./images/media/image58.png"  style="width:90%" />
 
 Select **Start from scratch** to create a new report so you can test out
 the new dataset.
 
-<img src="./images/media/image59.png"  style="width:30%" />
+<img src="./images/media/image59.png"  style="width:25%" />
 
 You should now be able to build a report using this DirectLake-mode
 dataset.
