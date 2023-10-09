@@ -86,7 +86,7 @@ connection string value to the Windows clipboard.
 The connection string starts with a unique value and end with
 `.datawarehouse.pbidedicated.windows.net`.
 
-5lcsgl3vll3edero2m4sge7gdu-nya26urqtgsejoagwutwdoogl4.datawarehouse.pbidedicated.windows.net
+`5lcsgl3vll3edero2m4sge7gdu-nya26urqtgsejoagwutwdoogl4.datawarehouse.pbidedicated.windows.net`
 
 Copy the values for the SQL endpoint and the name of the Lakehouse into
 the text file with configuration values as shown in the following
