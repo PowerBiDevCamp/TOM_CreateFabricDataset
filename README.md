@@ -147,12 +147,12 @@ associated with a lakehouse. Click the **Add** button in the
 
 In the **Add lakehouse** dialog, select **Existing lakehouse** and click **Add**.
 
-<img src="./images/media/image18.png" style="width:40%" />
+<img src="./images/media/image18.png" style="width:35%" />
 
 Select the lakehouse you created earlier named **SalesDataLakehouse**
 and click **Add**.
 
-<img src="./images/media/image19.png"  style="width:70%" />
+<img src="./images/media/image19.png"  style="width:85%" />
 
 Once you have associated the notebook with the lakehouse named
 **SalesDataLakehouse**, you should see the **Tables** folder and the
