@@ -1,34 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TOM_CreateFabricDataset {
+﻿namespace TOM_CreateFabricDataset {
 
   class AppSettings {
 
-    // public Azure AD application metadata for user authentication
+    // fill in this configuration data before running demo application
+    public const string WorkspaceConnection = "";
+    public const string SqlEndpoint = "";
+    public const string TargetLakehouseName = "";
     public const string ApplicationId = "";
     public const string RedirectUri = "http://localhost";
 
-    // fill these in to run without interactive login
-    public const string UserId = "user1@mydoamin.onmicrosoft.com";
+    // optionally add credentials to authenticate without requiring interactive login
+    public const string UserId = "";
     public const string UserPassword = "";
 
-    public const string WorkspaceConnection = "powerbi://api.powerbi.com/v1.0/myorg/workspace123";
-
-    public const string SqlEndpoint = "xyz" + 
-                                      ".datawarehouse.pbidedicated.windows.net";
-
-    public const string TargetLakehouseName = "lakehouse123";
-
-    // confidential Azure AD application metadata for service principal authentication
+    // confidential application metadata for service principal authentication not current used in this demo
     public const string TenantId = "";
     public const string ConfidentialApplicationId = "";
     public const string ConfidentialApplicationSecret = "";
     public const string TenantSpecificAuthority = "https://login.microsoftonline.com/" + TenantId;
 
   }
-
 }
+

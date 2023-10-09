@@ -28,6 +28,31 @@ namespace TOM_CreateFabricDataset.Services {
       ConnectToPowerBIAsUser();
     }
 
+    public static Database CreateDatabase(string DatabaseName) {
+
+      // ensure new workspace name not already in use
+      string newDatabaseName = server.Databases.GetNewName(DatabaseName);
+
+      // create new database object (aka Dataset) with CompatibilityLevel >= 1604
+      var database = new Database() {
+        Name = newDatabaseName,
+        ID = newDatabaseName,
+        CompatibilityLevel = 1604,
+        StorageEngineUsed = Microsoft.AnalysisServices.StorageEngineUsed.TabularMetadata,
+        Model = new Model() {
+          Name = DatabaseName + "-Model",
+          Description = "A Demo Tabular data model with 1604 compatibility level."
+        },
+      };
+
+      // add new dataset to target workspace
+      server.Databases.Add(database);
+      database.Update(Microsoft.AnalysisServices.UpdateOptions.ExpandFull);
+
+      // return database object to caller
+      return database;
+    }
+
     public static void CreateDirectLakeSalesModel(string DatabaseName) {
 
       Database database = DatasetManager.CreateDatabase(DatabaseName);
@@ -271,43 +296,5 @@ namespace TOM_CreateFabricDataset.Services {
       }
     }
     
-    public static Database CreateDatabase(string DatabaseName) {
-
-      string newDatabaseName = server.Databases.GetNewName(DatabaseName);
-
-      var database = new Database() {
-        Name = newDatabaseName,
-        ID = newDatabaseName,
-
-        CompatibilityLevel = 1604,
-        StorageEngineUsed = Microsoft.AnalysisServices.StorageEngineUsed.TabularMetadata,
-        Model = new Model() {
-          Name = DatabaseName + "-Model",
-          Description = "A Demo Tabular data model with 1604 compatibility level."
-        },
-
-      };
-
-      server.Databases.Add(database);
-      database.Update(Microsoft.AnalysisServices.UpdateOptions.ExpandFull);
-
-      return database;
-    }
-
-    public static Database CopyDatabase(string sourceDatabaseName, string DatabaseName) {
-
-      Database sourceDatabase = server.Databases.GetByName(sourceDatabaseName);
-
-      string newDatabaseName = server.Databases.GetNewName(DatabaseName);
-      Database targetDatabase = CreateDatabase(newDatabaseName);
-      sourceDatabase.Model.CopyTo(targetDatabase.Model);
-      targetDatabase.Model.SaveChanges();
-
-      targetDatabase.Model.RequestRefresh(RefreshType.Full);
-      targetDatabase.Model.SaveChanges();
-
-      return targetDatabase;
-    }
-
   }
 }
