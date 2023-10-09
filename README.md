@@ -686,7 +686,7 @@ might take as long as 20-30 seconds.
 
 The application should run and complete without any errors. When the
 application completes, navigate to the home page of the
-**DirectLakeDemo** workspace and verify that you can see new dataset
+**DirectLakeDemo** workspace and refresh the workspace page with the list of items. Verify that you can see new dataset
 named **DirectLake Sales Model**. Click on the named **DirectLake Sales
 Model** item to navigate to its details page.
 
