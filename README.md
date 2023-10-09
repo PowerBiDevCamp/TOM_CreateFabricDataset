@@ -81,7 +81,7 @@ menu of the SQL endpoint.
 In the **Copy SQL connection string** dialog, click **Copy** to copy the
 connection string value to the Windows clipboard.
 
-<img src="./images/media/image10.png"  style="width:50%" />
+<img src="./images/media/image10.png"  style="width:40%" />
 
 The connection string starts with a unique value and end with
 `.datawarehouse.pbidedicated.windows.net`.
