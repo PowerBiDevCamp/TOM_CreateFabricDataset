@@ -462,7 +462,8 @@ df_bronze_invoice_details = spark.read.format("delta").load("Tables/bronze_invoi
 
 df_silver_sales = (
     df_bronze_invoice_details
-            .join(df_bronze_invoices, df_bronze_invoice_details['InvoiceId'] == df_bronze_invoices['InvoiceId'])
+            .join(df_bronze_invoices, 
+                  df_bronze_invoice_details['InvoiceId'] == df_bronze_invoices['InvoiceId'])
             .withColumnRenamed('SalesAmount', 'Sales')
             .withColumn("DateKey", (year(col('Date'))*10000) + 
                                    (month(col('Date'))*100) + 
