@@ -601,7 +601,7 @@ Give the new application a name such as **Create DirectLake Dataset Demo
 App** and leave the Supported account types setting with the default
 selection of **Accounts in this organizational directory only**.
 
-<img src="./images/media/image44.png"  style="width:90%" />
+<img src="./images/media/image44.png"  style="width:80%" />
 
 Move down to the **Redirect URI** section. Select **Public
 client/native** application in the drop down menu and enter a redirect
