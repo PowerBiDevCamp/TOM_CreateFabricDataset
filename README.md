@@ -562,11 +562,11 @@ Inspect the data in the **customers** table.
 
 Inspect the data in the **sales** table.
 
-<img src="./images/media/image40.png"  style="width:70%" />
+<img src="./images/media/image40.png"  style="width:80%" />
 
 Inspect the data in the **sales** table.
 
-<img src="./images/media/image41.png"  style="width:70%" />
+<img src="./images/media/image41.png"  style="width:90%" />
 
 Now all Lakehouse tables have been created and you can move on to the
 next step where you create the DirectLake dataset using the custom
