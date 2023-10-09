@@ -646,10 +646,10 @@ following screenshot.
 Open the C# file named **AppSettings.cs** so you can update
 configuration values used by the application.
 
-<img src="./images/media/image51.png"  style="width:40%" />
+<img src="./images/media/image51.png"  style="width:36%" />
 
-You can see **AppSettings.cs** has several constant for configuration
-values that need to be filled in before running the application.
+You can see **AppSettings.cs** has several constants for configuration
+values that you need to update before running the application.
 
 <img src="./images/media/image52.png"  style="width:90%" />
 
