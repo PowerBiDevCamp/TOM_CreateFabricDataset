@@ -95,8 +95,7 @@ private static Table CreateDirectLakeProductsTable(NamedExpression sqlEndpoint) 
       }
     },
     Columns = {
-      new DataColumn() { Name = "ProductId", DataType = DataType.Int64, SourceColumn = "ProductId", 
-                         IsHidden = true, IsKey=true },
+      new DataColumn() { Name = "ProductId", DataType = DataType.Int64, SourceColumn = "ProductId", IsHidden = true },
       new DataColumn() { Name = "Product", DataType = DataType.String, SourceColumn = "Product" },
       new DataColumn() { Name = "Category", DataType = DataType.String, SourceColumn = "Category" }
     }
