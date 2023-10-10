@@ -171,7 +171,7 @@ Now you will execute the Python code from this workbook to populate the
 lakehouse with data. You will execute the Python code in each of the
 notebook’s cell one by one from top to bottom. You will begin by
 executing Python code to copy four CSV files from this GitHub repository
-into file system of the lakehouse.
+into the file system of the lakehouse.
 
 Examine the following Python code in the top notebook cell which copies CSV files to the lakehouse file system.
 
