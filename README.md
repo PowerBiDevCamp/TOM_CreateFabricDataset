@@ -568,7 +568,7 @@ Inspect the data in the **sales** table.
 
 <img src="./images/media/image40.png"  style="width:80%" />
 
-Inspect the data in the **sales** table.
+Inspect the data in the **calendar** table.
 
 <img src="./images/media/image41.png"  style="width:90%" />
 
