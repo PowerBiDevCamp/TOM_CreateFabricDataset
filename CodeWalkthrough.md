@@ -132,7 +132,7 @@ new Partition() {
   }
 }
 ```
-Now you can review the entire implementation of the **CreateDirectLakeSalesModel** method which contains the top-level logic to create a DirectLake-mode dataset for Power BI.
+Now you can review the entire implementation of the **CreateDirectLakeSalesModel** method which contains the top-level logic to create a complete DirectLake-mode dataset for Power BI.
 
 ``` csharp
 public static void CreateDirectLakeSalesModel(string DatabaseName) {
