@@ -402,7 +402,7 @@ Move to the next cell in the notebook which contains the following code
 to load the table named **bronze_products** and then saves the data to a
 second delta table named **products**. Note this Python code is simple
 in that it does not perform any transformations. However, it shows the
-basic pattern of loading a table into a DataFrame and then saving itback as
+basic pattern of loading a table into a DataFrame and then saving it back into storage as
 a delta table with another name.
 
 ``` python
