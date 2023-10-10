@@ -730,7 +730,7 @@ dimensional hierarchy.
 
 <img src="./images/media/image64.png" style="width:30%" />
 
->You have now generated a DirectLake-mode dataset which can be used to
+You have now generated a DirectLake-mode dataset which can be used to
 create Power BI reports. This is the end of the demonstration. 
 Designing a report that looks good is left as an exercise for the reader.
 
