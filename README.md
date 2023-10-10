@@ -679,7 +679,7 @@ Run the application in debug mode by pressing **{F5}** or selecting **Debug \> S
 <img src="./images/media/image54.png"  style="width:75%" />
 
 When the application starts, you will be promoted to login. Log in using
-the same user account you have been using throughout this demo.
+the same user account you have been using throughout this demo to create the workspace and lakehouse.
 
 <img src="./images/media/image55.png" style="width:30%" />
 
