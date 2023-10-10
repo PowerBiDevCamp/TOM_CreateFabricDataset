@@ -625,7 +625,7 @@ center.
 
 <img src="./images/media/image47.png"  style="width:97%" />
 
-Add the Application ID and Redirect URI of <http://localhost> into the
+Add the Application ID and Redirect URI of **http://localhost** into the
 text file with configuration data.
 
 <img src="./images/media/image48.png"  style="width:70%" />
