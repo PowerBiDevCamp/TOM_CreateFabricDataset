@@ -54,7 +54,7 @@ model.RequestRefresh(RefreshType.Full);
 // retrieve named expression used to create DirectLake tables
 NamedExpression sqlEndpoint = model.Expressions[0];
 ```
-xxx
+The following code listing shows what the actual M expresssion looks like. This M code calls the **Sql.Database** function passing the connection string for the SQL endpoint of the lakehouse and the name of the lakehouse.   
 ``` m
 let
     database = Sql.Database("your_lakehouse_id.datawarehouse.pbidedicated.windows.net", "lakehouse_name")
@@ -62,7 +62,7 @@ in
     database
 
 ```
-xxxx
+Once this **NamedExpression ** has been created, it can be passed as a parameter to each of the functions that creates a DirectLake-mode table.
 
 ``` csharp
  // retrieve named expression used to create DirectLake tables
