@@ -421,7 +421,7 @@ displays the top 20 rows of data from the **products** table.
 
 Move to the next cell which contains the following code to load the
 table named **bronze_customers** and then saves it to a second delta
-table named **customers**. This code written to create the **customers**
+table named **customers**. This code which has been written to create the **customers**
 table is a bit more involved because it creates two new columns named
 **Customer** and **Age** and it drops two columns named **FirstName**
 and **LastName**.
