@@ -62,7 +62,7 @@ in
     database
 
 ```
-Once this **NamedExpression ** has been created, it can be passed as a parameter to each of the functions that creates a DirectLake-mode table.
+Once this **NamedExpression** has been created, it can be passed as a parameter to each of the functions that creates a DirectLake-mode table.
 
 ``` csharp
  // retrieve named expression used to create DirectLake tables
