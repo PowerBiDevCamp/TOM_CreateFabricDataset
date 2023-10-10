@@ -659,7 +659,7 @@ values that you need to update before running the application.
 
 Update **AppSettings.cs** by adding configuration values for
 **WorkspaceConnection**, **SQLEndpoint**, **TargetLakehouseName**,
-**ApplicationID**. You should also endure that **RedirectUrl** is
+**ApplicationID**. You should also make sure that **RedirectUrl** is
 correctly set to **http://localhost**.
 
 <img src="./images/media/image53.png" style="width:97%" />
