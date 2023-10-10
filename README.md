@@ -4,7 +4,7 @@ This GitHub repository contains a sample C# console application named
 **TOM_CreateFabricDataset** which demonstrates how to automate the
 creation of a DirectLake-mode dataset for Power BI using the Tabular
 Object Model (TOM). Inside this repository, there is also a Fabric
-notebook named **CreateLakehouseTables.ipynb** with Python code which
+notebook named **[CreateLakehouseTables.ipynb](CreateLakehouseTables.ipynb)** with Python code which
 can be used to generate Lakehouse tables in delta format that will be
 used as the underlying datasource for the DirectLake dataset.
 
