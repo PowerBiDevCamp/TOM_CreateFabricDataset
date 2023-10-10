@@ -31,7 +31,7 @@ menu command to display the **Workspace settings** pane.
 In **Workspace settings**, select the **Premium** tab in the left
 navigation and scroll down to locate the **Workspace connection**
 setting. Click the **Copy** button to copy the **Workspace connection**
-value to the Windows clipboard.
+string to the Windows clipboard.
 
 <img src="./images/media/image2.png" style="width:80%" />
 
