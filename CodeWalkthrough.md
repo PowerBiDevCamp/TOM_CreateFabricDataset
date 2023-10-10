@@ -116,12 +116,11 @@ private static Table CreateDirectLakeProductsTable(NamedExpression sqlEndpoint) 
 }
 
 ```
-xxx
+As you can see, the **CreateDirectLakeProductsTable** method accepts a **NamedExpression** parameter named **SqlEndpoint**. 
 ``` csharp
-# add code here
-```
 private static Table CreateDirectLakeProductsTable(NamedExpression sqlEndpoint)
-
+```
+Below in the implementation of the **CreateDirectLakeProductsTable** method, there is code which creates a new **Partition** object with a **Mode** property setting of **ModeType.DirectLake**. Also, the **Source** property of th new **Partition** object is initilized with a new **EntityPartitionSource** object.
 ``` csharp
 new Partition() {
   Name = "All Products",
