@@ -87,7 +87,7 @@ connection string value to the Windows clipboard.
 
 <img src="./images/media/image10.png"  style="width:40%" />
 
-The connection string starts with a unique value and end with
+The connection string starts with a lakehouse identifier and ends with
 **`.datawarehouse.pbidedicated.windows.net`**.
 
 **`5lcsgl3vll3edero2m4sge7gdu-nya26urqtgsejoagwutwdoogl4.datawarehouse.pbidedicated.windows.net`**
