@@ -731,3 +731,5 @@ dimensional hierarchy.
 > You have now generated a DirectLake-mode dataset which can be used to
 create Power BI reports. This is the end of the demonstration. 
 Designing a report that looks good is left as an exercise for the reader.
+
+> While this document examined the steps required to set up and run  the demo, it did not really explain how the C# code created a Direct-mode dataset using the Tabular Object Model. If you want to understand how to write C# code to create a Direct-mode dataset, you should read **[CodeWalkthrough.md](CodeWalkthrough.md)**.
