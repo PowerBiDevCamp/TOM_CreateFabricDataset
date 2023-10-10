@@ -135,40 +135,68 @@ new Partition() {
 xxx
 
 ``` csharp
-# add code here
+public static void CreateDirectLakeSalesModel(string DatabaseName) {
+
+  Database database = DatasetManager.CreateDatabase(DatabaseName);
+      
+  Model model = database.Model;
+
+  // create get named expression used to create DirectLake tables
+  model.Expressions.Add(new NamedExpression {
+    Name = "DatabaseQuery",
+    Kind = ExpressionKind.M,
+    Expression = Properties.Resources.DatabaseQuery_m
+                  .Replace("{SQL_ENDPOINT}", AppSettings.SqlEndpoint)
+                  .Replace("{LAKEHOUSE_NAME}", AppSettings.TargetLakehouseName)
+  });
+
+  model.SaveChanges();
+  model.RequestRefresh(RefreshType.Full);
+
+  // retrieve named expression used to create DirectLake tables
+  NamedExpression sqlEndpoint = model.Expressions[0];
+
+  // pass named expression to functions creating DirectLake tables
+  Table tableCustomers = CreateDirectLakeCustomersTable(sqlEndpoint);
+  Table tableProducts = CreateDirectLakeProductsTable(sqlEndpoint);
+  Table tableSales = CreateDirectLakeSalesTable(sqlEndpoint);
+  Table tableCalendar = CreateDirectLakeCalendarTable(sqlEndpoint);
+
+  // add DirectLake tables to data model
+  model.Tables.Add(tableCustomers);
+  model.Tables.Add(tableProducts);
+  model.Tables.Add(tableSales);
+  model.Tables.Add(tableCalendar);
+
+  // create table relationship
+  model.Relationships.Add(new SingleColumnRelationship {
+    Name = "Customers to Sales",
+    ToColumn = tableCustomers.Columns["CustomerId"],
+    ToCardinality = RelationshipEndCardinality.One,
+    FromColumn = tableSales.Columns["CustomerId"],
+    FromCardinality = RelationshipEndCardinality.Many
+  });
+
+  model.Relationships.Add(new SingleColumnRelationship {
+    Name = "Products to Sales",
+    ToColumn = tableProducts.Columns["ProductId"],
+    ToCardinality = RelationshipEndCardinality.One,
+    FromColumn = tableSales.Columns["ProductId"],
+    FromCardinality = RelationshipEndCardinality.Many
+  });
+
+  model.Relationships.Add(new SingleColumnRelationship {
+    Name = "Calendar to Sales",
+    ToColumn = tableCalendar.Columns["DateKey"],
+    ToCardinality = RelationshipEndCardinality.One,
+    FromColumn = tableSales.Columns["DateKey"],
+    FromCardinality = RelationshipEndCardinality.Many
+  });
+
+  model.SaveChanges();
+  model.RequestRefresh(RefreshType.Full);
+  model.SaveChanges();
+
+}
 ```
 xxx
-
-``` csharp
-# add code here
-```
-xxx
-
-``` csharp
-# add code here
-```
-xxx
-
-``` csharp
-# add code here
-```
-xxx
-
-``` csharp
-# add code here
-```
-xxx
-
-``` csharp
-# add code here
-```
-xxx
-
-``` csharp
-# add code here
-```
-xxx
-
-``` csharp
-# add code here
-```
