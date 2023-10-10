@@ -74,7 +74,7 @@ Once this **NamedExpression** has been created, it can be passed as a parameter 
  Table tableSales = CreateDirectLakeSalesTable(sqlEndpoint);
  Table tableCalendar = CreateDirectLakeCalendarTable(sqlEndpoint);
 ```
-Here is the listing for the method  
+Examine the C# code for the **CreateDirectLakeProductsTable** method which create the **Products** table.  
 
 ``` csharp
 private static Table CreateDirectLakeProductsTable(NamedExpression sqlEndpoint) {
