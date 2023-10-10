@@ -62,19 +62,19 @@ in
     database
 
 ```
-Once this **NamedExpression** has been created, it can be passed as a parameter to each of the functions that creates a DirectLake-mode table.
+Once this **NamedExpression** has been created, it can be passed as a parameter to each of the methods in the **DatasetManagwer** class that creates a DirectLake-mode table.
 
 ``` csharp
  // retrieve named expression used to create DirectLake tables
  NamedExpression sqlEndpoint = model.Expressions[0];
 
  // pass named expression to functions creating DirectLake tables
- Table tableCustomers = CreateDirectLakeCustomersTable(sqlEndpoint);
  Table tableProducts = CreateDirectLakeProductsTable(sqlEndpoint);
+ Table tableCustomers = CreateDirectLakeCustomersTable(sqlEndpoint);
  Table tableSales = CreateDirectLakeSalesTable(sqlEndpoint);
  Table tableCalendar = CreateDirectLakeCalendarTable(sqlEndpoint);
 ```
-xxx
+Here is the listing for the method  
 
 ``` csharp
 private static Table CreateDirectLakeProductsTable(NamedExpression sqlEndpoint) {
