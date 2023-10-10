@@ -16,6 +16,8 @@ Here are the high-level steps to set up and run through this demonstration:
 - Generate lakehouse tables using pre-provided Python code in Fabric notebook
 - Set up and run the custom C# application to automate the creation of a DirectLake datatset
 
+This document will now examine each of these steps in more detail.
+
 ## Create a new workspace associated with Fabric capacity
 
 Create a new workspace with a name such as **DirectLakeDemo**. Make sure
