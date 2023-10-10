@@ -396,7 +396,7 @@ represents the raw data without any data cleansing or manipulation. In
 the next step, you will perform transformations on the data in the
 bronze layer tables to create the silver layer tables.
 
-### Reshape and Transform Data in Bronze Layer Tables to Create Silver Layer Tables
+### Reshape and transform data in bronze layer tables to create silver layer tables
 
 Move to the next cell in the notebook which contains the following code
 to load the table named **bronze_products** and then saves the data to a
