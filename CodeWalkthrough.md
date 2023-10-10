@@ -199,4 +199,4 @@ public static void CreateDirectLakeSalesModel(string DatabaseName) {
 
 }
 ```
-You can work through the steps in **[README.txt](README.txt)** if you want to walk through the steps to set up and run the demo.
+If you want to walk through the steps to set up and run the demo, you should look at **[README.txt](README.txt)**.
