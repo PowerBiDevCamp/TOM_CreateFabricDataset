@@ -630,7 +630,7 @@ text file with configuration data.
 
 <img src="./images/media/image48.png"  style="width:70%" />
 
-> Now you have all the configuration data you need to set up and run the
+> Now you have recorded all the configuration data you need to set up and run the
 C# console application to create the DirectLake-mode dataset.
 
 ### Open C# console application project in Visual Studio 2022
