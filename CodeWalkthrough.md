@@ -120,7 +120,7 @@ As you can see, the **CreateDirectLakeProductsTable** method accepts a **NamedEx
 ``` csharp
 private static Table CreateDirectLakeProductsTable(NamedExpression sqlEndpoint)
 ```
-Below in the implementation of the **CreateDirectLakeProductsTable** method, there is code which creates a new **Partition** object with a **Mode** property setting of **ModeType.DirectLake**. Also, the **Source** property of th new **Partition** object is initilized with a new **EntityPartitionSource** object.
+Below in the implementation of the **CreateDirectLakeProductsTable** method, there is code which creates a new **Partition** object with a **Mode** property setting of **ModeType.DirectLake**. One more requirement in creating the new **Partition** object is initilized the **Source** property with a new **EntityPartitionSource** object. The **EntityPartitionSource** object has an **EntityName** with the lakehouse table name and an **ExpressionSource** property with is intialized with the **SqlEndpoint** parameter. 
 ``` csharp
 new Partition() {
   Name = "All Products",
