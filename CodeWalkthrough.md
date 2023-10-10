@@ -2,7 +2,7 @@
 
 This documents provides a code walkthrough of the C# console application porject named **TOM_CreateFabricDataset** to build your understanding of how to use the Tabular Object Model (TOM) to automate the creation of a DirectLake-mode dataset for Power BI.
 
-This .NET project references the **Microsoft.AnalysisServices.NetCore.retail.amd64**** assembly which provides public class for the Tabular Object Model in the **Microsoft.AnalysisServices.Tabular** namespace.s  
+This .NET project references the **Microsoft.AnalysisServices.NetCore.retail.amd64** assembly which provides public class for the Tabular Object Model in the **Microsoft.AnalysisServices.Tabular** namespace.s  
 
 Let's start by reviewing the code used to create a new Power BI dataset named **CreateDatabase**. Note that you must use a **CompatibilityLevel** of **1604** or higher to create DirectLake-mode tables.
 
