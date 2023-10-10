@@ -116,7 +116,7 @@ private static Table CreateDirectLakeProductsTable(NamedExpression sqlEndpoint) 
 }
 
 ```
-As you can see, the **CreateDirectLakeProductsTable** method accepts a **NamedExpression** parameter named **SqlEndpoint**. 
+As you can see, the **CreateDirectLakeProductsTable** method accepts a parameter of type **NamedExpression** named **SqlEndpoint**. 
 ``` csharp
 private static Table CreateDirectLakeProductsTable(NamedExpression sqlEndpoint)
 ```
