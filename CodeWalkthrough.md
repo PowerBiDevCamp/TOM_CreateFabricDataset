@@ -32,7 +32,7 @@ public static Database CreateDatabase(string DatabaseName) {
   return database;
 }
 ```
-Once you have created a new **Database** object for a Power BI dataset, you can then access the data model using the Model property. The first step in enabling the creation of DirectLake-mode tables is adding a **NamedExpression** object used to connect to the SQL endpoint of the Fabric lakehouse. Examine the following code which creates a new a **NamedExpression** object with a name of **DatabaseQuery**.
+Once you have created a new **Database** object for a Power BI dataset, you can then access thedataset (i.e data model) using the **Model** property. The first step in enabling the creation of DirectLake-mode tables is adding a **NamedExpression** object used to connect to the SQL endpoint of the Fabric lakehouse. Examine the following code which creates a new a **NamedExpression** object with a name of **DatabaseQuery**.
 
 ``` csharp
 Database database = DatasetManager.CreateDatabase(DatabaseName);
