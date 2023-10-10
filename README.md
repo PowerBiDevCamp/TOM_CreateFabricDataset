@@ -261,7 +261,7 @@ displays the DataFrame schema and 10 rows of product data.
 
 <img src="./images/media/image26.png"  style="width:40%"   />
 
-Examine the Python code from the third cell in the notebook which loads
+Examine the Python code inside the third cell in the notebook which loads
 customer data from **Customers.csv** into a Spark DataFrame and then
 displays the DataFrame schema and samples rows of data.
 
