@@ -227,7 +227,7 @@ the lakehouse file system. Now you will use Spark to load this data into
 memory as DataFrames where the data can be manipulated and saved as
 lakehouse tables.
 
-### Execute code in notebook to load CSV files into Spark DataFrames for the bronze layer
+### Execute Python code to load CSV files into Spark DataFrames for the bronze layer
 
 Examine the following Python code from the second cell in the notebook
 which loads product data from **Products.csv** into a Spark DataFrame
