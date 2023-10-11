@@ -376,39 +376,37 @@ Examine the Python code in the next cell which loads customer data from
 DataFrame schema and samples rows of data.
 
 ``` python
-# create invoices table for silver zone
-from pyspark.sql.types import StructType, StructField, LongType, FloatType, DateType
+# create invoice_details table for silver zone
+from pyspark.sql.types import StructType, StructField, LongType, FloatType
 
-# create schema for invoices table using StructType and StructField 
-schema_invoices = StructType([
+# create schema for invoice_details table using StructType and StructField 
+schema_invoice_details = StructType([
+    StructField("Id", LongType() ),
+    StructField("Quantity", LongType() ),
+    StructField("SalesAmount", FloatType() ),
     StructField("InvoiceId", LongType() ),
-    StructField("Date", DateType() ),
-    StructField("TotalSalesAmount", FloatType() ),
-    StructField("CustomerId", LongType() )
+    StructField("ProductId", LongType() )
 ])
 
-# Load CSV file into Spark DataFrame with schema and support to infer dates
-df_invoices = (
+# Load CSV file into Spark DataFrame and validate data using schema
+df_invoice_details = (
     spark.read.format("csv")
          .option("header","true")
-         .schema(schema_invoices)
-         .option("dateFormat", "MM/dd/yyyy")
-         .option("inferSchema", "true") 
-         .load("Files/bronze_landing_zone/Invoices.csv")
+         .schema(schema_invoice_details)
+         .load("Files/bronze_landing_zone/InvoiceDetails.csv")
 )
 
 # save DataFrame as lakehouse table in Delta format
-( df_invoices.write
-             .mode("overwrite")
-             .option("overwriteSchema", "True")
-             .format("delta")
-             .save("Tables/silver_invoices")
+( df_invoice_details.write
+                    .mode("overwrite")
+                    .option("overwriteSchema", "True")
+                    .format("delta")
+                    .save("Tables/silver_invoice_details")
 )
 
 # display table schema and data
-df_invoices.printSchema()
-df_invoices.show()
-
+df_invoice_details.printSchema()
+df_invoice_details.show()
 ```
 
 Execute the code to load invoice detail data into a Spark DataFrame.
