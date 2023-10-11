@@ -174,9 +174,7 @@ empty.
 
 <img src="./images/media/image20.png"  style="width:40%" />
 
-### Copy CSV files to lakehouse to load bronze zone data
-
-Copy CSV files with bronze zone data into the lakehouse file system
+### Copy CSV files into the lakehouse file system to load bronze zone data
 
 Now you will execute the Python code from this workbook to populate the
 lakehouse with data. You will execute the Python code in each of the
