@@ -101,16 +101,13 @@ screenshot.
 Save the text file with these use these configuration values for later
 use when setting up the C# console application.
 
-> In the next step you will use a Fabric notepad with pre-provided Python code to
-populate the **SalesDataLakehouse** with data using a medallion architecture in 
-which the data is stored in data zones which typcially include bronze, silver and gold. 
+> In the next step you will import a Fabric notebook with pre-provided Python code. 
+You will execute Python code in this notebook to populate the **SalesDataLakehouse** 
+with data using a medallion architecture in 
+which the data is stored in three data zones which are bronze, silver and gold. 
 In a real-world scenario, you will typcially create a seperate lakehouse for each zone. 
-This demo uses a si
-
-that denote the quality of data stored in the lakehouse
-
-three zones each of which represents a different level 
-of data quality,  
+This demo is using a single lakehouse for the data in all three zones just 
+to simplify things as you begin to learn working with Python and Spark.  
 
 ## Create lakehouse tables using a pre-provided Fabric notebook
 
