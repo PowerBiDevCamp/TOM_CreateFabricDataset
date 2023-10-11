@@ -243,25 +243,32 @@ which loads product data from **Products.csv** into a Spark DataFrame
 and then displays the DataFrame schema and rows of data.
 
 ``` python
+# create products table for silver zone
 from pyspark.sql.types import StructType, StructField, StringType, LongType, FloatType
 
-# create schema for Spark DataFrame using  StructType and StructField 
+# creating a Spark DataFrame using schema defined using StructType and StructField 
 schema_products = StructType([
     StructField("ProductId", LongType() ),
     StructField("Product", StringType() ),
     StructField("Category", StringType() )
 ])
 
-# use schema to load CSV data into new DataFrame
 df_products = (
     spark.read.format("csv")
          .option("header","true")
          .schema(schema_products)
-         .load("Files/landing_zone_sales/Products.csv")
+         .load("Files/bronze_landing_zone/Products.csv")
 )
 
 df_products.printSchema()
 df_products.show()
+
+( df_products.write
+             .mode("overwrite")
+             .option("overwriteSchema", "True")
+             .format("delta")
+             .save("Tables/silver_products")
+)
 ```
 
 Execute the code in the second cell to load product data into a Spark
