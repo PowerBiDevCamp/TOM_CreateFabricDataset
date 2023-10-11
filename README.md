@@ -107,8 +107,8 @@ with data using a **medallion architecture** in
 which the data is stored in three **data zones** including a **bronze zone**, a **silver zone** and a **gold zone**. 
 
 > In a real-world scenario, you will typcially create a seperate lakehouse for each zone. 
-This demo is using a single lakehouse for the data in all three zones just 
-to simplify things as you begin to learn working with Python and Spark.  
+This demo is using a single lakehouse for all three zones just 
+to simplify things and reduce the complexity as you begin working with Python and Spark.  
 
 ## Create lakehouse tables using a pre-provided Fabric notebook
 
