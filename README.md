@@ -237,7 +237,6 @@ memory as DataFrames where the data can be validated with table schemas and save
 lakehouse tables in delta format for the silver zone.
 
 ### Use Spark to load and validate data from CSV files to create silver zone tables
-
 Examine the following Python code from the second cell in the notebook
 which loads product data from **Products.csv** into a Spark DataFrame
 and then displays the DataFrame schema and rows of data.
@@ -288,7 +287,7 @@ displays the DataFrame schema and samples rows of data.
 # create customers table for silver zone
 from pyspark.sql.types import StructType, StructField, StringType, LongType, DateType
 
-# create schema for products table using StructType and StructField 
+# create schema for customers roducts table using StructType and StructField 
 schema_customers = StructType([
     StructField("CustomerId", LongType() ),
     StructField("FirstName", StringType() ),
@@ -303,7 +302,7 @@ df_customers = (
     spark.read.format("csv")
          .option("header","true")
          .schema(schema_customers)
-         .option("dateFormat", "M/d/yyyy")
+         .option("dateFormat", "MM/dd/yyyy")
          .option("inferSchema", "true")
          .load("Files/bronze_landing_zone/Customers.csv")
 )
@@ -331,27 +330,8 @@ Examine the Python code in the next cell which loads customer data from
 schema and samples rows of data.
 
 ``` python
-from pyspark.sql.types import StructType, StructField, StringType, LongType, FloatType, DateType
 
-# creating a Spark DataFrame using schema defined using StructType and StructField 
-schema_invoices = StructType([
-    StructField("InvoiceId", LongType() ),
-    StructField("Date", DateType() ),
-    StructField("TotalSalesAmount", FloatType() ),
-    StructField("CustomerId", LongType() )
-])
 
-df_invoices = (
-    spark.read.format("csv")
-         .option("header","true")
-         .schema(schema_invoices)
-         .option("dateFormat", "MM/dd/yyyy")
-         .option("inferSchema", "true") 
-         .load("Files/landing_zone_sales/Invoices.csv")
-)
-
-df_invoices.printSchema()
-df_invoices.show()
 ```
 
 Execute the code to load invoice data into a Spark DataFrame. After the
