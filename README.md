@@ -101,6 +101,17 @@ screenshot.
 Save the text file with these use these configuration values for later
 use when setting up the C# console application.
 
+> In the next step you will use a Fabric notepad with pre-provided Python code to
+populate the **SalesDataLakehouse** with data using a medallion architecture in 
+which the data is stored in data zones which typcially include bronze, silver and gold. 
+In a real-world scenario, you will typcially create a seperate lakehouse for each zone. 
+This demo uses a si
+
+that denote the quality of data stored in the lakehouse
+
+three zones each of which represents a different level 
+of data quality,  
+
 ## Create lakehouse tables using a pre-provided Fabric notebook
 
 Start by downloading all the sources files from this GitHub repository
@@ -178,11 +189,11 @@ Examine the following Python code in the top notebook cell which copies CSV file
 ``` python
 import requests
 
-csv_base_url = "https://github.com/PowerBiDevCamp/Python-In-Fabric-Notebooks/raw/main/ProductSalesData/"
+csv_base_url = "https://github.com/PowerBiDevCamp/TOM_CreateFabricDataset/raw/main/ProductSalesData/"
 
 csv_files = { "Customers.csv", "Products.csv", "Invoices.csv", "InvoiceDetails.csv" }
 
-folder_path = "Files/landing_zone_sales/"
+folder_path = "Files/bronze_landing_zone/"
 
 for csv_file in csv_files:
     csv_file_path = csv_base_url + csv_file
