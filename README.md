@@ -108,7 +108,7 @@ which the data is stored in three **data zones** including a **bronze zone**, a 
 
 > In a real-world scenario, you will typcially create a seperate lakehouse for each zone. 
 This demo is using a single lakehouse for all three zones just 
-to simplify things and reduce the complexity as you begin working with Python and Spark.  
+to simplify things and to reduce the complexity as you begin working with Python and Spark.  
 
 ## Create lakehouse tables using a pre-provided Fabric notebook
 
