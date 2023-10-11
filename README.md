@@ -235,8 +235,8 @@ right.
 
 > At this point, you have now copied the CSV files with the raw data into
 the lakehouse file system. Now you will use Spark to load this data into
-memory as DataFrames where the data can be manipulated and saved as
-lakehouse tables.
+memory as DataFrames where the data can be validated with table schemas and saved as
+lakehouse tables in delta format for the silver zone.
 
 ### Execute Python code to load CSV files into Spark DataFrames for the bronze layer
 
