@@ -442,7 +442,6 @@ storage as a delta table with another name.
 
 ``` python
 # create products table for gold zone
-
 # load DataFrame from silver zone table
 df_gold_products = (
     spark.read
