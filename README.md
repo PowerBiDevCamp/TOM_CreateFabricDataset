@@ -330,7 +330,38 @@ Examine the Python code in the next cell which loads customer data from
 schema and samples rows of data.
 
 ``` python
+# create invoices table for silver zone
+from pyspark.sql.types import StructType, StructField, LongType, FloatType, DateType
 
+# create schema for invoices table using StructType and StructField 
+schema_invoices = StructType([
+    StructField("InvoiceId", LongType() ),
+    StructField("Date", DateType() ),
+    StructField("TotalSalesAmount", FloatType() ),
+    StructField("CustomerId", LongType() )
+])
+
+# Load CSV file into Spark DataFrame with schema and support to infer dates
+df_invoices = (
+    spark.read.format("csv")
+         .option("header","true")
+         .schema(schema_invoices)
+         .option("dateFormat", "MM/dd/yyyy")
+         .option("inferSchema", "true") 
+         .load("Files/bronze_landing_zone/Invoices.csv")
+)
+
+# save DataFrame as lakehouse table in Delta format
+( df_invoices.write
+             .mode("overwrite")
+             .option("overwriteSchema", "True")
+             .format("delta")
+             .save("Tables/silver_invoices")
+)
+
+# display table schema and data
+df_invoices.printSchema()
+df_invoices.show()
 
 ```
 
@@ -345,28 +376,39 @@ Examine the Python code in the next cell which loads customer data from
 DataFrame schema and samples rows of data.
 
 ``` python
-from pyspark.sql.types import StructType, StructField, StringType, LongType, FloatType, DateType
+# create invoices table for silver zone
+from pyspark.sql.types import StructType, StructField, LongType, FloatType, DateType
 
-# creating a Spark DataFrame using schema defined using StructType and StructField 
-schema_invoice_details = StructType([
-    StructField("Id", LongType() ),
-    StructField("Quantity", LongType() ),
-    StructField("SalesAmount", FloatType() ),
+# create schema for invoices table using StructType and StructField 
+schema_invoices = StructType([
     StructField("InvoiceId", LongType() ),
-    StructField("ProductId", LongType() )
+    StructField("Date", DateType() ),
+    StructField("TotalSalesAmount", FloatType() ),
+    StructField("CustomerId", LongType() )
 ])
 
-df_invoice_details = (
+# Load CSV file into Spark DataFrame with schema and support to infer dates
+df_invoices = (
     spark.read.format("csv")
          .option("header","true")
-         .schema(schema_invoice_details)
+         .schema(schema_invoices)
          .option("dateFormat", "MM/dd/yyyy")
          .option("inferSchema", "true") 
-         .load("Files/landing_zone_sales/InvoiceDetails.csv")
+         .load("Files/bronze_landing_zone/Invoices.csv")
 )
 
-df_invoice_details.printSchema()
-df_invoice_details.show()
+# save DataFrame as lakehouse table in Delta format
+( df_invoices.write
+             .mode("overwrite")
+             .option("overwriteSchema", "True")
+             .format("delta")
+             .save("Tables/silver_invoices")
+)
+
+# display table schema and data
+df_invoices.printSchema()
+df_invoices.show()
+
 ```
 
 Execute the code to load invoice detail data into a Spark DataFrame.
