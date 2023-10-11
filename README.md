@@ -415,29 +415,14 @@ DataFrame schema and displays the top 20 rows of data.
 
 <img src="./images/media/image29.png"   style="width:45%"   />
 
-> At this point you have created four DataFrames. However, you have only loaded data
-into memory. Nothing has been persisted. Now it’s time to actually
-persist your work by saving each of the four DataFrames to lakehouse
-tables using the delta format.
+> At this point you have created four silver zone table.
 
-### Execute code to save the four DataFrames as delta tables in the lakehouse
-
-Execute the code in the next cell which saves all four DataFrames as lakehouse tables in the delta format.
-
-``` python
-# save all bronze layer tables
-df_products.write.mode("overwrite").format("delta").save(f"Tables/bronze_products")
-df_customers.write.mode("overwrite").format("delta").save(f"Tables/bronze_customers")
-df_invoices.write.mode("overwrite").format("delta").save(f"Tables/bronze_invoices")
-df_invoice_details.write.mode("overwrite").format("delta").save(f"Tables/bronze_invoice_details")
-
-```
 Once the code which creates the lakehouse tables completes, click the **Refresh** context menu of the **Tables** folder.
 
 <img src="./images/media/image30.png"  style="width:30%" />
 
 Once the refresh operation completes, you should be able to see four
-tables created for the Bronze layer.
+tables created for the silver zone.
 
 <img src="./images/media/image31.png"   style="width:30%" />
 
@@ -446,21 +431,36 @@ represents the raw data without any data cleansing or manipulation. In
 the next step, you will perform transformations on the data in the
 bronze layer tables to create the silver layer tables.
 
-### Reshape and transform data in bronze layer tables to create silver layer tables
+### Reshape and transform data in silver zone tables to create gold zone tables
 
 Move to the next cell in the notebook which contains the following code
-to load the table named **bronze_products** and then saves the data to a
+to load the table named **silver_products** and then saves the data to a
 second delta table named **products**. Note this Python code is simple
 in that it does not perform any transformations. However, it shows the
 basic pattern of loading a table into a DataFrame and then saving it back into lakehouse 
 storage as a delta table with another name.
 
 ``` python
-# create silver layer products table
-df_silver_products = spark.read.format("delta").load("Tables/bronze_products")
-df_silver_products.write.mode("overwrite").format("delta").save(f"Tables/products")
-df_silver_products.printSchema()
-df_silver_products.show()
+# create products table for gold zone
+
+# load DataFrame from silver zone table
+df_gold_products = (
+    spark.read
+         .format("delta")
+         .load("Tables/silver_products")
+)
+
+# write DataFrame to new gold zone table 
+( df_gold_products.write
+                  .mode("overwrite")
+                  .option("overwriteSchema", "True")
+                  .format("delta")
+                  .save("Tables/products")
+)
+
+# display table schema and data
+df_gold_products.printSchema()
+df_gold_products.show()
 ```
 
 Execute the code to create the **products** table. After the code
@@ -477,20 +477,30 @@ table is a bit more involved because it transforms the data by creating two new 
 and **LastName**.
 
 ``` python
-# create silver layer customers table
+# create customers table for gold zone
 from pyspark.sql.functions import concat_ws, floor, datediff, current_date, col
 
-df_silver_customers = (
-    spark.read.format("delta").load("Tables/bronze_customers")
-            .withColumn("Customer", concat_ws(' ', col('FirstName'), col('LastName')) )
-            .withColumn("Age",( floor( datediff( current_date(), col("DOB") )/365.25) ))   
-            .drop('FirstName', 'LastName')
+# load DataFrame from silver zone table and perform transforms
+df_gold_customers = (
+    spark.read
+         .format("delta")
+         .load("Tables/silver_customers")
+         .withColumn("Customer", concat_ws(' ', col('FirstName'), col('LastName')) )
+         .withColumn("Age",( floor( datediff( current_date(), col("DOB") )/365.25) ))   
+         .drop('FirstName', 'LastName')
 )
 
-df_silver_customers.write.mode("overwrite").format("delta").save(f"Tables/customers")
+# write DataFrame to new gold zone table 
+( df_gold_customers.write
+                   .mode("overwrite")
+                   .option("overwriteSchema", "True")
+                   .format("delta")
+                   .save("Tables/customers")
+)
 
-df_silver_customers.printSchema()
-df_silver_customers.show()
+# display table schema and data
+df_gold_customers.printSchema()
+df_gold_customers.show()
 ```
 
 Execute the code to create the **customers** table. After the code
@@ -507,29 +517,38 @@ column, generating an integer-based **DateKey** column, dropping
 unneeded columns and rearranging the order of columns.
 
 ``` python
-# create silver layer sales table
+# create sales table for gold zone
 from pyspark.sql.functions import col, desc, concat, lit, floor, datediff
 from pyspark.sql.functions import date_format, to_date, current_date, year, month, dayofmonth
 
-df_bronze_invoices = spark.read.format("delta").load("Tables/bronze_invoices")
-df_bronze_invoice_details = spark.read.format("delta").load("Tables/bronze_invoice_details")
+# load DataFrames using invoices table and invoice_details table from silver zone
+df_silver_invoices = spark.read.format("delta").load("Tables/silver_invoices")
+df_silver_invoice_details = spark.read.format("delta").load("Tables/silver_invoice_details")
 
-df_silver_sales = (
-    df_bronze_invoice_details
-            .join(df_bronze_invoices, 
-                  df_bronze_invoice_details['InvoiceId'] == df_bronze_invoices['InvoiceId'])
-            .withColumnRenamed('SalesAmount', 'Sales')
-            .withColumn("DateKey", (year(col('Date'))*10000) + 
-                                   (month(col('Date'))*100) + 
-                                   (dayofmonth(col('Date')))   )
-            .drop('InvoiceId', 'TotalSalesAmount', 'InvoiceId', 'Id')
-            .select('Date', "DateKey", "CustomerId", "ProductId", "Sales", "Quantity")
+# perform join to merge columns from both DataFrames and transform data 
+df_gold_sales = (
+    df_silver_invoice_details
+        .join(df_silver_invoices, 
+              df_silver_invoice_details['InvoiceId'] == df_silver_invoices['InvoiceId'])
+        .withColumnRenamed('SalesAmount', 'Sales')
+        .withColumn("DateKey", (year(col('Date'))*10000) + 
+                               (month(col('Date'))*100) + 
+                               (dayofmonth(col('Date')))   )
+        .drop('InvoiceId', 'TotalSalesAmount', 'InvoiceId', 'Id')
+        .select('Date', "DateKey", "CustomerId", "ProductId", "Sales", "Quantity")
 )
 
-df_silver_sales.write.mode("overwrite").format("delta").save(f"Tables/sales")
+# write DataFrame to new gold zone table 
+( df_gold_sales.write
+               .mode("overwrite")
+               .option("overwriteSchema", "True")
+               .format("delta")
+               .save("Tables/sales")
+)
 
-df_silver_sales.printSchema()
-df_silver_sales.show()
+# display table schema and data
+df_gold_sales.printSchema()
+df_gold_sales.show()
 ```
 
 Execute the code to create the **sales** table. After the code
@@ -545,22 +564,23 @@ column of the **sales** table to determine where to start and to end the
 **calendar** table.
 
 ``` python
-# create silver layer calendar table 
+# create calendar table for gold zone
+from datetime import date
 import pandas as pd
-from datetime import datetime, timedelta, date
-import os
+from pyspark.sql.functions import to_date, year, month, dayofmonth, quarter, dayofweek, date_format
 
-from pyspark.sql.functions import to_date, year, month, dayofmonth, quarter, dayofweek
+# get first and last calendar date from sakes table 
+first_sales_date = df_gold_sales.agg({"Date": "min"}).collect()[0][0]
+last_sales_date = df_gold_sales.agg({"Date": "max"}).collect()[0][0]
 
-first_sales_date = df_silver_sales.agg({"Date": "min"}).collect()[0][0]
-last_sales_date = df_silver_sales.agg({"Date": "max"}).collect()[0][0]
-
+# calculate start date and end date for calendar table
 start_date = date(first_sales_date.year, 1, 1)
 end_date = date(last_sales_date.year, 12, 31)
 
-os.environ["PYARROW_IGNORE_TIMEZONE"] = "1"
+# create pandas DataFrame with Date series column
 df_calendar_ps = pd.date_range(start_date, end_date, freq='D').to_frame()
 
+# convert pandas DataFrame to Spark DataFrame and add calculated calendar columns
 df_calendar_spark = (
      spark.createDataFrame(df_calendar_ps)
        .withColumnRenamed("0", "timestamp")
@@ -579,7 +599,15 @@ df_calendar_spark = (
        .drop('timestamp')
 )
 
-df_calendar_spark.write.mode("overwrite").format("delta").save(f"Tables/calendar")
+# write DataFrame to new gold zone table 
+( df_calendar_spark.write
+                   .mode("overwrite")
+                   .option("overwriteSchema", "True")
+                   .format("delta")
+                   .save("Tables/calendar")
+)
+
+# display table schema and data
 df_calendar_spark.printSchema()
 df_calendar_spark.show()
 ```
