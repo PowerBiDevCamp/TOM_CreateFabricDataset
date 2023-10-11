@@ -246,13 +246,14 @@ and then displays the DataFrame schema and rows of data.
 # create products table for silver zone
 from pyspark.sql.types import StructType, StructField, StringType, LongType, FloatType
 
-# creating a Spark DataFrame using schema defined using StructType and StructField 
+# create schema for products table using StructType and StructField 
 schema_products = StructType([
     StructField("ProductId", LongType() ),
     StructField("Product", StringType() ),
     StructField("Category", StringType() )
 ])
 
+# Load CSV file into Spark DataFrame and validate data using schema
 df_products = (
     spark.read.format("csv")
          .option("header","true")
@@ -260,15 +261,17 @@ df_products = (
          .load("Files/bronze_landing_zone/Products.csv")
 )
 
-df_products.printSchema()
-df_products.show()
-
+# save DataFrame as lakehouse table in Delta format
 ( df_products.write
              .mode("overwrite")
              .option("overwriteSchema", "True")
              .format("delta")
              .save("Tables/silver_products")
 )
+
+# display table schema and data
+df_products.printSchema()
+df_products.show()
 ```
 
 Execute the code in the second cell to load product data into a Spark
