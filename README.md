@@ -174,7 +174,7 @@ empty.
 
 <img src="./images/media/image20.png"  style="width:40%" />
 
-### Copy CSV files from this repository into the file system of your Fabric Lakehouse
+### Copy CSV files into the lakehiuse file system for the bronze zone
 
 Now you will execute the Python code from this workbook to populate the
 lakehouse with data. You will execute the Python code in each of the
@@ -236,7 +236,7 @@ the lakehouse file system. Now you will use Spark to load this data into
 memory as DataFrames where the data can be validated with table schemas and saved as
 lakehouse tables in delta format for the silver zone.
 
-### Execute Python code to load CSV files into Spark DataFrames for the bronze layer
+### Use Spark to load and validate data from CSV files to create silver zone tables
 
 Examine the following Python code from the second cell in the notebook
 which loads product data from **Products.csv** into a Spark DataFrame
