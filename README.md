@@ -285,9 +285,10 @@ customer data from **Customers.csv** into a Spark DataFrame and then
 displays the DataFrame schema and samples rows of data.
 
 ``` python
-from pyspark.sql.types import StructType, StructField, StringType, LongType, FloatType, DateType
+# create customers table for silver zone
+from pyspark.sql.types import StructType, StructField, StringType, LongType, DateType
 
-# creating a Spark DataFrame using schema defined with StructType and StructField 
+# create schema for products table using StructType and StructField 
 schema_customers = StructType([
     StructField("CustomerId", LongType() ),
     StructField("FirstName", StringType() ),
@@ -297,15 +298,25 @@ schema_customers = StructType([
     StructField("DOB", DateType() ),
 ])
 
+# Load CSV file into Spark DataFrame with schema and support to infer dates
 df_customers = (
     spark.read.format("csv")
          .option("header","true")
          .schema(schema_customers)
          .option("dateFormat", "M/d/yyyy")
          .option("inferSchema", "true")
-         .load("Files/landing_zone_sales/Customers.csv")
+         .load("Files/bronze_landing_zone/Customers.csv")
 )
 
+# save DataFrame as lakehouse table in Delta format
+( df_customers.write
+              .mode("overwrite")
+              .option("overwriteSchema", "True")
+              .format("delta")
+              .save("Tables/silver_customers")
+)
+
+# display table schema and data
 df_customers.printSchema()
 df_customers.show()
 ```
