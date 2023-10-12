@@ -567,11 +567,13 @@ displays the top 20 rows of data from the **sales** table.
 
 <img src="./images/media/image34.png" style="width:55%" />
 
-Move down to the last cell in the notebook which generates the
-**calendar** table used for time-based analysis. If you examine the
-code, you can see it uses the first and last dates from the **Date**
+Move down to the last cell which create the **calendar** table for the gold zone
+ which is used for time-based analysis. If you examine the
+code, you can see it retrieves the first date and last date from the **Date**
 column of the **sales** table to determine where to start and to end the
-**calendar** table.
+**calendar** table. There is also code to add several calculated columns 
+to the **Calendar** table such as **Year**, **Quarter**, **Month**, **Day**, 
+**MonthInYear** and **DayOfWeek**.
 
 ``` python
 # create calendar table for gold zone
