@@ -279,7 +279,7 @@ df_products.show()
 Execute the code in the second cell to load product data into a Spark
 DataFrame and save it as a delta table in the silver zone. 
 After the code completes, you should see output which
-displays the DataFrame schema and 10 rows of product data.
+displays the table schema and 10 rows of product data.
 
 <img src="./images/media/image26.png"  style="width:40%"   />
 
@@ -326,15 +326,23 @@ df_customers = (
 df_customers.printSchema()
 df_customers.show()
 ```
-Execute the Python code in this cell to load customer data into a Spark DataFrame. After the
-code completes, you should see output which displays the DataFrame schema
-and displays the top 20 rows of data.
+
+Execute the code in the second cell to load product data into a Spark
+DataFrame and save it as a delta table in the silver zone. 
+After the code completes, you should see output which
+displays the table schema and the top 20 rows of product data.
 
 <img src="./images/media/image27.png"  style="width:60%"   />
 
 Examine the Python code in the next cell which loads customer data from
-**Invoices.csv** into a Spark DataFrame and then displays the DataFrame
+ into a Spark DataFrame and then displays the DataFrame
 schema and samples rows of data.
+
+Examine the Python code in the next cell which loads
+invoice data from **Invoices.csv** into a Spark DataFrame and then saves it as a delta
+table in the silver zone named **silver_invoices**. You should notice this code provides
+special treatment to load data from a CSV file that coantains dates similar to the code which creates the 
+*silver_customers** table.
 
 ``` python
 # create invoices table for silver zone
