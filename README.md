@@ -440,7 +440,7 @@ tables created for the silver zone.
 
 > At this point, you have created delta tables for the silver zone which
 represents cleansed data with valid datatypes. In the next step, you will perform transformations 
-on the data in silver zone tables to create the gold zone tables.
+on the data in silver zone tables to transform and enrich the data to create gold zone tables.
 
 ### Reshape and transform data from silver zone tables to create gold zone tables
 
