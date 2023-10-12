@@ -339,7 +339,7 @@ Examine the Python code in the next cell which loads
 invoice data from **Invoices.csv** into a Spark DataFrame and then saves it as a delta
 table in the silver zone named **silver_invoices**. You should notice this code provides
 special treatment to load data that contains dates similar to the code which creates the 
-*silver_customers** table.
+**silver_customers** table.
 
 ``` python
 # create invoices table for silver zone
