@@ -101,7 +101,8 @@ screenshot.
 Save the text file with these use these configuration values for later
 use when setting up the C# console application.
 
-> In the next step you will import a Fabric notebook with pre-provided Python code. 
+## Create lakehouse tables using a pre-provided Fabric notebook
+In this step you will import a Fabric notebook with pre-provided Python code. 
 You will execute Python code in this notebook to populate the **SalesDataLakehouse** 
 with data using a **medallion architecture** in 
 which the data is stored in three **data zones** including a **bronze zone**, a **silver zone** and a **gold zone**. 
@@ -109,8 +110,6 @@ which the data is stored in three **data zones** including a **bronze zone**, a 
 > In a real-world scenario, you will typcially create a seperate lakehouse for each zone. 
 This demo is using a single lakehouse for all three zones just 
 to simplify things and to reduce the complexity as you begin working with Python and Spark.  
-
-## Create lakehouse tables using a pre-provided Fabric notebook
 
 Start by downloading all the sources files from this GitHub repository
 as a single ZIP archive named **TOM_CreateFabricDataset.zip**. You can
