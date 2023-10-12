@@ -433,7 +433,7 @@ Click the **Refresh** context menu of the **Tables** folder.
 
 <img src="./images/media/image30.png"  style="width:30%" />
 
-Once the refresh operation completes, you should be able to see four
+Once the refresh operation completes, you should be able to see the four
 tables created for the silver zone.
 
 <img src="./images/media/image31.png"   style="width:30%" />
