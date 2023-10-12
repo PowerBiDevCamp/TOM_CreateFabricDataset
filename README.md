@@ -283,9 +283,12 @@ displays the DataFrame schema and 10 rows of product data.
 
 <img src="./images/media/image26.png"  style="width:40%"   />
 
-Examine the Python code inside the third cell in the notebook which loads
-customer data from **Customers.csv** into a Spark DataFrame and then
-displays the DataFrame schema and samples rows of data.
+Examine the Python code inside the third cell which loads
+customer data from **Customers.csv** into a Spark DataFrame and saved it as a delta
+table in the silver zone named **silver_customers**. You should notice this code provides
+special treatment to load data from a CSV file that coantains dates. More specifically,
+the DataFrame schema defines the **DOB** column using DateType() and there is code which sets 
+two important options named **dateFormat** and **inferSchema** before calling **load()**.
 
 ``` python
 # create customers table for silver zone
