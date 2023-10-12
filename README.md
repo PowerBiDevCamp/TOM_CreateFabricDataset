@@ -474,7 +474,7 @@ df_gold_products.show()
 ```
 
 Execute the code to create the **products** table. After the code
-completes, you should see output which display the DataFrame schema and
+completes, you should see output which displays the DataFrame schema and
 displays the top 20 rows of data from the **products** table.
 
 <img src="./images/media/image32.png"  style="width:40%" />
