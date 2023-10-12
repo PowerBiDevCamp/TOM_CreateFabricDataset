@@ -8,7 +8,7 @@ notebook named **[CreateLakehouseTables.ipynb](CreateLakehouseTables.ipynb)** wi
 can be used to generate Lakehouse tables in delta format that will be
 used as the underlying datasource for the DirectLake dataset.
 
-> This document will take you through the steps required to set up and run through the demo. If you are just looking to understand how to write C# code using the Tabular Object Model (TOM), you should read **[CodeWalkthrough.md](CodeWalkthrough.md)**.
+> This document will take you through the steps required to set up and run through the demo. If you are just looking to understand how to write C# code using the Tabular Object Model (TOM), you should read **[CodeWalkthrough.md](https://github.com/PowerBiDevCamp/TOM_CreateFabricDataset/blob/main/CodeWalkthrough.md
 
 Here are the high-level steps to set up and run through this demonstration:
 - Create a new workspace associated with Fabric capacity
@@ -826,4 +826,4 @@ You have now generated a DirectLake-mode dataset which can be used to
 create Power BI reports. This is the end of the demonstration. 
 Designing a report that looks good is left as an exercise for the reader.
 
->While this document examined the steps required to set up and run  the demo, it did not really explain how the C# code created a Direct-mode dataset using the Tabular Object Model. If you want to understand how to write C# code to create a Direct-mode dataset, you should read **[CodeWalkthrough.md](CodeWalkthrough.md)**.
+>While this document examined the steps required to set up and run  the demo, it did not really explain how the C# code created a Direct-mode dataset using the Tabular Object Model. If you want to understand how to write C# code to create a Direct-mode dataset, you should read **[CodeWalkthrough.md](https://github.com/PowerBiDevCamp/TOM_CreateFabricDataset/blob/main/CodeWalkthrough.md)**.
