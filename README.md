@@ -518,9 +518,10 @@ displays the top 20 rows of data from the **customers** table.
 
 <img src="./images/media/image33.png"  style="width:60%" />
 
-Move to the next cell which contains the following code to create the
-**sales** table. This code merges data from the **bronze_invoices**
-table and the **bronze_invoice_details** table into a single DataFrame.
+
+Move to the next cell which creates the **sales** table for gold zone. 
+This code merges columns from the **silver_invoices**
+table and the **silver_invoice_details** table into a single DataFrame.
 This code performs several other transformations including renaming a
 column, generating an integer-based **DateKey** column, dropping
 unneeded columns and rearranging the order of columns.
