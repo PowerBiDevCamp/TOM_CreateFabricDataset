@@ -444,12 +444,12 @@ tables and perform transformations to enrich the data used to create gold zone t
 
 ### Reshape and transform data from silver zone tables to create gold zone tables
 
-Move to the next cell in the notebook which contains the following code
-to load the table named **silver_products** and then saves the data to a
-second delta table named **products**. Note this Python code is simple
-in that it does not perform any transformations. However, it shows the
-basic pattern of loading a table into a DataFrame and then saving it back into lakehouse 
-storage as a delta table with another name or in a different lakehouse.
+Move to the next cell which creates the **products** table for gold zone. This code loads 
+the table named **silver_products** and then saves the data to a
+second delta table in the gold zone named **products**. Note this Python code is simple
+in that it does not perform any transformations on product data. However, this Python code
+demonstrates the basic pattern of loading a table into a DataFrame and then saving it back 
+into lakehouse storage as a delta table with another name or in a different lakehouse.
 
 ``` python
 # create products table for gold zone
