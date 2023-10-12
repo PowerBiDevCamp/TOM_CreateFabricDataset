@@ -242,7 +242,7 @@ Examine the following Python code from the second notebook cell
 which loads product data from **Products.csv** into a Spark DataFrame. 
 After the DataFrame has been loaded into memory, it is then saved as a delta table with the name 
 **silver_products**. The last two lines of Python code call **printSchema()** and **show()** to display 
-the table schema and sample rows of data below which allows you to visualize the data.
+the table schema and sample rows of data below which allows you to visualize the strucutre of the product data.
 
 ``` python
 # create products table for silver zone
