@@ -427,7 +427,7 @@ displays the table schema and the top 20 rows of data.
 
 <img src="./images/media/image29.png"   style="width:45%"   />
 
-> At this point you have created four silver zone table.
+> At this point you have created the four table required in the silver zone.
 
 Once the code which creates the lakehouse tables completes, click the **Refresh** context menu of the **Tables** folder.
 
