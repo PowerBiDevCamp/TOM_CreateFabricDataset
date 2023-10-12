@@ -633,7 +633,7 @@ displays the top 20 rows of data from the **calendar** table.
 <img src="./images/media/image35.png" style="width:70%" />
 
 Now refresh the **Tables** folder in the **Lakehouses** pane. You should
-now see the four delta tables named **calendar**, **customers**, **products** and
+now see the four gold zone tables named **calendar**, **customers**, **products** and
 **sales**. These are the delta tables that will be used to create the
 DirectLake-mode dataset.
 
