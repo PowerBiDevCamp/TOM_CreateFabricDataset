@@ -479,12 +479,11 @@ displays the top 20 rows of data from the **products** table.
 
 <img src="./images/media/image32.png"  style="width:40%" />
 
-Move to the next cell which contains the following code to load the
-table named **bronze_customers** and then saves it to a second delta
-table named **customers**. This code which has been written to create the **customers**
-table is a bit more involved because it transforms the data by creating two new columns named
-**Customer** and **Age** and dropping two other columns named **FirstName**
-and **LastName**.
+Move to the next cell which creates the **customers** table for gold zone. This code loads data from 
+the **silver_customers** table and transforms the data by creating two new columns named
+**Customer** and **Age** and by dropping two other columns named **FirstName** and **LastName**.
+After performing these transformations, the code saves the DataFrame as a new table for the gold zone
+named **Customers**.
 
 ``` python
 # create customers table for gold zone
