@@ -287,7 +287,7 @@ Examine the Python code inside the third cell which loads
 customer data from **Customers.csv** into a Spark DataFrame and then saves it as a delta
 table in the silver zone named **silver_customers**. You should notice this code provides
 special treatment to load data from a CSV file that coantains dates. More specifically,
-the DataFrame schema defines the **DOB** column using DateType() and there is code which sets 
+the DataFrame schema defines the **DOB** column using **DateType()** and there is code which sets 
 two important options named **dateFormat** and **inferSchema** before calling **load()**.
 
 ``` python
