@@ -277,7 +277,8 @@ df_products.show()
 ```
 
 Execute the code in the second cell to load product data into a Spark
-DataFrame. After the code completes, you should see output which
+DataFrame and save it as a delta table in the silver zone. 
+After the code completes, you should see output which
 displays the DataFrame schema and 10 rows of product data.
 
 <img src="./images/media/image26.png"  style="width:40%"   />
