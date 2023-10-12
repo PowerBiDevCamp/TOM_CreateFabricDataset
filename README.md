@@ -238,9 +238,11 @@ memory as DataFrames where the data can be validated with table schemas and save
 lakehouse tables in delta format for the silver zone.
 
 ### Use Spark to load and validate data from CSV files to create silver zone tables
-Examine the following Python code from the second cell in the notebook
-which loads product data from **Products.csv** into a Spark DataFrame
-and then displays the DataFrame schema and rows of data.
+Examine the following Python code from the second notebook cell
+which loads product data from **Products.csv** into a Spark DataFrame. 
+After loading the DataFrame into memory, it is then saved as a delta table with the name 
+**silver_products**. At the end, this code calls **printSchema()** and **show()** to display 
+the table schema and sample rows of data below.
 
 ``` python
 # create products table for silver zone
