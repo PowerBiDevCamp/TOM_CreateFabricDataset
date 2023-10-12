@@ -334,7 +334,6 @@ displays the table schema and the top 20 rows of data.
 
 <img src="./images/media/image27.png"  style="width:60%"   />
 
-
 Examine the Python code in the next cell which loads
 invoice data from **Invoices.csv** into a Spark DataFrame and then saves it as a delta
 table in the silver zone named **silver_invoices**. You should notice this code provides
@@ -374,18 +373,18 @@ df_invoices = (
 # display table schema and data
 df_invoices.printSchema()
 df_invoices.show()
-
 ```
 
-Execute the code to load invoice data into a Spark DataFrame. After the
-code completes, you should see output which displays the DataFrame schema
-and displays the top 20 rows of data.
+Execute the code to load invoice data into a Spark
+DataFrame and save it as a delta table named **silver_invoices**. 
+After the code completes, you should see output which
+displays the table schema and the top 20 rows of data.
 
 <img src="./images/media/image28.png"   style="width:45%"   />
 
-Examine the Python code in the next cell which loads customer data from
-**InvoiceDetails.csv** into a Spark DataFrame and then displays the
-DataFrame schema and samples rows of data.
+Examine the Python code in the next cell which loads
+invoice detail data from **InvoiceDetails.csv** into a Spark DataFrame and then saves it as a delta
+table in the silver zone named **silver_invoice_details**.
 
 ``` python
 # create invoice_details table for silver zone
@@ -421,9 +420,10 @@ df_invoice_details.printSchema()
 df_invoice_details.show()
 ```
 
-Execute the code to load invoice detail data into a Spark DataFrame.
-After the code completes, you should see output which displays the
-DataFrame schema and displays the top 20 rows of data.
+Execute the code to load invoice detail data into a Spark
+DataFrame and save it as a delta table named **silver_invoice_details**. 
+After the code completes, you should see output which
+displays the table schema and the top 20 rows of data.
 
 <img src="./images/media/image29.png"   style="width:45%"   />
 
