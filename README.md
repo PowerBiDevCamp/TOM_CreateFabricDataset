@@ -572,8 +572,10 @@ which is used for time-based analysis. If you examine the
 code, you can see it retrieves the first date and last date from the **Date**
 column of the **sales** table to determine where to start and to end the
 **calendar** table. There is also code to add several calculated columns 
-to the **Calendar** table such as **Year**, **Quarter**, **Month**, **Day**, 
-**MonthInYear** and **DayOfWeek**.
+to the **calendar** table such as **Year**, **Quarter**, **Month**, **Day**, 
+**MonthInYear** and **DayOfWeek**. Finally, note the code creates a calculated column
+named **DateKey** that will be used to establish a one-
+to-many relationship between the **calendar** table and the **sales** table.
 
 ``` python
 # create calendar table for gold zone
