@@ -521,7 +521,7 @@ displays the top 20 rows of data from the **customers** table.
 
 Move to the next cell which creates the **sales** table for gold zone. 
 This code merges columns from the **silver_invoices**
-table and the **silver_invoice_details** table into a single DataFrame.
+table and the **silver_invoice_details** table into a single DataFrame by calling **join()**.
 After that, this code performs several other transformations including renaming a
 column, generating an integer-based **DateKey** column, dropping
 unneeded columns and rearranging the order of columns.
