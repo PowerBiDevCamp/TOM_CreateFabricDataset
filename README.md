@@ -438,10 +438,9 @@ tables created for the silver zone.
 
 <img src="./images/media/image31.png"   style="width:30%" />
 
-> At this point, you have created delta tables for the bronze layer which
-represents the raw data without any data cleansing or manipulation. In
-the next step, you will perform transformations on the data in the
-bronze layer tables to create the silver layer tables.
+> At this point, you have created delta tables for the silver zone which
+represents cleansed data with valid datatypes. In the next step, you will perform transformations 
+on the data in silver zone tables to create the gold zone tables.
 
 ### Reshape and transform data from silver zone tables to create gold zone tables
 
