@@ -427,7 +427,7 @@ displays the table schema and the top 20 rows of data.
 
 <img src="./images/media/image29.png"   style="width:45%"   />
 
-> At this point you have created the four tables which completes the work in preparing the silver zone.
+> At this point you have created four tables which completes the work required for the silver zone.
 
 Click the **Refresh** context menu of the **Tables** folder.
 
