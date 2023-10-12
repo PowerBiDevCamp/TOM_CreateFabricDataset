@@ -334,9 +334,6 @@ displays the table schema and the top 20 rows of data.
 
 <img src="./images/media/image27.png"  style="width:60%"   />
 
-Examine the Python code in the next cell which loads customer data from
- into a Spark DataFrame and then displays the DataFrame
-schema and samples rows of data.
 
 Examine the Python code in the next cell which loads
 invoice data from **Invoices.csv** into a Spark DataFrame and then saves it as a delta
