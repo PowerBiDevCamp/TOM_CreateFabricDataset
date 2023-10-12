@@ -567,8 +567,8 @@ displays the top 20 rows of data from the **sales** table.
 
 <img src="./images/media/image34.png" style="width:55%" />
 
-Move down to the last cell which create the **calendar** table for the gold zone
- which is used for time-based analysis. If you examine the
+Move down to the last cell which creates the **calendar** table in the gold zone
+which is used for time-based analysis. If you examine the
 code, you can see it retrieves the first date and last date from the **Date**
 column of the **sales** table to determine where to start and to end the
 **calendar** table. There is also code to add several calculated columns 
