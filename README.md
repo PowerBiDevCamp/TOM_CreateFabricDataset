@@ -327,8 +327,8 @@ df_customers.printSchema()
 df_customers.show()
 ```
 
-Execute the code in the second cell to load product data into a Spark
-DataFrame and save it as a delta table in the silver zone. 
+Execute the code to load customer data into a Spark
+DataFrame and save it as a delta table named **silver_customers**. 
 After the code completes, you should see output which
 displays the table schema and the top 20 rows of product data.
 
